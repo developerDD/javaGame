@@ -18,6 +18,25 @@ public class HomeWorkForBook {
         }
     }
 
+    public static void FindMinMax_devision3_9(int [] mas)
+    {
+
+    }
+
+    public static void buildPascalTriangle(int number, int rows) {
+        for (int y = 0; y < rows; y++) {
+            int c = number;
+            for (int w = 0; w < rows - y; w++) {
+                System.out.print("   ");
+            }
+            for (int x = 0; x <= y; x++) {
+                System.out.print("   " + c + " ");
+                c = c * (y - x) / (x + 1);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         int[] mas = new int[]{12, 21, 33, 4, 5, 6, 9, 27};
         int max = 0;
