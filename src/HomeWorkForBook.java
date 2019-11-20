@@ -16,8 +16,8 @@ public class HomeWorkForBook {
     public static void main(String[] args) {
         int[] mas = new int[]{12, 21, 33, 4, 5, 6, 9, 27};
 
-        Methods.evenAndOddNum(mas);
-
+       int []mas2= Methods.initMas(20);
+        showMas(mas2);
 
     }
 }

@@ -2,6 +2,15 @@ import java.util.*;
 
 public class Methods {
 
+    public static int[] initMas(int size) {
+        int[] mas = new int[size];
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            mas[i]=random.nextInt(100)+1;
+        }
+        return mas;
+    }
+
     //Числа Фибоначчи: f0 = f1 = 1, f (n) = f (n–1) + f (n–2)
     public static int[] fibo(int index) {
         System.out.println("Первые " + index + " чисел Фибоначи ->");
@@ -33,13 +42,13 @@ public class Methods {
         System.out.print("\n" + "Max = " + max + "\n" + "Min = " + min);
     }
 
-    public static void evenAndOddNum (int []mas){
+    public static void evenAndOddNum(int[] mas) {
         List<Integer> even = new ArrayList<>();
         List<Integer> odd = new ArrayList<>();
-        for (int i:mas) {
-            if (i%2==0){
+        for (int i : mas) {
+            if (i % 2 == 0) {
                 even.add(i);
-            }else {
+            } else {
                 odd.add(i);
             }
         }
