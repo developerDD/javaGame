@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Methods {
 
     //Числа Фибоначчи: f0 = f1 = 1, f (n) = f (n–1) + f (n–2)
@@ -29,6 +31,20 @@ public class Methods {
             }
         }
         System.out.print("\n" + "Max = " + max + "\n" + "Min = " + min);
+    }
+
+    public static void evenAndOddNum (int []mas){
+        List<Integer> even = new ArrayList<>();
+        List<Integer> odd = new ArrayList<>();
+        for (int i:mas) {
+            if (i%2==0){
+                even.add(i);
+            }else {
+                odd.add(i);
+            }
+        }
+        System.out.println("Чётные числа: " + even);
+        System.out.println("Нечётные числа: " + odd);
     }
 
     //Tреугольник Паскаля для первого положительного числа
