@@ -6,7 +6,7 @@ public class Methods {
         int[] mas = new int[size];
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            mas[i]=random.nextInt(100)+1;
+            mas[i] = random.nextInt(100) + 1;
         }
         return mas;
     }
@@ -95,5 +95,29 @@ public class Methods {
                 }
             }
         }
+    }
+
+    //Двоичный поиск в отсортированом массиве
+    public static void find(int[] mas, int key) {
+        int current;
+        int start = 0;
+        int end = mas.length - 1;
+        while (true) {
+            current = (start + end) / 2;
+            if (mas[current] == key) {
+                System.out.println("Елемент "+key+ " найден, идекс в масиве " + current);
+                break;
+            } else if (start > end) {
+                System.out.println("Нет такого елемента в массиве!");
+                break;
+            } else {
+                if (mas[current] < key) {
+                    start = current + 1;
+                } else {
+                    end = current - 1;
+                }
+            }
+        }
+
     }
 }

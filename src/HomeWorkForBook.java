@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class HomeWorkForBook {
 
 
@@ -11,13 +9,21 @@ public class HomeWorkForBook {
         }
         System.out.println("\n");
     }
+    public static void showMas(Number[] mas) {
+        for (Number i :
+                mas) {
+            System.out.print(i + " ");
+
+        }
+        System.out.println("\n");
+    }
 
 
     public static void main(String[] args) {
-        int[] mas = new int[]{12, 21, 33, 4, 5, 6, 9, 27};
-
-       int []mas2= Methods.initMas(20);
-        showMas(mas2);
-
+        int[] mas = new int[]{-12, 21, 33, 4, 5, 6, 9, 27};
+        int[] mas2 = Methods.initMas(20);
+        Methods.boobleSort(mas,true);
+        showMas(mas);
+        Methods.find(mas,5);
     }
 }
