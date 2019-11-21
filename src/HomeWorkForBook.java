@@ -22,8 +22,7 @@ public class HomeWorkForBook {
     public static void main(String[] args) {
         int[] mas = new int[]{-12, 21, 33, 4, 5, 6, 9, 27};
         int[] mas2 = Methods.initMas(20);
-        Methods.boobleSort(mas,true);
+        Methods.sotrSelect(mas);
         showMas(mas);
-        Methods.find(mas,5);
     }
 }

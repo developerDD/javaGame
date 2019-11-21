@@ -120,4 +120,19 @@ public class Methods {
         }
 
     }
+
+    //Сортировка вставкой
+    public static void sotrSelect(int []mas){
+        int min;
+        for (int i = 0; i < mas.length-1; i++) {
+            min=i;
+            for (int j = min+1; j <mas.length ; j++) {
+                if (mas[j]<mas[min]){
+                    int temp = mas[min];
+                    mas[min]=mas[j];
+                    mas[j]=temp;
+                }
+            }
+        }
+    }
 }
