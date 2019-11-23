@@ -1,5 +1,3 @@
-import sun.nio.cs.ext.MacArabic;
-
 public class HomeWorkForBook {
 
 
@@ -24,14 +22,14 @@ public class HomeWorkForBook {
 
     public static void main(String[] args) {
         int[] mas = new int[]{-12, 21, 33, 4, 5, 6, 9, 27};
-        int[] mas2 = Methods.initMas(20);
-        Matrix matrix = new Matrix(2, 2);
-        Matrix matrix1 = new Matrix(3, 2);
+        int[] mas2 = MethodsForMass.initMas(20);
+        Matrix matrix = new Matrix(3, 3);
+        Matrix matrix1 = new Matrix(3, 3);
         matrix.createRandomeMatix();
         matrix1.createRandomeMatix();
         System.out.println(matrix.toSting());
         System.out.println(matrix1.toSting());
-        Matrix matrix2 = Multiplicator.multiply(matrix, matrix1);
+        Matrix matrix2 = Multiplicator.addMatrix(matrix, matrix1);
         System.out.println(matrix2.toSting());
     }
 }

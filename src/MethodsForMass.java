@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Methods {
+public class MethodsForMass {
 
     public static int[] initMas(int size) {
         int[] mas = new int[size];
