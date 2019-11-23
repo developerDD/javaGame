@@ -28,7 +28,7 @@ public class Multiplicator extends Exception {
         return result;
     }
 
-    public static Matrix addMatrix(Matrix a, Matrix b){
+    public static Matrix addMatrix(Matrix a, Matrix b) {
         int v = a.getVerticalSize();
         int h = b.getHorizonyalSize();
         int temp = a.getHorizonyalSize();
@@ -43,9 +43,27 @@ public class Multiplicator extends Exception {
         Matrix result = new Matrix(v, h);
         for (int i = 0; i < v; i++) {
             for (int j = 0; j < h; j++) {
-
-                    result.setElemetsMatrix(i, j, a.getElemetsMatrix(i, j) + b.getElemetsMatrix(i, j));
-
+                result.setElemetsMatrix(i, j, a.getElemetsMatrix(i, j) + b.getElemetsMatrix(i, j));
+            }
+        }
+        return result;
+    }
+    public static Matrix differenceMatrix(Matrix a, Matrix b) {
+        int v = a.getVerticalSize();
+        int h = b.getHorizonyalSize();
+        int temp = a.getHorizonyalSize();
+        //проверка на разность матрици
+        try {
+            if (temp != b.getVerticalSize()) {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Matrix result = new Matrix(v, h);
+        for (int i = 0; i < v; i++) {
+            for (int j = 0; j < h; j++) {
+                result.setElemetsMatrix(i, j, a.getElemetsMatrix(i, j) - b.getElemetsMatrix(i, j));
             }
         }
         return result;
