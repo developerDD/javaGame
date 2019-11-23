@@ -1,5 +1,5 @@
 public class Matrix {
-    int[][] mas;
+   private int[][] mas;
     int row, kolum;
 
     public Matrix(int row, int kolum) {

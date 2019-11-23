@@ -26,10 +26,8 @@ public class HomeWorkForBook {
         Matrix matrix = new Matrix(3, 3);
         Matrix matrix1 = new Matrix(3, 3);
         matrix.createRandomeMatix();
-        matrix1.createRandomeMatix();
         System.out.println(matrix.toSting());
-        System.out.println(matrix1.toSting());
-        Matrix matrix2 = Multiplicator.addMatrix(matrix, matrix1);
-        System.out.println(matrix2.toSting());
+       Matrix trans = Multiplicator.transpoceMatrix(matrix);
+        System.out.println(trans.toSting());
     }
 }

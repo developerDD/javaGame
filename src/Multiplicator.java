@@ -1,3 +1,5 @@
+import org.omg.CORBA.MARSHAL;
+
 import java.io.IOException;
 
 public class Multiplicator extends Exception {
@@ -48,6 +50,7 @@ public class Multiplicator extends Exception {
         }
         return result;
     }
+
     public static Matrix differenceMatrix(Matrix a, Matrix b) {
         int v = a.getVerticalSize();
         int h = b.getHorizonyalSize();
@@ -67,5 +70,21 @@ public class Multiplicator extends Exception {
             }
         }
         return result;
+    }
+
+    public static Matrix transpoceMatrix(Matrix matrix) {
+        Matrix transpMatrix = new Matrix(matrix.getHorizonyalSize(), matrix.getVerticalSize());
+        int v = transpMatrix.getVerticalSize();
+        int h = transpMatrix.getHorizonyalSize();
+        try {
+            for (int i = 0; i < v; i++) {
+                for (int j = 0; j < h; j++) {
+                    transpMatrix.setElemetsMatrix(i, j, matrix.getElemetsMatrix(j, i));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return transpMatrix;
     }
 }
