@@ -1,3 +1,10 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ * @author Dima Derevianko
+ */
 public class HomeWorkForBook {
 
 
@@ -20,14 +27,16 @@ public class HomeWorkForBook {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int[] mas = new int[]{-12, 21, 33, 4, 5, 6, 9, 27};
         int[] mas2 = MethodsForMass.initMas(20);
         Matrix matrix = new Matrix(3, 3);
         Matrix matrix1 = new Matrix(3, 3);
-        matrix.createRandomeMatix();
-        System.out.println(matrix.toSting());
-       Matrix trans = Multiplicator.transpoceMatrix(matrix);
-        System.out.println(trans.toSting());
+       OperationsString string = new OperationsString(3);
+        string.sortMasStr();
+        string.showMasStr();
+
+
+
     }
 }
