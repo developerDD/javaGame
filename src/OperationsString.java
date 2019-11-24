@@ -1,3 +1,5 @@
+import com.sun.xml.internal.fastinfoset.util.CharArray;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,6 +14,7 @@ public class OperationsString extends Exception {
         numberStr = number;
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Введите " + number + " слов. После каждого слова нажимайте Enter!");
             for (int i = 0; i < numberStr; i++) {
                 masStr[i] = reader.readLine();
             }
@@ -33,6 +36,18 @@ public class OperationsString extends Exception {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void showMasStr() {
+        try {
+            for (String s :
+                    masStr) {
+                System.out.println(s + " size " + s.length());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     //Ввести n строк с консоли, найти самую короткую и самую длинную
@@ -61,6 +76,7 @@ public class OperationsString extends Exception {
 
         }
     }
+
     /*Ввести n строк с консоли. Упорядочить и вывести строки в порядке
     возрастания (убывания) значений их длины.*/
     public void sortMasStr() {
@@ -74,16 +90,26 @@ public class OperationsString extends Exception {
             }
         }
     }
-
-    public void showMasStr() {
-        try {
-            for (String s :
-                    masStr) {
-                System.out.println(s + " size " + s.length());
+    /*Ввести n слов с консоли. Найти количество слов, содержащих только
+    символы латинского алфавита, а среди них – количество слов с равным
+    числом гласных и согласных букв.*/
+    public void stringTocharLatino() {
+        int flag = 0,count =0;
+        for (int i = 0; i < masStr.length; i++) {
+            flag=0;
+            char[] wordChar = masStr[i].toCharArray();
+            for (int j = 0; j < wordChar.length; j++) {
+                if (wordChar[j] >= 'A' && wordChar[j] <= 'Z' || wordChar[j] >= 'a' && wordChar[j] <= 'z') {
+                    flag ++;
+                }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            //проверка слова
+            if (flag==masStr[i].length()) {
+                System.out.println(masStr[i] + " только латинские буквы!");
+                count++;
+            }
 
+        }
+        System.out.println("Всего слов с латинскими буквами "+count);
     }
 }
