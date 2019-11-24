@@ -90,26 +90,36 @@ public class OperationsString extends Exception {
             }
         }
     }
+
     /*Ввести n слов с консоли. Найти количество слов, содержащих только
     символы латинского алфавита, а среди них – количество слов с равным
     числом гласных и согласных букв.*/
     public void stringTocharLatino() {
-        int flag = 0,count =0;
+        int flag = 0, count = 0, vowels = 0, vowelsWords = 0;
         for (int i = 0; i < masStr.length; i++) {
-            flag=0;
+            flag = 0;
+            vowels = 0;
             char[] wordChar = masStr[i].toCharArray();
             for (int j = 0; j < wordChar.length; j++) {
                 if (wordChar[j] >= 'A' && wordChar[j] <= 'Z' || wordChar[j] >= 'a' && wordChar[j] <= 'z') {
-                    flag ++;
+                    flag++;
+                }
+                if ((wordChar[j] == 'A') || (wordChar[j] == 'E') || (wordChar[j] == 'I') || (wordChar[j] == 'O') || (wordChar[j] == 'U')
+                        || (wordChar[j] == 'a') || (wordChar[j] == 'e') || (wordChar[j] == 'i') || (wordChar[j] == 'o') || (wordChar[j] == 'u')) {
+                    vowels++;
                 }
             }
             //проверка слова
-            if (flag==masStr[i].length()) {
+            if (flag == masStr[i].length()) {
                 System.out.println(masStr[i] + " только латинские буквы!");
                 count++;
             }
+            if (vowels == masStr[i].length() / 2) {
+                vowelsWords++;
+            }
 
         }
-        System.out.println("Всего слов с латинскими буквами "+count);
+        System.out.println("Всего слов с латинскими буквами " + count);
+        System.out.println("Всего слов с равным числом гласных и согласных букв " + vowelsWords);
     }
 }
