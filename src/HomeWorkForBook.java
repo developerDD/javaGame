@@ -33,7 +33,7 @@ public class HomeWorkForBook {
         Matrix matrix = new Matrix(3, 3);
         Matrix matrix1 = new Matrix(3, 3);
        OperationsString string = new OperationsString(3);
-        string.stringTocharLatino();
+        string.lettersAscending();
 
 
 
