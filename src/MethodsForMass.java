@@ -1,3 +1,6 @@
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import sun.security.pkcs11.P11Util;
+
 import java.util.*;
 
 public class MethodsForMass {
@@ -9,6 +12,36 @@ public class MethodsForMass {
             mas[i] = random.nextInt(100) + 1;
         }
         return mas;
+    }
+
+    public static void showMas(int[] mas) {
+        for (int i :
+                mas) {
+            System.out.print(i + " ");
+
+        }
+        System.out.print("\n");
+    }
+
+    public static void showMas(int[][] mas) {
+        for (int[] i :
+                mas) {
+            for (int j : i
+            ) {
+                System.out.print(j + " ");
+            }
+            System.out.println("\n");
+        }
+
+    }
+
+    public static void showMas(Number[] mas) {
+        for (Number i :
+                mas) {
+            System.out.print(i + " ");
+
+        }
+        System.out.println("\n");
     }
 
     //Числа Фибоначчи: f0 = f1 = 1, f (n) = f (n–1) + f (n–2)
@@ -105,7 +138,7 @@ public class MethodsForMass {
         while (true) {
             current = (start + end) / 2;
             if (mas[current] == key) {
-                System.out.println("Елемент "+key+ " найден, идекс в масиве " + current);
+                System.out.println("Елемент " + key + " найден, идекс в масиве " + current);
                 break;
             } else if (start > end) {
                 System.out.println("Нет такого елемента в массиве!");
@@ -122,17 +155,57 @@ public class MethodsForMass {
     }
 
     //Сортировка вставкой
-    public static void sotrSelect(int []mas){
+    public static void sotrSelect(int[] mas) {
         int min;
-        for (int i = 0; i < mas.length-1; i++) {
-            min=i;
-            for (int j = min+1; j <mas.length ; j++) {
-                if (mas[j]<mas[min]){
+        for (int i = 0; i < mas.length - 1; i++) {
+            min = i;
+            for (int j = min + 1; j < mas.length; j++) {
+                if (mas[j] < mas[min]) {
                     int temp = mas[min];
-                    mas[min]=mas[j];
-                    mas[j]=temp;
+                    mas[min] = mas[j];
+                    mas[j] = temp;
                 }
             }
         }
     }
+
+    /*
+    Найти количество всех седловых точек матрицы. (Матрица А имеет
+    седловую точку Аi,j, если Аi,j является минимальным элементом в i-й
+    строке и максимальным в j-м столбце).
+    */
+    public static void findPoint(int[][] mas) {
+        int max, min,count=0;
+        int colum = 0, row = 0;
+        boolean flag = true;
+        for (int i = 0, k = 0; i < mas.length; i++) {
+            max = mas[i][k];
+            min = max;
+            flag = true;
+            colum=k;
+            row=i;
+            for (int j = 0; j < mas[i].length; j++) {
+                if (mas[i][j] < min) {
+                    min = mas[i][j];
+                    max = min;
+                    colum=j;
+                    row=i;
+                }
+            }
+            if (flag) {
+                for (int j = 0; j < mas.length; j++) {
+                    if (mas[j][colum] > max) {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if (flag) {
+                System.out.println(mas[row][colum] + " point");
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+
 }

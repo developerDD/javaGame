@@ -125,19 +125,22 @@ public class OperationsString extends Exception {
 
     /*Ввести n слов с консоли. Найти слово, символы в котором идут в строгом порядке возрастания их кодов.
     Если таких слов несколько, найти первое из них*/
-    public void lettersAscending(){
-        int count=1;
-        for (int j = 0; j <masStr.length ; j++) {
+    public void lettersAscending() {
+        int count = 1;
+        for (int j = 0; j < masStr.length; j++) {
             for (int i = 1; i < masStr[j].length(); i++) {
-                if (masStr[j].toCharArray()[i]>masStr[j].toCharArray()[i-1]){
+                if (masStr[j].toCharArray()[i] > masStr[j].toCharArray()[i - 1]) {
                     count++;
                 }
             }
-            if (count==masStr[j].length()){
-                System.out.println(masStr[j]);
+            if (count == masStr[j].length()) {
+                System.out.println("Cлово, символы в котором идут в строгом порядке возрастания их кодов " + masStr[j]);
+                count = 1;
                 break;
             }
         }
-
+        if (count == 1) {
+            System.out.println("Cлов, символы в котором идут в строгом порядке возрастания их кодов нет!");
+        }
     }
 }
