@@ -3,11 +3,19 @@ import com.sun.xml.internal.fastinfoset.util.CharArray;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class OperationsString extends Exception {
 
     String[] masStr;
+    String string;
     int numberStr;
+
+    public OperationsString(String str) {
+        string = str;
+        numberStr = 1;
+    }
 
     public OperationsString(int number) {
         this.masStr = new String[number];
@@ -143,4 +151,20 @@ public class OperationsString extends Exception {
             System.out.println("Cлов, символы в котором идут в строгом порядке возрастания их кодов нет!");
         }
     }
+
+    /*Реализуйте метод, проверяющий, является ли заданная строка палиндромом.
+     *При определении "палиндромности" строки должны учитываться только буквы и цифры.
+     * А пробелы, знаки препинания, а также регистр символов должны игнорироваться.
+     * Гарантируется, что в метод попадают только строки, состоящие из символов ASCII (цифры, латинские буквы, знаки препинания).
+     * Т.е. русских, китайских и прочих экзотических символов в строке не будет.
+     */
+    public void isPalindrom(String str) {
+        Pattern pattern = Pattern.compile("[a-z][A-Z][0-9][,.!?]");
+        Matcher matcher = pattern.matcher(str);
+        /*while (matcher.find()){
+            System.out.println(matcher.start() + " " + matcher.group());
+        }*/
+        System.out.println(matcher.find());
+    }
+
 }
