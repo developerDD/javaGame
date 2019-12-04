@@ -1,6 +1,3 @@
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-import sun.security.pkcs11.P11Util;
-
 import java.util.*;
 
 public class MethodsForMass {
@@ -175,25 +172,25 @@ public class MethodsForMass {
     строке и максимальным в j-м столбце).
     */
     public static void findPoint(int[][] mas) {
-        int max, min,count=0;
+        int max, min, count = 0;
         int colum = 0, row = 0;
         boolean flag = true;
         for (int i = 0, k = 0; i < mas.length; i++) {
             max = mas[i][k];
             min = max;
             flag = true;
-            colum=k;
-            row=i;
+            colum = k;
+            row = i;
             for (int j = 0; j < mas[i].length; j++) {
-                if (mas[i][j] < min) {
+                if (mas[i][j] < min) {  //поиск минимально
                     min = mas[i][j];
                     max = min;
-                    colum=j;
-                    row=i;
+                    colum = j;
+                    row = i;
                 }
             }
             if (flag) {
-                for (int j = 0; j < mas.length; j++) {
+                for (int j = 0; j < mas.length; j++) {//проход по столбику для подтверждения того что min это max в столбике
                     if (mas[j][colum] > max) {
                         flag = false;
                         break;
@@ -207,5 +204,41 @@ public class MethodsForMass {
         }
         System.out.println(count);
     }
+    /*Перестроить матрицу, переставляя в ней строки так, чтобы сумма элементов в строках полученной матрицы убывала.*/
 
+    public static void sumRowMatrix(int[][] mas) {
+        LinkedList<Integer> sumRow = new LinkedList<>();
+        LinkedList<Integer> indexRow = new LinkedList<>();
+        int[] sum = new int[mas[0].length];
+        int index = 0;
+        for (int[] i :
+                mas) {
+            for (int j :
+                    i) {
+                sum[index] += j;
+            }
+            sumRow.add(sum[index]);
+            indexRow.add(index);
+            index++;
+        }
+        for (int i = 0; i < indexRow.size(); i++) {
+            System.out.println("Строка " + indexRow.get(i) + " сумма " + sumRow.get(i));
+        }
+        while (!sumRow.isEmpty()) {
+            int iMax = 0;
+            int inDex = 0;
+            for (int i = 0; i < sumRow.size(); i++) {
+                if (sumRow.get(i) > iMax) {
+                    iMax = sumRow.get(i);
+                    inDex = i;
+                }
+            }
+            for (int h :
+                    mas[inDex]) {
+                System.out.print(h);
+            }
+            System.out.println();
+            sumRow.remove(inDex);
+        }
+    }
 }
