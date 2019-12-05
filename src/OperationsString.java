@@ -1,10 +1,8 @@
-import com.sun.xml.internal.fastinfoset.util.CharArray;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Stack;
+import java.util.Vector;
 
 public class OperationsString extends Exception {
 
@@ -157,14 +155,12 @@ public class OperationsString extends Exception {
      * А пробелы, знаки препинания, а также регистр символов должны игнорироваться.
      * Гарантируется, что в метод попадают только строки, состоящие из символов ASCII (цифры, латинские буквы, знаки препинания).
      * Т.е. русских, китайских и прочих экзотических символов в строке не будет.
+     * для проверки: Madam, I'm Adam!
      */
-    public void isPalindrom(String str) {
-        Pattern pattern = Pattern.compile("[a-z][A-Z][0-9][,.!?]");
-        Matcher matcher = pattern.matcher(str);
-        /*while (matcher.find()){
-            System.out.println(matcher.start() + " " + matcher.group());
-        }*/
-        System.out.println(matcher.find());
+    public boolean isPalindrom(String str) {
+        String replaced = str.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+        String reversed = new StringBuffer(replaced).reverse().toString();
+        return reversed.equals(replaced);
     }
 
 }

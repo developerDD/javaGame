@@ -11,9 +11,9 @@ public class HomeWorkForBook {
         int[] mas = new int[]{-12, 21, 33, 4, 5, 6, 9, 27};
         int[] mas2 = MethodsForMass.initMas(20);
         int [][] mat = new int [][]{{1,2,3,4},{5,6,7,8},{9,10,11,12}};
-       String string = "dimaD";
+       String string = "Madam, I'm Adam!";
         OperationsString opStr = new OperationsString(string);
-        opStr.isPalindrom(string);
+        System.out.println(opStr.isPalindrom(string));
 
 
 
