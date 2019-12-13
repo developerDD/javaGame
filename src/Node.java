@@ -20,6 +20,7 @@ public class Node {
     public void showNode(){
         System.out.println(value);
     }
+    //вывод узла в виде дерева
     public void print() {
         print("", this, false);
     }

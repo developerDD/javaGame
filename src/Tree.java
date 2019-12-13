@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class Tree {
     Node root;
-    static Integer colNood=0;
+    static Integer colNood = 0;
 
     //добавление в узел
     public void add(int value) {
@@ -78,13 +78,13 @@ public class Tree {
     }
 
     //вывод дерева
-    public void showTree(Node nood) {
+    public void showTreeColum(Node nood) {
         Stack<Integer> stack = new Stack<Integer>();
         if (nood != null) {
-            showTree(nood.left);
+            showTreeColum(nood.left);
             //System.out.println(nood.value);
 
-            showTree(nood.right);
+            showTreeColum(nood.right);
         }
     }
 
@@ -119,7 +119,7 @@ public class Tree {
             Node current = root;
             Node parent = root;
             boolean isLeftChild = true;
-            //поиск узла дл удаления
+            //поиск узла для удаления
             while (current.value != val) {
                 parent = current;
                 if (val < current.value) {
@@ -141,14 +141,38 @@ public class Tree {
                 parent.right = null;
                 System.out.println("DELETE RIGHT");
             }
-            return true;
 
 
+            if (current.left==null&&current.right==null){
+                if (current==root){
+                    root=null;
+                }else if (isLeftChild){
+                    parent.left=null;
+                }else {
+                    parent.right=null;
+                }
+            }else if (current.right==null){
+                if (current==root){
+                    root=current.left;
+                }else if (isLeftChild){
+                    parent.left=current.left;
+                }else {
+                    parent.right=current.left;
+                }
+            }else if (current.left==null){
+                if (current==root){
+                    root=current.right;
+                }else if (isLeftChild){
+                    parent.left=current.right;
+                }else {
+                    parent.right=current.right;
+                }
+            }
         }
         return false;
     }
-
-    public void pri(){
+    //вывод дерева
+    public void showTree() {
         root.print();
     }
 

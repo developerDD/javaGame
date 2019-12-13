@@ -21,10 +21,11 @@ public class HomeWorkForBook {
         tree.add(11);
         tree.add(12);
         tree.add(13);
-        tree.showTree(tree.root);
-
+        tree.add(14);
         tree.deleteNood(13);
-        tree.pri();
+        tree.showTree();
+
+
 
 
     }
