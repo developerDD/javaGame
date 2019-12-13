@@ -22,7 +22,7 @@ public class HomeWorkForBook {
         tree.add(12);
         tree.add(13);
         tree.showTree(tree.root);
-        Node find = tree.find(10);
+        Node find = tree.find(13);
         System.out.println("Нашли " +find);
 
 
