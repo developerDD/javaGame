@@ -1,8 +1,9 @@
-import org.omg.CORBA.NO_IMPLEMENT;
+
 
 public class Tree {
     Node root;
 
+    //добавление в узел
     public void add(int value) {
         Node node = new Node(value);
         if (root == null) {
@@ -30,6 +31,7 @@ public class Tree {
 
     }
 
+    //поиск искомого елемента в дереве
     public Node find(int val) {
         Node current = root;
         while (current.value != val) {
@@ -45,6 +47,7 @@ public class Tree {
         return current;
     }
 
+    //вставка елемента в дерево
     public void insert(int val) {
         Node newNood = new Node(val);
         if (root == null) {
@@ -52,18 +55,18 @@ public class Tree {
         } else {
             Node current = root;
             Node parent;
-            while (true){
-                parent=current;
-                if (val<current.value){
-                    current=current.left;
-                    if (current==null){
-                        parent.left=newNood;
+            while (true) {
+                parent = current;
+                if (val < current.value) {
+                    current = current.left;
+                    if (current == null) {
+                        parent.left = newNood;
                         return;
                     }
-                }else {
-                    current=current.right;
-                    if (current==null){
-                        parent.right=newNood;
+                } else {
+                    current = current.right;
+                    if (current == null) {
+                        parent.right = newNood;
                         return;
                     }
                 }
@@ -71,12 +74,35 @@ public class Tree {
         }
     }
 
-    public void showTree(Node node) {
-        if (node != null) {
-            showTree(node.left);
-            System.out.println(node);
-            ;
-            showTree(node.right);
+    //вывод дерева
+    public void showTree(Node nood) {
+
+        if (nood != null) {
+            showTree(nood.left);
+            System.out.println(nood.value);
+            showTree(nood.right);
         }
+    }
+
+    //поиск минимального елемента
+    public Node minValueTree() {
+        Node current, last = null;
+        current = root;
+        while (current != null) {
+            last = current;
+            current = current.left;
+        }
+        return last;
+    }
+
+    //поиск максимального елемента
+    public Node maxValueTree() {
+        Node current, last = null;
+        current = root;
+        while (current != null) {
+            last = current;
+            current = current.right;
+        }
+        return last;
     }
 }
