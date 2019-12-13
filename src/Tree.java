@@ -1,11 +1,13 @@
-
+import java.util.Stack;
 
 public class Tree {
     Node root;
+    static Integer colNood=0;
 
     //добавление в узел
     public void add(int value) {
         Node node = new Node(value);
+        colNood++;
         if (root == null) {
             root = node;
         } else {
@@ -50,6 +52,7 @@ public class Tree {
     //вставка елемента в дерево
     public void insert(int val) {
         Node newNood = new Node(val);
+        colNood++;
         if (root == null) {
             root = newNood;
         } else {
@@ -76,10 +79,11 @@ public class Tree {
 
     //вывод дерева
     public void showTree(Node nood) {
-
+        Stack<Integer> stack = new Stack<Integer>();
         if (nood != null) {
             showTree(nood.left);
-            System.out.println(nood.value);
+            //System.out.println(nood.value);
+
             showTree(nood.right);
         }
     }
@@ -105,4 +109,48 @@ public class Tree {
         }
         return last;
     }
+
+    // удаление узла
+    public boolean deleteNood(int val) {
+        if (root.value == val && root.left == null && root.right == null) {
+            System.out.println("ROOT DELETE");
+            root = null;
+        } else {
+            Node current = root;
+            Node parent = root;
+            boolean isLeftChild = true;
+            //поиск узла дл удаления
+            while (current.value != val) {
+                parent = current;
+                if (val < current.value) {
+                    isLeftChild = true;
+                    current = current.left;
+                } else {
+                    isLeftChild = false;
+                    current = current.right;
+                }
+                if (current == null) {
+                    System.out.println("No VALUE");
+                    return false;
+                }
+            }
+            if (isLeftChild) {
+                parent.left = null;
+                System.out.println("DELETE LEFT");
+            } else {
+                parent.right = null;
+                System.out.println("DELETE RIGHT");
+            }
+            return true;
+
+
+        }
+        return false;
+    }
+
+    public void pri(){
+        root.print();
+    }
+
+
 }

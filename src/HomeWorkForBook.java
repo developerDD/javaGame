@@ -23,7 +23,8 @@ public class HomeWorkForBook {
         tree.add(13);
         tree.showTree(tree.root);
 
-        System.out.println("Нашли " +tree.minValueTree());
+        tree.deleteNood(13);
+        tree.pri();
 
 
     }
