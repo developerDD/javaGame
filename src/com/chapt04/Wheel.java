@@ -1,0 +1,41 @@
+package com.chapt04;
+
+enum TireType {winter, summer, allseasons, sport}
+
+enum Manufacturer {Continental, Michelin, Goodyear, Pirelli}
+
+public class Wheel {
+    int radius;
+    TireType tireType;
+    Manufacturer manufacturer;
+
+    public Wheel() {
+        this.radius = (int) (Math.random() * (25 - 13)) + 13;
+        TireType[] masTireType = TireType.values();
+        Manufacturer[] masManufacturer = Manufacturer.values();
+        this.tireType = masTireType[(0 + (int) (Math.random() * masTireType.length))];
+        this.manufacturer = masManufacturer[(0 + (int) (Math.random() * masManufacturer.length))];
+    }
+
+    @Override
+    public String toString() {
+        return "Шины: " + manufacturer + ", radius - " + radius + ", typeGume - " + tireType + "\n";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() == obj.getClass()) {
+            Wheel temp = (Wheel) obj;
+            return this.manufacturer.equals(temp.manufacturer) &&
+                    this.radius == temp.radius &&
+                    this.tireType.equals(temp.tireType);
+        } else
+            return true;
+    }
+}
