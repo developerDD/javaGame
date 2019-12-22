@@ -43,7 +43,25 @@ public class Car extends Transport {
     public String toString (){
         return "Автомобиль - "+name+
                 "\nТип - " +type+
-                "\nНомер автомобиля - " +numberCar+"\n"+
-                wheels.toString() ;
+                "\nНомер автомобиля - " +numberCar+
+                "\nДвигатель - " +engine+
+                "\nЦвет - " +color+"\n"+ wheels.toString() ;
+    }
+    @Override
+    public boolean equals(Object obj){
+        if (obj==null)return false;
+        if (this==obj)return true;
+        if (getClass()==obj.getClass()){
+            Car temp = (Car) obj;
+            return color.equals(temp.color)&&engine.equals(temp.engine)&&
+                    wheels.equals(temp.wheels)&&name.equals(temp.name)&&
+                    type.equals(temp.type)&&numberCar.equals(temp.numberCar);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

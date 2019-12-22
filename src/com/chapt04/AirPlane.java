@@ -49,15 +49,7 @@ public class AirPlane extends Transport {
                 "\nКрилья: " + wings +
                 "\nМаршрут: " + route + "\n";
     }
-    /*@Override
-    public boolean equals(Object obj){
-        if (this==obj){
-            return true;
-        }
-        if ()
-    }*/
-
-    @Override
+      @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
