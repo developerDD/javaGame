@@ -9,8 +9,13 @@ public class HomeWorkForBook {
 
         Student s = new Student("Dima",28);
         Student sw = new Student("Dima1",28);
-        Student sq = new Student("Dima",28);
-        System.out.println(s.getId());
+        Teacher teacher = new Teacher("Vas",34);
+        Teacher teacher1 = new Teacher("Vas",34);
+
+        System.out.println(teacher);
+        System.out.println(teacher1);
+        System.out.println(teacher.hashCode());
+        System.out.println(teacher1.hashCode());
 
     }
 }

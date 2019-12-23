@@ -35,8 +35,6 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return "Имя - "+getName()+"\n"+
-                "Возраст - "+getAge()+"\n"+
-                "ID - "+ id +"\n";
+        return "Имя - "+getName()+", Возраст - "+getAge()+", ID - "+ id +"\n";
     }
 }
