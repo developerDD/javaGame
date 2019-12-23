@@ -16,10 +16,11 @@ public class Wheel {
         this.tireType = masTireType[(0 + (int) (Math.random() * masTireType.length))];
         this.manufacturer = masManufacturer[(0 + (int) (Math.random() * masManufacturer.length))];
     }
-    public Wheel(int radius){
+
+    public Wheel(int radius) {
         this.radius = radius;
-        this.tireType=TireType.sport;
-        this.manufacturer=Manufacturer.Michelin;
+        this.tireType = TireType.sport;
+        this.manufacturer = Manufacturer.Michelin;
     }
 
     @Override
@@ -37,15 +38,16 @@ public class Wheel {
         }
         if (getClass() == obj.getClass()) {
             Wheel temp = (Wheel) obj;
-            return this.manufacturer==temp.manufacturer &&
+            return this.manufacturer == temp.manufacturer &&
                     this.radius == temp.radius &&
-                    this.tireType ==temp.tireType;
+                    this.tireType == temp.tireType;
         } else
             return false;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+
+        return 31 * (tireType.hashCode() + manufacturer.hashCode() + radius);
     }
 }

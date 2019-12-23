@@ -33,6 +33,7 @@ abstract class Transport {
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, wheel, color);
+
+        return 31*(engine.hashCode() + wheel.hashCode() + color.hashCode());
     }
 }
