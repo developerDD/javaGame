@@ -10,12 +10,11 @@ public class HomeWorkForBook {
         Student s = new Student("Dima",28);
         Student sw = new Student("Dima1",28);
         Teacher teacher = new Teacher("Vas",34);
-        Teacher teacher1 = new Teacher("Vas",34);
+        Teacher teacher1 = new Teacher("Sim",34);
+        Course mashin = teacher.start_cours("mashin");
+       s.go_to_cours(mashin);
+        s.showMyCours();
 
-        System.out.println(teacher);
-        System.out.println(teacher1);
-        System.out.println(teacher.hashCode());
-        System.out.println(teacher1.hashCode());
 
     }
 }

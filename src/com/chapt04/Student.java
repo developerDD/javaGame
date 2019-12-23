@@ -1,13 +1,18 @@
 package com.chapt04;
 
+import java.util.ArrayList;
+
 public class Student extends Human {
     private static int count_students;
     private int id;
+    private ArrayList<Course> my_course;
+    private ArrayList<Integer> my_ratings;
 
         public Student(String name, int age){
         super(name,age);
         count_students++;
         id=count_students;
+        my_course=new ArrayList<>();
     }
 
     public static int getCount_students() {
@@ -16,7 +21,16 @@ public class Student extends Human {
     public int getId() {
         return id;
     }
-
+    public void go_to_cours(Course course){
+            my_course.add(course);
+        course.add_studens_cours(this);
+    }
+    public void showMyCours(){
+        for (Course i :
+                my_course) {
+            System.out.println("Название курса - "+i.getName_cours()+", препод - "+i.teacher.getName());
+        }
+    }
     @Override
     public int hashCode() {
         return 31*(getName().hashCode()+getAge()+ count_students);
@@ -35,6 +49,6 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return "Имя - "+getName()+", Возраст - "+getAge()+", ID - "+ id +"\n";
+        return "ID - "+ id +" Имя - "+getName()+", Возраст - "+getAge()+"\n";
     }
 }
