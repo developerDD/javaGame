@@ -15,13 +15,14 @@ public class Student extends Human {
         my_course=new ArrayList<>();
         my_ratings= new int[20];
     }
-
+    //количество студентов всего
     public static int getCount_students() {
         return count_students;
     }
     public int getId() {
         return id;
     }
+    //записаться на курс
     public void go_to_cours(Course course){
         for (Course cours :
                 my_course) {
@@ -33,12 +34,14 @@ public class Student extends Human {
             my_course.add(course);
         course.add_studens_cours(this);
     }
+    //показать все курсы студента на которые он записан
     public void showMyCours(){
         for (Course i :
                 my_course) {
             System.out.println("Название курса - "+i.getName_cours()+", препод - "+i.teacher.getName());
         }
     }
+    //оценить студента по курсу
     public void setMy_ratings(Course course,Integer number){
         int index = -1;
             for (Course i :
@@ -54,10 +57,13 @@ public class Student extends Human {
                 System.out.println("Студент не записан на курс");
             }
     }
-    //до делать вывод оценок по курсам
+    // вывод оценок по курсам
     public void showMyRaitings(){
-        for (int i = 0; i < my_course.size(); i++) {
-            System.out.println(my_course.indexOf());
+      int index = 0;
+       for (Course c :
+                my_course) {
+            System.out.println(c.getName_cours()+" оценка по курсу - "+my_ratings[index]);
+            index++;
         }
     }
     @Override

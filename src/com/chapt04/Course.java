@@ -11,7 +11,7 @@ public class Course {
     public Course(String name_cours, Teacher teacher) {
         this.name_cours = name_cours;
         this.teacher = teacher;
-        juornal=new ArrayList<>();
+        juornal = new ArrayList<>();
     }
 
     public String getName_cours() {
@@ -22,10 +22,10 @@ public class Course {
         return count_student_cours;
     }
 
-    public void add_studens_cours(Student student){
+    public void add_studens_cours(Student student) {
         for (Student i :
                 juornal) {
-            if (i.getId() == student.getId()){
+            if (i.getId() == student.getId()) {
                 System.out.println("Вы записаны уже на курс!");
                 return;
             }
@@ -33,35 +33,52 @@ public class Course {
         juornal.add(student);
         count_student_cours++;
     }
-    public void show_students(){
-        for (Student i:
-             juornal) {
+
+    //вывод всех студентов на курсе
+    public void show_students() {
+        for (Student i :
+                juornal) {
             System.out.println(i);
         }
     }
-    public void setRaiting(int number){
+
+    //оценить всех студентов сразу
+    public void setRaitingAll(int number) {
         for (Student stud :
                 juornal) {
-            stud.setMy_ratings(this,number);
+            stud.setMy_ratings(this, number);
         }
     }
-    @Override
-    public String toString(){
-        return "Название курса - "+name_cours+"\n"+"Преподаватель - "+teacher.getName()+"\n"+
-                "Количество студентов на курсе - "+count_student_cours;
+
+    //оцетинть студента
+    public void setRaitingStud(String name_stud, int number) {
+        for (Student stud :
+                juornal) {
+            if (stud.getName() == name_stud) {
+                stud.setMy_ratings(this, number);
+            }
+        }
     }
+
     @Override
-    public boolean equals(Object obj){
-        if (obj==null)return false;
-        if (this==obj)return true;
-        if (this.getClass()==obj.getClass()){
+    public String toString() {
+        return "Название курса - " + name_cours + "\n" + "Преподаватель - " + teacher.getName() + "\n" +
+                "Количество студентов на курсе - " + count_student_cours;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (this.getClass() == obj.getClass()) {
             Course temp = (Course) obj;
             return name_cours.equals(temp.name_cours); //имет смысл сравнивать только по названию курса
         }
         return false;
     }
+
     @Override
-    public int hashCode(){
-        return 31*(name_cours.hashCode()+count_student_cours+teacher.hashCode()+juornal.hashCode());
+    public int hashCode() {
+        return 31 * (name_cours.hashCode() + count_student_cours + teacher.hashCode() + juornal.hashCode());
     }
 }
