@@ -39,6 +39,12 @@ public class Course {
             System.out.println(i);
         }
     }
+    public void setRaiting(int number){
+        for (Student stud :
+                juornal) {
+            stud.setMy_ratings(this,number);
+        }
+    }
     @Override
     public String toString(){
         return "Название курса - "+name_cours+"\n"+"Преподаватель - "+teacher.getName()+"\n"+

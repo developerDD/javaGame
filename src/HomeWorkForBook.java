@@ -9,11 +9,20 @@ public class HomeWorkForBook {
 
         Student s = new Student("Dima",28);
         Student sw = new Student("Dima1",28);
+        Student sw2 = new Student("Dimaw",28);
         Teacher teacher = new Teacher("Vas",34);
-        Teacher teacher1 = new Teacher("Sim",34);
-        Course mashin = teacher.start_cours("mashin");
-       s.go_to_cours(mashin);
+           teacher.start_cours("Myyrrb");
+           teacher.start_cours("GHHFHHHF");
+        s.go_to_cours(teacher.findCours("Myyrrb"));
+        s.go_to_cours(teacher.findCours("GHHFHHHF"));
+        s.go_to_cours(teacher.findCours("Myyrrb"));
+        sw2.go_to_cours(teacher.findCours("Myyrrb"));
+        sw.go_to_cours(teacher.findCours("Myyrrb"));
         s.showMyCours();
+        sw.showMyCours();
+        sw2.showMyCours();
+
+
 
 
     }
