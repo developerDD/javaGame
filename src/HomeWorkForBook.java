@@ -1,8 +1,7 @@
-import com.chapt04.*;
-import com.chapt05.AbstractFactory.BMWFactory;
-import com.chapt05.AbstractFactory.CarsFactory;
-import com.chapt05.factory.Base;
-import com.chapt05.factory.ClassFacroty;
+import com.chapt05.Builder.Car;
+import com.chapt05.Builder.CreateCars;
+import com.chapt05.Builder.SedanCar;
+import com.chapt05.Builder.SportCar;
 
 /**
  * @author Dima Derevianko
@@ -11,12 +10,10 @@ public class HomeWorkForBook {
 
     public static void main(String[] args){
 
-       // Base ob = ClassFacroty.getCalssFromFactory("first");
-        //ob.perform();
-        CarsFactory factory = new BMWFactory();
-        factory.createCoupe();
-
-
+        Car sport = CreateCars.buildCar(new SportCar());
+        System.out.println(sport);
+        Car sedan = CreateCars.buildCar((new SedanCar()));
+        System.out.println(sedan);
 
 
     }
