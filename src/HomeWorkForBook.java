@@ -12,8 +12,11 @@ import java.util.Stack;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
-        int [] arr = {25,100};
-        System.out.println(VasyaClerk.Tickets(arr));
+        int[] arr = {5,-3,10};
+        for (int i:InvertValues.invert(arr))
+        {
+            System.out.println(i);
+        }
 
 
 
