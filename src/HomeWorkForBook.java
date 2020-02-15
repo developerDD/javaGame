@@ -12,11 +12,8 @@ import java.util.Stack;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
-        int[] arr = {5,-3,10};
-        for (int i:InvertValues.invert(arr))
-        {
-            System.out.println(i);
-        }
+        int[]ar={-5,6,-10};
+        System.out.println(MinInArray.findSmallestInt(ar));
 
 
 
