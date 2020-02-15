@@ -11,5 +11,6 @@ public class InvertValues {
             }
         }
         return arrayResalt;
+        // return java.util.Arrays.stream(array).map(i -> -i).toArray();
     }
 }
