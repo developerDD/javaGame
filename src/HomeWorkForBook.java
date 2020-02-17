@@ -13,9 +13,9 @@ import java.util.Stack;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
-        System.out.println(GetChetnoeEvenNumber.nthEven(1298734));
-
-
+        int[] num = {-17,17};
+        System.out.println(SumOfDifferencesInArray.sumOfDifferences(num));
+        //SumOfDifferencesInArray.sumOfDifferences(num);
 
     }
 }
