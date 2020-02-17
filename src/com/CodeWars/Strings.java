@@ -16,4 +16,9 @@ public class Strings {
         return new String (x.replaceAll("\\s",""));
     }
 
+    public static String ReversedStrings(String str) {
+        StringBuffer buffer = new StringBuffer(str);
+        return buffer.reverse().toString();
+    }
+
 }
