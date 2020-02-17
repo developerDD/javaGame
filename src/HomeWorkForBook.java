@@ -13,8 +13,7 @@ import java.util.Stack;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
-        String name = "Patrick Feenan";
-        System.out.println(AbbreviateTwoWordName.abbrevName(name));
+        System.out.println(GetChetnoeEvenNumber.nthEven(1298734));
 
 
 
