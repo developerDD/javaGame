@@ -9,14 +9,6 @@ import java.util.Arrays;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
-        String[] s = {"bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"};
-        Arrays.sort(s);
-        System.out.println(Arrays.toString(s));
-        StringBuffer buffer = new StringBuffer(s[0]);
-        for (int i = 1,j=1; j <s[0].length(); i+=4,j++) {
-            buffer.insert(i,"***");
-        }
-        System.out.println(buffer.toString());
 
     }
     //

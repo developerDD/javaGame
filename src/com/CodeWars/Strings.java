@@ -103,4 +103,29 @@ public class Strings {
         return buffer.toString();
     }
 
+    public static String[] stringToArray(String s){
+        return s.split(" ");
+    }
+
+    static String encode(String word){
+        word=word.toLowerCase();
+        StringBuilder stringBuilder = new StringBuilder(5);
+        int f = 0;
+        for (int i = 0; i < word.length(); i++) {
+            f=0;
+            for (int j = 0; j < word.length(); j++) {
+                if (word.charAt(i)==word.charAt(j)){
+                    f++;
+                }
+            }
+            if (f>1&&f!=0){
+                stringBuilder.append(')');
+            }else {
+                stringBuilder.append('(');
+            }
+        }
+
+        return stringBuilder.toString();
+    }
+
 }
