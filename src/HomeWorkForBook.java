@@ -9,7 +9,6 @@ import java.util.Arrays;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
-        System.out.println(       SquareEveryDigit.squareDigits(9119));
 
     }
     //
