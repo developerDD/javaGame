@@ -92,4 +92,15 @@ public class Strings {
      * }
      *         * */
 
+    public static String twoSort(String[] s) {
+        Arrays.sort(s);
+        System.out.println(Arrays.toString(s));
+        StringBuffer buffer = new StringBuffer(s[0]);
+        for (int i = 1,j=1; j <s[0].length(); i+=4,j++) {
+            buffer.insert(i,"***");
+        }
+        //java 8 return String.join("***",s[0].split(""));
+        return buffer.toString();
+    }
+
 }
