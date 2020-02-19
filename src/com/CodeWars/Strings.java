@@ -127,5 +127,34 @@ public class Strings {
 
         return stringBuilder.toString();
     }
+    /*Write a function that will return the count of distinct case-insensitive alphabetic characters
+     and numeric digits that occur more than once in the input string.
+    The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.*/
+
+    public static int duplicateCount(String text) {
+
+        StringBuilder stringBuilder = new StringBuilder(text.toLowerCase());
+        int duplicate = 0;
+        boolean flag=false;
+        for (int i = 0; i < stringBuilder.length()-1; i++) {
+            if ('*'==stringBuilder.charAt(i)){
+                continue;
+            }else {
+                for (int j = i+1; j < stringBuilder.length(); j++) {
+                    if (stringBuilder.charAt(i)==stringBuilder.charAt(j)){
+                        stringBuilder.replace(j,j+1,"*");
+                        flag=true;
+                    }
+                }
+                if (flag){
+                    stringBuilder.replace(i,i+1,"*");
+                    duplicate++;
+                }
+            }
+            flag=false;
+        }
+
+        return duplicate;
+    }
 
 }

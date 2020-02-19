@@ -10,6 +10,7 @@ public class HomeWorkForBook {
 
     public static void main(String[] args){
 
+
     }
     //
     public static int[] divisibleBy(int[] numbers, int divider){
