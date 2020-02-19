@@ -1,6 +1,7 @@
 package com.CodeWars;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.stream.Stream;
 
 public class Strings {
@@ -157,4 +158,21 @@ public class Strings {
         return duplicate;
     }
 
+    public static String removeDuplicateWords(String s){
+        String[] arr = s.split("\\s+");
+        StringBuilder stringBuilder = new StringBuilder();
+        HashSet<String> stringHashSet = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (stringHashSet.contains(arr[i])){
+                continue;
+            }else {
+                if (i>0)stringBuilder.append(" ");
+                stringHashSet.add(arr[i]);
+                stringBuilder.append(arr[i]);
+            }
+
+        }
+        return stringBuilder.toString();
+        //java 8 return Arrays.stream( s.split("\\s+")).distinct().collect(Collectors.joining(" ") );
+    }
 }

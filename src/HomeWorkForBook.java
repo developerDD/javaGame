@@ -1,6 +1,7 @@
 import com.CodeWars.*;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 
 /**
@@ -9,6 +10,22 @@ import java.util.Arrays;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
+    String string = "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta";
+    String[] arr = string.split("\\s+");
+    StringBuilder stringBuilder = new StringBuilder();
+        HashSet<String> stringHashSet = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (stringHashSet.contains(arr[i])){
+                continue;
+            }else {
+                if (i>0)stringBuilder.append(" ");
+                stringHashSet.add(arr[i]);
+                stringBuilder.append(arr[i]);
+             }
+
+        }
+        stringBuilder.toString();
+
 
 
     }
