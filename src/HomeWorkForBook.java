@@ -10,7 +10,7 @@ import java.util.HashSet;
 public class HomeWorkForBook {
 
     public static void main(String[] args){
-        ARuleOfDivisibilityBy13.thirt(321);
+        System.out.println(BallUpwards.maxBall(45));
 
 
     }
