@@ -14,7 +14,7 @@ public class HomeWorkForBook {
     public static void main(String[] args) {
         //int k = 2;
        // System.out.println(k << 3 >> k == k >> 1 << k);//разобраться
-
+            int [] numbers = {1,2,3,4,5,6,7,8,9,0};
 
     }
 
