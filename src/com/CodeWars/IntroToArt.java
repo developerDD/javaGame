@@ -11,23 +11,23 @@ import java.util.Arrays;
  */
 public class IntroToArt {
     public static String[] getW(int height) {
-        if (height<3){
-            return new    String[0];
+        if (height<2){
+            return new    String[]{};
         }
         String [] art = new String[height];
-        int sizeStrig = (height*2)+(height*2)-3;
+        int sizeString = (height*2)+(height*2)-3;
         for (int i = 0; i < height; i++) {
             art[i]=new String();
         }
         String s = "";
         int start =0;
-        int end =sizeStrig-1;
-        int centr = end/2;
-        int left =centr;
-        int riath = centr;
-        for (int i = 0; i < height; i++,start++,end--,left--,riath++) {
-            for (int j = 0; j < sizeStrig; j++) {
-                if (j==start||j==centr&&i==0||j==left||j==riath||j==end){
+        int end =sizeString-1;
+        int centre = end/2;
+        int left =centre;
+        int riaht = centre;
+        for (int i = 0; i < height; i++,start++,end--,left--,riaht++) {
+            for (int j = 0; j < sizeString; j++) {
+                if (j==start||j==centre&&i==0||j==left||j==riaht||j==end){
                     s+="*";
                 }else {
                     s+="t";

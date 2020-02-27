@@ -15,8 +15,8 @@ public class HomeWorkForBook {
         //int k = 2;
        // System.out.println(k << 3 >> k == k >> 1 << k);//разобраться
 //            int [] numbers = {1,2,3,4,5,6,7,8,9,0};
-//        String[] s = IntroToArt.getW(10);
-//        System.out.println(s.length);
+        String[] s = IntroToArt.getW(2);
+        System.out.println(s.length);
         ///Test MateAcademy
         //System.out.println(ada("hfgsda"));
         //System.out.println(min(new int[]{1,13,-5}));
