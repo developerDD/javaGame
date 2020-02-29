@@ -30,7 +30,7 @@ public class IntroToArt {
                 if (j==start||j==centre&&i==0||j==left||j==riaht||j==end){
                     s+="*";
                 }else {
-                    s+="t";
+                    s+=" ";
                 }
             }
             art[i] = s;

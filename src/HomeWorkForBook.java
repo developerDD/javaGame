@@ -21,21 +21,21 @@ public class HomeWorkForBook {
         //System.out.println(min(new int[]{1,13,-5}));
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
-       FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
+       //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
+        System.out.println(PrimorialOfaNumber.numPrimorial(100));
+
     }
-public static int sdd(String input){
+    public static int sdd(String input){
         if (input==null||input.isEmpty()){
             return 0;
         }else {
             return input.length();
         }
 }
-
-public static char ada(String input){
+    public static char ada(String input){
         return (char) Character.codePointAt(input.toCharArray(),input.length()-1);
 }
-
-public static int min(int[] nums){
+    public static int min(int[] nums){
         if (nums.length==1||nums.length==0){
             return 0;
         }
@@ -54,7 +54,6 @@ public static int min(int[] nums){
         return sum;
         // WRITE YOUR CODE ABOVE THIS LINE
     }
-
     private static boolean hasNoneLetters(String blacklist, String phrase) {
         // WRITE YOUR CODE BELOW THIS LINE
         blacklist = blacklist.toLowerCase();
@@ -69,7 +68,6 @@ public static int min(int[] nums){
         return true;
         // WRITE YOUR CODE ABOVE THIS LINE
     }
-        //
     public static int[] divisibleBy(int[] numbers, int divider){
         int[] divis = new int[numbers.length];
         int countElements=0;
