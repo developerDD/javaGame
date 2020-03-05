@@ -1,8 +1,10 @@
 package com.CodeWars;
 
-import java.util.Arrays;
-
 public class IrreducibleSumofRationals {
+    public static  int nod(int a,int b) // для нахождения НОД
+    {
+        return b == 0 ? a : nod(b,a % b);
+    }
     public static String sumFracts(int[][] l) {
         // your code
         if(l.length==0){
@@ -16,7 +18,7 @@ public class IrreducibleSumofRationals {
         }
         int NOK =1;
         int TEMP = 0;
-// поиск НОК
+        // поиск НОК
         for (int i = 0; i < znaminatel.length-1; i++) {
             TEMP = NOK;
             NOK=1;
@@ -30,7 +32,6 @@ public class IrreducibleSumofRationals {
                     if (NOK%TEMP==0&&NOK%znaminatel[i+1]==0){
                         break;
                     }
-
                 }
                 NOK++;
             }
@@ -40,19 +41,9 @@ public class IrreducibleSumofRationals {
             ZNAM+=chislitel[i]*(NOK/znaminatel[i]);
         }
         // сокращение дроби
-        int count = 0;
-        if (ZNAM>NOK){
-            if (ZNAM%NOK==0){
-                count=ZNAM/NOK;
-            } else  {
-                while (ZNAM%2!=1) {
-                    ZNAM/=2;
-                    NOK/=2;
-                }
-            }
-        }
-        int[][] arr = {{ZNAM,NOK}};
-        return count!=0? String.valueOf(count): Arrays.toString(arr[0]);
-
+        int NOD = nod(ZNAM,NOK);
+        ZNAM/=NOD;
+        NOK/=NOD;
+        return NOK>2? "["+ZNAM+", "+NOK+"]":""+ZNAM;
     }
 }
