@@ -21,6 +21,7 @@ public class EasyLinePascalsTriangle {
             }
             previous.clear();
             previous.addAll(0,cerrent);
+            System.out.println(Arrays.toString(new ArrayList[]{previous}));
             cerrent.clear();
         }
         for (BigInteger number:previous){

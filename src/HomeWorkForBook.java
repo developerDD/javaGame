@@ -22,7 +22,7 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-        EasyLinePascalsTriangle.easyLine(38);
+        EasyDiagonalPascalsTriangele.easyLine(20,5);
     }
     public static int sdd(String input){
         if (input==null||input.isEmpty()){
