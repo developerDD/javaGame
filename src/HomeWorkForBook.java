@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -22,7 +24,6 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-        EasyDiagonalPascalsTriangele.easyLine(20,3);
 
     }
     public static int sdd(String input){
