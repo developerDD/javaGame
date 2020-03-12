@@ -1,12 +1,5 @@
 import com.CodeWars.*;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 /**
  * @author Dima Derevianko
@@ -24,7 +17,7 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-    GrowthOfPopulation.nbYear(1000,2,50,1200);
+    NOD.NODfindCikl(676,3676);
     }
     public static int sdd(String input){
         if (input==null||input.isEmpty()){
