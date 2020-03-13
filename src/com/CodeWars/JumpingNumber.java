@@ -1,5 +1,7 @@
 package com.CodeWars;
 
+import java.util.Arrays;
+
 /**
  * Definition
  * Jumping number is the number that All adjacent digits in it differ by 1.
@@ -23,6 +25,6 @@ public class JumpingNumber {
             flag=false;
             break;
         }
-              return flag ? "Jumping!!": "Not!!";
+              return flag ? "Jumping!!":"Not!!";
     }
 }
