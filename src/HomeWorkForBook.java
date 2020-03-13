@@ -18,22 +18,11 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-
-
+        MinInArray.pendulum(new int[]{20,19,25,16,19,30,18,24});
 
     }
 
-
-    public static int sdd(String input){
-        if (input==null||input.isEmpty()){
-            return 0;
-        }else {
-            return input.length();
-        }
-}
-    public static char ada(String input){
-        return (char) Character.codePointAt(input.toCharArray(),input.length()-1);
-}
+    public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
     public static int min(int[] nums){
         if (nums.length==1||nums.length==0){
             return 0;
