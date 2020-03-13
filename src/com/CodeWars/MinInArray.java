@@ -1,6 +1,6 @@
 package com.CodeWars;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class MinInArray {
     public static int findSmallestInt(int[] args) {
@@ -45,6 +45,35 @@ public class MinInArray {
             dinDon[left]=values[i+1];
         }
         return dinDon; // Do your magic!
+    }
+
+    /**
+     * Вернуть массив / список, где четные числа идут первыми, а затем нечетные
+     * * Так, мужчины сильнее , чем мальчики , тогда даже цифры в порядке возрастания Хотя шансы в порядке убывания .
+     * Размер массива / списка не менее * 4 ***.
+     * * Числа массива / списка могут быть смесью позитивов и негативов .
+     * * Не бойтесь , Гарантируется, что нулей не будет .! альт
+     * * Может произойти повторение чисел в массиве / списке , поэтому (дублирование не учитывается при разделении) .
+     */
+    public static int[] menFromBoys(final int[] values) {
+        // Your Code is Here .. Enjoy !! , Don't Forget To Vote :wink: :wink
+       TreeSet<Integer> integers = new TreeSet<>();
+       List<Integer> even = new ArrayList<Integer> ();
+       List <Integer> notEven = new ArrayList<Integer>  ();
+        for (int num:values){
+            integers.add(Integer.valueOf(num));
+        }
+        for (Integer n:integers){
+            if (n % 2 == 0) even.add(n);
+            else notEven.add(n);
+        }
+        Collections.reverse(notEven);
+        even.addAll(notEven);
+        int [] res = new int[even.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i]=even.get(i);
+        }
+        return res;
     }
 }
 
