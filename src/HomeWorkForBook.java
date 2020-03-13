@@ -1,11 +1,12 @@
 import com.CodeWars.*;
 
+import java.util.Arrays;
+
 
 /**
  * @author Dima Derevianko
  */
 public class HomeWorkForBook {
-
     public static void main(String[] args) {
         //int k = 2;
        // System.out.println(k << 3 >> k == k >> 1 << k);//разобраться
@@ -17,8 +18,12 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-        System.out.println(JumpingNumber.jumpingNumber(4343456  ));
+
+
+
     }
+
+
     public static int sdd(String input){
         if (input==null||input.isEmpty()){
             return 0;
