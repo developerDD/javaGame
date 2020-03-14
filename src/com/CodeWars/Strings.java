@@ -1,7 +1,8 @@
 package com.CodeWars;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class Strings {
@@ -224,5 +225,44 @@ public class Strings {
         }
         return stringBuilder.toString();
 }
+
+    /**
+     * Если задана строчная строка, состоящая только из буквенных символов и без пробелов,
+     * вернуть наибольшее значение согласных подстрок. Согласные - это любые буквы алфавита, кроме "aeiou".
+     *
+     * Мы должны присвоить следующие значения: a = 1, b = 2, c = 3, .... z = 26.
+     */
+    public static int ConsonantValue(final String s){
+        Map<Character, Integer> abcBook = new HashMap<>();
+        String[] arr = s.split("[aeiou]");
+        for (int i = 97, v =1; i < 123; i++,v++) {
+            abcBook.put(Character.valueOf((char)i),v);
+        }
+        int sum =0,sumMax =0;
+        char[] currentCharArr;
+        char currentChar;
+        for (int i = 0; i < arr.length; i++) {
+            currentCharArr=arr[i].toCharArray();
+
+            for (int i1 = 0; i1 < currentCharArr.length; i1++) {
+                currentChar=currentCharArr[i1];
+
+                for (Map.Entry<Character, Integer> item : abcBook.entrySet()) {
+                    if (item.getKey()==currentChar){
+                        sum+=item.getValue();
+                        break;
+                    }
+                }
+            }
+            if (sum>sumMax){
+                sumMax=sum;
+                sum=0;
+            }else {
+                sum=0;
+            }
+        }
+
+        return sumMax;
+    }
 
 }

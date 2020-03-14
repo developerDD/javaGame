@@ -18,7 +18,7 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-        MinInArray.menFromBoys(new int[]{82,91,72,76,76,100,85});
+       System.out.println(Strings.ConsonantValue("twelfthstreet"));
 
     }
 
