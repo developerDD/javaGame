@@ -1,6 +1,8 @@
 import com.CodeWars.*;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -29,6 +31,8 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
+         System.out.println(NextHappyYear.nextHappyYear(1987));
+
 
 
     }
