@@ -9,16 +9,27 @@ import java.util.Arrays;
 public class HomeWorkForBook {
     public static void main(String[] args) {
         //int k = 2;
-       // System.out.println(k << 3 >> k == k >> 1 << k);//разобраться
-//            int [] numbers = {1,2,3,4,5,6,7,8,9,0};
-
+        // System.out.println(k << 3 >> k == k >> 1 << k);//разобраться
+        /** операнд1 << or >> операнд2 (операнд2 всегда 2 в стпенени операнда)
+         * если << то умножение, если >> то диление!!!
+         * вычесляем с лево от == k << 3 >> k
+         * начинаем с лева:
+         * k << 3 = 2*2 (в степени 3) = 2*8 = 16
+         * 16 >> k= 16/2 (в степени 2) = 16/4 = 4
+         * k << 3 >> k = 4
+         * вычесляем с право от == k >> 1 << k
+         * k >> 1 = 2/2 (в степени 1) = 2/2= 0
+         * 0 << k =0*2 (в степени 2) = 0*4 = 4
+         * результат k << 3 >> k == k >> 1 << k будет TRUE 4==4
+         */
+        //MateAcademy
         ///Test MateAcademy
         //System.out.println(ada("hfgsda"));
         //System.out.println(min(new int[]{1,13,-5}));
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-       System.out.println(Strings.ConsonantValue("twelfthstreet"));
+
 
     }
 
