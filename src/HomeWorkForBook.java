@@ -31,10 +31,8 @@ public class HomeWorkForBook {
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-         System.out.println(NextHappyYear.nextHappyYear(1987));
-
-
-
+        //SortingTheOddWay.sortItOut(new Double[]{1.1,2.8,5.9,3.8,4.7,12.0});
+        System.out.println(0.6%0.2);
     }
 
     public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
