@@ -1,8 +1,6 @@
 import com.CodeWars.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,8 +31,8 @@ public class HomeWorkForBook {
         //System.out.println(min(new int[]{1,13,-5}));
         //System.out.println(countOddPositionChars(new String[]{"Hello","world","from", "array"}));
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
-       //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
-        System.out.println(Arrays.toString(RowWeights.rowWeights(new int[]{50, 60, 70, 80})));
+        //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
+        System.out.println(JosephusSurvivor.josephusSurvivor(40,3));
     }
 
     public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
