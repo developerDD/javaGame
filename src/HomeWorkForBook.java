@@ -33,11 +33,12 @@ public class HomeWorkForBook {
         //System.out.println(hasNoneLetters("fabcde", "fgh"));
         //FromTheMinimum.minValue(new int[]{6, 7, 7, 7, 6, 6});
         //System.out.println(JosephusSurvivor.josephusSurvivor(40,3));
-       List<Object> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        List<Object> newList = JosephusPermutation.josephusPermutation(list,2);
-        for (var string :newList){
-            System.out.printf(string.toString());
-        }
+//      привышено время List<Object> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+//        List<Object> newList = JosephusPermutation.josephusPermutation(list,2);
+//        for (var string :newList){
+//            System.out.printf(string.toString());
+//        }
+
     }
 
     public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
