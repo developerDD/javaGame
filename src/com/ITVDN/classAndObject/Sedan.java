@@ -56,6 +56,11 @@ public class Sedan extends NewCar {
     }
 
     @Override
+    public void move() {
+        System.out.println("Car - "+getMarka() + " - "+getModel()+" GO!");
+    }
+
+    @Override
     public String toString() {
         return "Sedan ->" +
                 "bodyNumber=" + bodyNumber +

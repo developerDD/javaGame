@@ -70,5 +70,13 @@ public class NewCar {
         return model;
     }
 
+    public void move(){
+        System.out.println("car is begin move!");
+    }
+
+    public void stop(){
+        System.out.println("Car was stopping!");
+    }
+
 
 }
