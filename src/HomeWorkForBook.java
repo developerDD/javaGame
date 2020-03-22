@@ -38,6 +38,7 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
+        System.out.println(SumofoddnumbersTriangele.RowSumOddNumbers(42));
 
     }
 

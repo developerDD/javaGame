@@ -55,6 +55,7 @@ public class Sedan extends NewCar {
         return options;
     }
 
+
     @Override
     public void move() {
         System.out.println("Car - "+getMarka() + " - "+getModel()+" GO!");

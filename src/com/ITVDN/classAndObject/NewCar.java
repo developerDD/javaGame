@@ -7,6 +7,7 @@ public class NewCar {
     private final String model;
     private double speed;
     private String color;
+    //нужно жобавить мотор, шаси, КПП
 
     public NewCar(){
         this.year = 0;
