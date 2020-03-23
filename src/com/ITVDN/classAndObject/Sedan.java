@@ -79,8 +79,6 @@ final public class Sedan extends NewCar {
         if (!super.equals(o))return false;
         Sedan newCar = (Sedan)o;
         return bodyNumber==newCar.bodyNumber;
-
-
     }
 
     @Override

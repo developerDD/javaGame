@@ -81,6 +81,14 @@ public class NewCar {
         System.out.println("Car was stopping!");
     }
 
+    /**
+     *
+     * @param o объект для сравнение
+     * @return возвращает верно или лож
+     * Методы equals () и hashCode () должны быть совместимы: если в результате вы­
+     * зова х . equals (у) возвращается логическое значение true, то и результаты вызовов
+     * х . hashCode () и у . hashCode () также должны совпадать.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

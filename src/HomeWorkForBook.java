@@ -1,10 +1,3 @@
-import com.CodeWars.*;
-
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-
 /**
  * @author Dima Derevianko
  */
@@ -38,8 +31,15 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        System.out.println(SumofoddnumbersTriangele.RowSumOddNumbers(42));
 
+            d(8);
+    }
+    public static void d(int n){
+        if(n==0) System.out.println(n+" = "+0);
+        if(n==1) System.out.println(n+" = "+1);
+        if(n>1&&n<4) System.out.println(n+" = "+(n-1));;
+        System.out.println("round = "+n/3f);
+        System.out.println("round = "+(n*3f)/n);
     }
 
     public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
