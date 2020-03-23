@@ -1,6 +1,8 @@
 package com.ITVDN.classAndObject;
 
-public class Sedan extends NewCar {
+import java.util.Objects;
+
+final public class Sedan extends NewCar {
     private final int bodyNumber;
     private int stateNumber;
     private static int countSedan;
@@ -64,16 +66,25 @@ public class Sedan extends NewCar {
     @Override
     public String toString() {
         return "Sedan ->" +
-                "bodyNumber=" + bodyNumber +
-                ", stateNumber=" + stateNumber +
-                ", year ="+getYear()+
-                ", weigth ="+getWeigth()+
-                ", marka='" + getMarka() + '\'' +
-                ", model='" + getModel() + '\'' +
-                ", speed ="+getSpeed()+
-                ", color ="+getColor()+
-                ", materialSalon='" + materialSalon + '\'' +
-                ", options='" + options + '\'' +
+                "bodyNumber = " + bodyNumber +
+                ", stateNumber = " + stateNumber +
+                " "+super.toString()+
+                ", materialSalon = '" + materialSalon + '\'' +
+                ", options = '" + options + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o))return false;
+        Sedan newCar = (Sedan)o;
+        return bodyNumber==newCar.bodyNumber;
+
+
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode()+ Objects.hash(bodyNumber,stateNumber,materialSalon,options);
     }
 }

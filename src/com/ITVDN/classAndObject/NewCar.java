@@ -1,5 +1,7 @@
 package com.ITVDN.classAndObject;
 
+import java.util.Objects;
+
 public class NewCar {
     private final int year;
     private final int weigth;
@@ -79,5 +81,31 @@ public class NewCar {
         System.out.println("Car was stopping!");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NewCar newCar = (NewCar) o;
+        return year == newCar.year &&
+                weigth == newCar.weigth &&
+                Double.compare(newCar.speed, speed) == 0 &&
+                marka.equals(newCar.marka) &&
+                model.equals(newCar.model) &&
+                color.equals(newCar.color);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(year, weigth, marka, model, speed, color);
+    }
+
+    @Override
+    public String toString() {
+        return  "year   = " + year +
+                ", weigth =" + weigth +
+                ", marka ='" + marka + '\'' +
+                ", model ='" + model + '\'' +
+                ", speed =" + speed +
+                ", color ='" + color + '\'';
+    }
 }
