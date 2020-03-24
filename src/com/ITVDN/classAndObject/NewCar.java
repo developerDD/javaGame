@@ -2,7 +2,7 @@ package com.ITVDN.classAndObject;
 
 import java.util.Objects;
 
-public class NewCar {
+public class NewCar implements Cloneable{
     private final int year;
     private final int weigth;
     private final String marka;
@@ -14,7 +14,7 @@ public class NewCar {
     public NewCar(){
         this.year = 0;
         this.weigth = 0;
-        this.marka = "no marka";
+        this.marka = "no markka";
         this.model = "no model";
         this.speed = 0.0;
         this.color = "no color";
@@ -34,10 +34,7 @@ public class NewCar {
     }
 
     public NewCar(int year, int weigth, String marka, String model, double speed, String color) {
-        this.year = year;
-        this.weigth = weigth;
-        this.marka = marka;
-        this.model = model;
+        this(year,weigth,marka,model);
         this.speed = speed;
         this.color = color;
     }
@@ -111,7 +108,7 @@ public class NewCar {
     public String toString() {
         return  "year   = " + year +
                 ", weigth =" + weigth +
-                ", marka ='" + marka + '\'' +
+                ", markka ='" + marka + '\'' +
                 ", model ='" + model + '\'' +
                 ", speed =" + speed +
                 ", color ='" + color + '\'';

@@ -1,6 +1,6 @@
 package com.ITVDN.classAndObject;
 
-public enum TypeEngines {
+public enum TypeEngines implements Cloneable{
     DIESEL("Diesel EVRO 5"),
     BENZINE("Benzine - A 92,A 95, A 98"),
     GAZ_BENZINE("Gaz - propane, Benzine - A 92,A 95, A 98"),

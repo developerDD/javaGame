@@ -2,7 +2,7 @@ package com.ITVDN.classAndObject;
 
 import java.util.Objects;
 
-final public class Sedan extends NewCar {
+final public class Sedan extends NewCar implements Cloneable,Comparable<Sedan> {
     private final int bodyNumber;
     private int stateNumber;
     private static int countSedan;
@@ -85,4 +85,11 @@ final public class Sedan extends NewCar {
     public int hashCode() {
         return super.hashCode()+ Objects.hash(bodyNumber,stateNumber,materialSalon,options);
     }
+
+    //соравнение по номеру кузова
+    @Override
+    public int compareTo(Sedan sedan) {return this.bodyNumber-sedan.bodyNumber; }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {return super.clone();}
 }
