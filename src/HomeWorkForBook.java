@@ -32,20 +32,6 @@ public class HomeWorkForBook {
 //            System.out.printf(string.toString());
 //        }
 
-           String s = "asdfghj";
-           if (s.length()%2!=0){
-               s=s.concat("_");
-           }
-           String[] arr = new String[(int)Math.ceil(s.length()/2d)];
-           int size = arr.length;
-           StringBuilder stringBuilder =new StringBuilder();
-           char [] arrChar = s.toCharArray();
-        for (int i = 0, k=0; i < arrChar.length; i+=2,k++) {
-            stringBuilder.append(arrChar[i]);
-            stringBuilder.append(arrChar[i+1]);
-            arr[k]=stringBuilder.toString();
-            stringBuilder.delete(0,2);
-        }
     }
 
     public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
