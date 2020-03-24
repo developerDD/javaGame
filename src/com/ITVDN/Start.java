@@ -1,7 +1,5 @@
 package com.ITVDN;
 
-import com.ITVDN.InheritanceAndPolymorphism.ClassRoom;
-
 public class Start {
     public static void main(String[] args) throws CloneNotSupportedException {
 //        Sedan bmw = new Sedan();
@@ -10,7 +8,7 @@ public class Start {
 //        bmw2.setStateNumber(1235);
 //        Sedan bmwClon = (Sedan) bmw2.clone();
 //        System.out.println(bmw2.compareTo(bmw));
-        ClassRoom classRoom = new ClassRoom();
+
 
 
 

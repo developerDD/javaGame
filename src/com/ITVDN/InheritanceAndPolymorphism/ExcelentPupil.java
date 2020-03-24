@@ -6,9 +6,7 @@ public class ExcelentPupil extends Pupil {
     }
 
     @Override
-    public void study() {
-        System.out.println(super.toString()+" "+" I very like study!");
-    }
+    public void study() {System.out.println(super.toString()+" "+" I very like study!"); }
 
     @Override
     public void read() {
