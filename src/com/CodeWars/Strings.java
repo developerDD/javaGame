@@ -1,25 +1,27 @@
 package com.CodeWars;
 
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class Strings {
 
-    public static String RemoveFirstAndLastCharacter (String str){
+    public static String RemoveFirstAndLastCharacter(String str) {
         return str.substring(1, str.length() - 1);
     }
+
     // one number in string
     public static boolean isDigit(String s) {
-        if(s.isEmpty()) return false;
+        if (s.isEmpty()) return false;
         return s.matches("\\d{1}");
         //поиск числа в строке //str[i].matches("^\\d*$")
     }
+
     //del Space
     static String noSpace(final String x) {
 
-        return new String (x.replaceAll("\\s",""));
+        return new String(x.replaceAll("\\s", ""));
     }
 
     public static String ReversedStrings(String str) {
@@ -27,38 +29,39 @@ public class Strings {
         return buffer.reverse().toString();
     }
 
-    public static Object[] dbSort(Object[] a){
-        int countNumber=0;
-        int countWord=0;
+    public static Object[] dbSort(Object[] a) {
+        int countNumber = 0;
+        int countWord = 0;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] instanceof Number){
+            if (a[i] instanceof Number) {
                 countNumber++;
-            }else {
+            } else {
                 countWord++;
             }
         }
-        int[] arrNumber = new  int[countNumber];
+        int[] arrNumber = new int[countNumber];
         String[] arrWord = new String[countWord];
 
-        for (int i = 0,j=0,h=0; i < a.length; i++) {
-            if (a[i] instanceof Number){
-                arrNumber[j]=((Number) a[i]).intValue();;
+        for (int i = 0, j = 0, h = 0; i < a.length; i++) {
+            if (a[i] instanceof Number) {
+                arrNumber[j] = ((Number) a[i]).intValue();
+                ;
                 j++;
-            }else {
-                arrWord[h]=a[i].toString();
+            } else {
+                arrWord[h] = a[i].toString();
                 h++;
             }
         }
         Arrays.sort(arrNumber);
         Arrays.sort(arrWord);
-        Object[]result = new Object[countNumber+countWord];
-        for (int i = 0,h=0; i < result.length; i++) {
+        Object[] result = new Object[countNumber + countWord];
+        for (int i = 0, h = 0; i < result.length; i++) {
 
-            if (i<countNumber){
-                result[i]=(Object)arrNumber[i];
+            if (i < countNumber) {
+                result[i] = (Object) arrNumber[i];
 
-            }else {
-                result[i]=(Object)arrWord[h];
+            } else {
+                result[i] = (Object) arrWord[h];
                 h++;
             }
         }
@@ -73,56 +76,57 @@ public class Strings {
     }
 
     /**
-     *  /*
-     *         * public static int toInt(Object obj)
+     * /*
+     * * public static int toInt(Object obj)
      * {
-     *     if (obj instanceof String)
-     *     {
-     *          return Integer.parseInt((String) obj);
-     *     } else if (obj instanceof Number)
-     *     {
-     *          return ((Number) obj).intValue();
-     *     } else
-     *     {
-     *          String toString = obj.toString();
-     *          if (toString.matches("-?\d+"))
-     *          {
-     *               return Integer.parseInt(toString);
-     *          }
-     *          throw new IllegalArgumentException("This Object doesn't represent an int");
-     *     }
+     * if (obj instanceof String)
+     * {
+     * return Integer.parseInt((String) obj);
+     * } else if (obj instanceof Number)
+     * {
+     * return ((Number) obj).intValue();
+     * } else
+     * {
+     * String toString = obj.toString();
+     * if (toString.matches("-?\d+"))
+     * {
+     * return Integer.parseInt(toString);
      * }
-     *         * */
+     * throw new IllegalArgumentException("This Object doesn't represent an int");
+     * }
+     * }
+     * *
+     */
 
     public static String twoSort(String[] s) {
         Arrays.sort(s);
         System.out.println(Arrays.toString(s));
         StringBuffer buffer = new StringBuffer(s[0]);
-        for (int i = 1,j=1; j <s[0].length(); i+=4,j++) {
-            buffer.insert(i,"***");
+        for (int i = 1, j = 1; j < s[0].length(); i += 4, j++) {
+            buffer.insert(i, "***");
         }
         //java 8 return String.join("***",s[0].split(""));
         return buffer.toString();
     }
 
-    public static String[] stringToArray(String s){
+    public static String[] stringToArray(String s) {
         return s.split(" ");
     }
 
-    static String encode(String word){
-        word=word.toLowerCase();
+    static String encode(String word) {
+        word = word.toLowerCase();
         StringBuilder stringBuilder = new StringBuilder(5);
         int f = 0;
         for (int i = 0; i < word.length(); i++) {
-            f=0;
+            f = 0;
             for (int j = 0; j < word.length(); j++) {
-                if (word.charAt(i)==word.charAt(j)){
+                if (word.charAt(i) == word.charAt(j)) {
                     f++;
                 }
             }
-            if (f>1&&f!=0){
+            if (f > 1 && f != 0) {
                 stringBuilder.append(')');
-            }else {
+            } else {
                 stringBuilder.append('(');
             }
         }
@@ -137,37 +141,37 @@ public class Strings {
 
         StringBuilder stringBuilder = new StringBuilder(text.toLowerCase());
         int duplicate = 0;
-        boolean flag=false;
-        for (int i = 0; i < stringBuilder.length()-1; i++) {
-            if ('*'==stringBuilder.charAt(i)){
+        boolean flag = false;
+        for (int i = 0; i < stringBuilder.length() - 1; i++) {
+            if ('*' == stringBuilder.charAt(i)) {
                 continue;
-            }else {
-                for (int j = i+1; j < stringBuilder.length(); j++) {
-                    if (stringBuilder.charAt(i)==stringBuilder.charAt(j)){
-                        stringBuilder.replace(j,j+1,"*");
-                        flag=true;
+            } else {
+                for (int j = i + 1; j < stringBuilder.length(); j++) {
+                    if (stringBuilder.charAt(i) == stringBuilder.charAt(j)) {
+                        stringBuilder.replace(j, j + 1, "*");
+                        flag = true;
                     }
                 }
-                if (flag){
-                    stringBuilder.replace(i,i+1,"*");
+                if (flag) {
+                    stringBuilder.replace(i, i + 1, "*");
                     duplicate++;
                 }
             }
-            flag=false;
+            flag = false;
         }
 
         return duplicate;
     }
 
-    public static String removeDuplicateWords(String s){
+    public static String removeDuplicateWords(String s) {
         String[] arr = s.split("\\s+");
         StringBuilder stringBuilder = new StringBuilder();
         HashSet<String> stringHashSet = new HashSet<>();
         for (int i = 0; i < arr.length; i++) {
-            if (stringHashSet.contains(arr[i])){
+            if (stringHashSet.contains(arr[i])) {
                 continue;
-            }else {
-                if (i>0)stringBuilder.append(" ");
+            } else {
+                if (i > 0) stringBuilder.append(" ");
                 stringHashSet.add(arr[i]);
                 stringBuilder.append(arr[i]);
             }
@@ -185,84 +189,109 @@ public class Strings {
      * Your task is to write a function maskify, which changes all but the last four characters into '#'.
      */
     public static String maskify(String str) {
-        if (str.length()<4) return  str;
-        String substring = str.substring(0,str.length()-4);
-        String stringReplace =substring.replaceAll(".","#");
-        stringReplace+=str.substring(str.length()-4,str.length());
+        if (str.length() < 4) return str;
+        String substring = str.substring(0, str.length() - 4);
+        String stringReplace = substring.replaceAll(".", "#");
+        stringReplace += str.substring(str.length() - 4, str.length());
         return stringReplace;
         //return str.replaceAll(".(?=.{4})", "#");
     }
 
     /**
      * Task:
-     *  You have to write a function pattern which returns the following Pattern (See Pattern & Examples) upto n number of rows.
-     *
-     *  Note: Returning the pattern is not the same as Printing the pattern.
-     *  Rules/Note:
-     *  If n < 1 then it should return "" i.e. empty string.
-     *  There are no whitespaces in the pattern.
-     *  Pattern:
-     *  (n)(n-1)(n-2)...4321
-     *  (n)(n-1)(n-2)...432
-     *  (n)(n-1)(n-2)...43
-     *  (n)(n-1)(n-2)...4
-     *  ...............
-     *  ..............
-     *  (n)(n-1)(n-2)
-     *  (n)(n-1)
-     *  (n)*/
-    public static String pattern ( int n) {
+     * You have to write a function pattern which returns the following Pattern (See Pattern & Examples) upto n number of rows.
+     * <p>
+     * Note: Returning the pattern is not the same as Printing the pattern.
+     * Rules/Note:
+     * If n < 1 then it should return "" i.e. empty string.
+     * There are no whitespaces in the pattern.
+     * Pattern:
+     * (n)(n-1)(n-2)...4321
+     * (n)(n-1)(n-2)...432
+     * (n)(n-1)(n-2)...43
+     * (n)(n-1)(n-2)...4
+     * ...............
+     * ..............
+     * (n)(n-1)(n-2)
+     * (n)(n-1)
+     * (n)
+     */
+    public static String pattern(int n) {
         //Happy Coding ^_^
-        if (n<1) return "";
+        if (n < 1) return "";
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < n; i++) {
-            for (int j = n; j > i ; j--) {
+            for (int j = n; j > i; j--) {
                 stringBuilder.append(j);
             }
-            if (i!=n-1){
+            if (i != n - 1) {
                 stringBuilder.append('\n');
             }
         }
         return stringBuilder.toString();
-}
+    }
 
     /**
      * Если задана строчная строка, состоящая только из буквенных символов и без пробелов,
      * вернуть наибольшее значение согласных подстрок. Согласные - это любые буквы алфавита, кроме "aeiou".
-     *
+     * <p>
      * Мы должны присвоить следующие значения: a = 1, b = 2, c = 3, .... z = 26.
      */
-    public static int ConsonantValue(final String s){
+    public static int ConsonantValue(final String s) {
         Map<Character, Integer> abcBook = new HashMap<>();
         String[] arr = s.split("[aeiou]");
-        for (int i = 97, v =1; i < 123; i++,v++) {
-            abcBook.put(Character.valueOf((char)i),v);
+        for (int i = 97, v = 1; i < 123; i++, v++) {
+            abcBook.put(Character.valueOf((char) i), v);
         }
-        int sum =0,sumMax =0;
+        int sum = 0, sumMax = 0;
         char[] currentCharArr;
         char currentChar;
         for (int i = 0; i < arr.length; i++) {
-            currentCharArr=arr[i].toCharArray();
+            currentCharArr = arr[i].toCharArray();
 
             for (int i1 = 0; i1 < currentCharArr.length; i1++) {
-                currentChar=currentCharArr[i1];
+                currentChar = currentCharArr[i1];
 
                 for (Map.Entry<Character, Integer> item : abcBook.entrySet()) {
-                    if (item.getKey()==currentChar){
-                        sum+=item.getValue();
+                    if (item.getKey() == currentChar) {
+                        sum += item.getValue();
                         break;
                     }
                 }
             }
-            if (sum>sumMax){
-                sumMax=sum;
-                sum=0;
-            }else {
-                sum=0;
+            if (sum > sumMax) {
+                sumMax = sum;
+                sum = 0;
+            } else {
+                sum = 0;
             }
         }
 
         return sumMax;
     }
 
+    /**
+     * Завершите решение так, чтобы оно разбивало строку на пары из двух символов.
+     * Если строка содержит нечетное количество символов, тогда следует заменить отсутствующий второй символ
+     * последней пары подчеркиванием ('_').
+     */
+    public static String[] solution(String s){
+        if (s.length()%2!=0){
+            s=s.concat("_");
+        }
+        String[] arr = new String[(int)Math.ceil(s.length()/2d)];
+        int size = arr.length;
+        StringBuilder stringBuilder =new StringBuilder();
+        char [] arrChar = s.toCharArray();
+        for (int i = 0, k=0; i < arrChar.length; i+=2,k++) {
+            stringBuilder.append(arrChar[i]);
+            stringBuilder.append(arrChar[i+1]);
+            arr[k]=stringBuilder.toString();
+            stringBuilder.delete(0,2);
+        }
+        return arr;
+        // best с помощью регулярки
+        //s = (s.length() % 2 == 0)?s:s+"_";
+        //        return s.split("(?<=\\G.{2})");
+    }
 }

@@ -32,14 +32,20 @@ public class HomeWorkForBook {
 //            System.out.printf(string.toString());
 //        }
 
-            d(8);
-    }
-    public static void d(int n){
-        if(n==0) System.out.println(n+" = "+0);
-        if(n==1) System.out.println(n+" = "+1);
-        if(n>1&&n<4) System.out.println(n+" = "+(n-1));;
-        System.out.println("round = "+n/3f);
-        System.out.println("round = "+(n*3f)/n);
+           String s = "asdfghj";
+           if (s.length()%2!=0){
+               s=s.concat("_");
+           }
+           String[] arr = new String[(int)Math.ceil(s.length()/2d)];
+           int size = arr.length;
+           StringBuilder stringBuilder =new StringBuilder();
+           char [] arrChar = s.toCharArray();
+        for (int i = 0, k=0; i < arrChar.length; i+=2,k++) {
+            stringBuilder.append(arrChar[i]);
+            stringBuilder.append(arrChar[i+1]);
+            arr[k]=stringBuilder.toString();
+            stringBuilder.delete(0,2);
+        }
     }
 
     public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
