@@ -1,7 +1,7 @@
 package com.ITVDN.InheritanceAndPolymorphism;
 
-public  class Pupil {
-   private final String name;
+public class Pupil {
+    private final String name;
     String nameClass;
 
     public Pupil(String name, String nameClass) {
@@ -13,10 +13,17 @@ public  class Pupil {
         return name;
     }
 
-    public   void study(){   }
-    public  void read(){     }
-    public  void write(){    }
-    public  void relax(){    }
+    public void study() {
+    }
+
+    public void read() {
+    }
+
+    public void write() {
+    }
+
+    public void relax() {
+    }
 
     @Override
     public String toString() {

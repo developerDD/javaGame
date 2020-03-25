@@ -32,35 +32,42 @@ public class HomeWorkForBook {
 //            System.out.printf(string.toString());
 //        }
 
+
     }
 
-    public static char ada(String input){return (char) Character.codePointAt(input.toCharArray(),input.length()-1);}
-    public static int min(int[] nums){
-        if (nums.length==1||nums.length==0){
+
+    public static char ada(String input) {
+        return (char) Character.codePointAt(input.toCharArray(), input.length() - 1);
+    }
+
+    public static int min(int[] nums) {
+        if (nums.length == 1 || nums.length == 0) {
             return 0;
         }
-    //Arrays.sort(nums);
-    return nums[0];
-}
+        //Arrays.sort(nums);
+        return nums[0];
+    }
+
     public static int countOddPositionChars(String[] array) {
         // WRITE YOUR CODE BELOW THIS LINE
-        if (array.length==0){
+        if (array.length == 0) {
             return 0;
         }
-            int sum=0;
-            for (int i = 0; i < array.length; i+=2) {
-                    sum+=array[i].length();
-            }
+        int sum = 0;
+        for (int i = 0; i < array.length; i += 2) {
+            sum += array[i].length();
+        }
         return sum;
         // WRITE YOUR CODE ABOVE THIS LINE
     }
+
     private static boolean hasNoneLetters(String blacklist, String phrase) {
         // WRITE YOUR CODE BELOW THIS LINE
         blacklist = blacklist.toLowerCase();
         phrase = phrase.toLowerCase();
         for (int i = 0; i < blacklist.length(); i++) {
             for (int j = 0; j < phrase.length(); j++) {
-                if (blacklist.charAt(i)==phrase.charAt(j)){
+                if (blacklist.charAt(i) == phrase.charAt(j)) {
                     return false;
                 }
             }
@@ -68,12 +75,13 @@ public class HomeWorkForBook {
         return true;
         // WRITE YOUR CODE ABOVE THIS LINE
     }
-    public static int[] divisibleBy(int[] numbers, int divider){
+
+    public static int[] divisibleBy(int[] numbers, int divider) {
         int[] divis = new int[numbers.length];
-        int countElements=0;
-        for (int i = 0,j=0; i < numbers.length; i++) {
-            if (numbers[i]%divider==0){
-                divis[j]=numbers[i];
+        int countElements = 0;
+        for (int i = 0, j = 0; i < numbers.length; i++) {
+            if (numbers[i] % divider == 0) {
+                divis[j] = numbers[i];
                 countElements++;
                 j++;
 
@@ -82,7 +90,7 @@ public class HomeWorkForBook {
         int[] result = new int[countElements];
 
         for (int i = 0; i < countElements; i++) {
-            result[i]= divis[i];
+            result[i] = divis[i];
         }
         return result;
     }

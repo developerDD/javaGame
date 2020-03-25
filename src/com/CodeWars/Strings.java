@@ -275,23 +275,52 @@ public class Strings {
      * Если строка содержит нечетное количество символов, тогда следует заменить отсутствующий второй символ
      * последней пары подчеркиванием ('_').
      */
-    public static String[] solution(String s){
-        if (s.length()%2!=0){
-            s=s.concat("_");
+    public static String[] solution(String s) {
+        if (s.length() % 2 != 0) {
+            s = s.concat("_");
         }
-        String[] arr = new String[(int)Math.ceil(s.length()/2d)];
+        String[] arr = new String[(int) Math.ceil(s.length() / 2d)];
         int size = arr.length;
-        StringBuilder stringBuilder =new StringBuilder();
-        char [] arrChar = s.toCharArray();
-        for (int i = 0, k=0; i < arrChar.length; i+=2,k++) {
+        StringBuilder stringBuilder = new StringBuilder();
+        char[] arrChar = s.toCharArray();
+        for (int i = 0, k = 0; i < arrChar.length; i += 2, k++) {
             stringBuilder.append(arrChar[i]);
-            stringBuilder.append(arrChar[i+1]);
-            arr[k]=stringBuilder.toString();
-            stringBuilder.delete(0,2);
+            stringBuilder.append(arrChar[i + 1]);
+            arr[k] = stringBuilder.toString();
+            stringBuilder.delete(0, 2);
         }
         return arr;
         // best с помощью регулярки
         //s = (s.length() % 2 == 0)?s:s+"_";
         //        return s.split("(?<=\\G.{2})");
     }
+
+    /**
+     * В состав действующей команды должно входить не менее 2 работников. Вы должны подсчитать ,
+     * сколько в силе команд этой компании, и перечислить имена своих членов в формате:
+     * {N_OF_VALID_TEAMS}:{COMMA_SEPARATED_NAMES}.
+     * s = "A:Stefan,Milica,Zvonimir,AndrewH:Richard"
+     * mix(s) == "1:Stefan,Milica,Zvonimir,Andrew"
+     * <p>
+     * s = "W:John,John,John,JohnC:Danger,Man"
+     * mix(s) == "2:John,John,John,John,Danger,Man"
+     */
+    public static String validate(String s) {
+        String[] h = s.split("[[A-Z]{1}]:");
+        String res = "";
+        int count = 0;
+        for (String string : h) {
+            if (string.length() == 0) continue;
+            if (string.split(",").length > 1) {
+                count++;
+                res += string + " ";
+            }
+        }
+        res = res.trim();
+        res = res.replaceAll(" ", ",");
+        res = res.replaceAll(",,", ",");
+        System.out.println("count = " + count + ": " + res);
+        return count + ":" + res;
+    }
+
 }

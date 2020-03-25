@@ -1,7 +1,7 @@
 package com.ITVDN;
 
 public class Start {
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) {
 //        Sedan bmw = new Sedan();
 //        Sedan bmw2 = new Sedan(2020,1500,"BMW","530LX",
 //                300,"BLACK","Leather","FellXXL");
