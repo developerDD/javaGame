@@ -1,3 +1,7 @@
+import com.CodeWars.SumParts;
+
+import java.util.Arrays;
+
 /**
  * @author Dima Derevianko
  */
@@ -31,8 +35,9 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-
-
+        int[] f = SumParts.sumParts(new int[]
+                {744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358});
+        System.out.println(Arrays.toString(f)); // привышен лимит времени
     }
 
 
