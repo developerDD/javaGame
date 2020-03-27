@@ -37,7 +37,7 @@ public class HomeWorkForBook {
 //        }
         int[] f = SumParts.sumParts(new int[]
                 {744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358});
-        System.out.println(Arrays.toString(f)); // привышен лимит времени
+        System.out.println(Arrays.toString(f));
     }
 
 
