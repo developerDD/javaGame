@@ -1,11 +1,8 @@
-import com.CodeWars.SumParts;
-
-import java.util.Arrays;
+import com.CodeWars.RainFall;
 
 /**
  * @author Dima Derevianko
  */
-
 public class HomeWorkForBook {
     public static void main(String[] args) {
         //int k = 2;
@@ -35,10 +32,12 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        int[] f = SumParts.sumParts(new int[]
-                {744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358});
-        System.out.println(Arrays.toString(f));
+//        System.out.println(RainFall.mean("London","ds"));
+//        System.out.println(RainFall.variance("London","ds"));
+        System.out.println(Math.abs(RainFall.mean("London","ds") - RainFall.variance("London","ds")));
+        System.out.println(1e-2);
     }
+
 
 
     public static char ada(String input) {

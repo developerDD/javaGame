@@ -1,22 +1,27 @@
 package com.ITVDN.classAndObject;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+class A{
+        private int i = 5;
+        public A(){
+                System.out.println(getI());
+        }
 
-public class Test {
+        public int getI() {
+                return i;
+        }
 
+}
 
+public class Test extends A {
+        private static int i =10;
+        private Test() {
+                System.out.println(super.getI());
+        }
+        public int getI() {
+                return i;
+        }
 
-        public static void main (String [] args) {
-                ArrayList <Integer> num = new ArrayList<>();
-                num.add(1);
-                num.add(0,0);
-                num.add(0,9);
-                String j = Arrays.toString(num.toArray());
-                j=j.replaceAll("[\\s \\[\\]]","");
-
-                long p =1003;
-                String k = String.valueOf(p);
-                System.out.println(k.length());
+        public static strictfp void main (String [] args) {
+                new Test();
         }
 }
