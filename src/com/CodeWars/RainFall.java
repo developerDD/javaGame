@@ -23,76 +23,65 @@ public class RainFall {
                     "\n" +
                     "Lima:Jan 1.2,Feb 0.9,Mar 0.7,Apr 0.4,May 0.6,Jun 1.8,Jul 4.4,Aug 3.1,Sep 3.3,Oct 1.7,Nov 0.5,Dec 0.7";
 
-    public static double mean(String town, String strng) {
-        String[] valueCity = new String[12];
-        double middleValue = 0;
-        final double SIZ_YEAR = 12d;
-        double sumValueMonth = 0;//сумма всех значенией по городу за год
-        String[] AllCity = data.split("\\n");// заменить на strng
-        boolean cityYes = false;
-        //проверка: если город в массиве данных, и если есть то у него есть данные о погоде
-        loops:
-        for (String string : AllCity) {
-            if (string.startsWith(town)) {
-                cityYes = string.matches("(.*)\\d\\d.\\d(.*)");
-                break loops;
+    public static String data1 =
+            "Rome:Jan 90.2,Feb 73.2,Mar 80.3,Apr 55.7,May 53.0,Jun 36.4,Jul 17.5,Aug 27.5,Sep 60.9,Oct 147.7,Nov 121.0,Dec 97.9" +
+                    "\n" +
+                    "London:" +
+                    "\n" +
+                    "Paris:Jan 182.3,Feb 120.6,Mar 188.1,Apr 204.9,May 323.1,Jun 350.5,Jul 336.8,Aug 192.9,Sep 66.3,Oct 63.3,Nov 83.2,Dec 154.7" +
+                    "\n" +
+                    "NY:Jan 128.7,Feb 121.8,Mar 151.9,Apr 93.5,May 98.8,Jun 93.6,Jul 142.2,Aug 131.8,Sep 92.0,Oct 82.3,Nov 107.8,Dec 94.2" +
+                    "\n" +
+                    "Vancouver:Jan 155.7,Feb 121.4,Mar 132.3,Apr 69.2,May 85.8,Jun 47.1,Jul 31.3,Aug 37.0,Sep 69.6,Oct 116.3,Nov 154.6,Dec 171.5" +
+                    "\n" +
+                    "Sydney:Jan 123.4,Feb 111.0,Mar 151.3,Apr 129.7,May 123.0,Jun 159.2,Jul 102.8,Aug 90.3,Sep 69.3,Oct 82.6,Nov 81.4,Dec 78.2" +
+                    "\n" +
+                    "Bangkok:Jan 20.6,Feb 28.2,Mar 40.7,Apr 81.8,May 189.4,Jun 151.7,Jul 198.2,Aug 197.0,Sep 319.9,Oct 230.8,Nov 57.3,Dec 9.4" +
+                    "\n" +
+                    "Tokyo:Jan 59.9,Feb 81.5,Mar 106.4,Apr 139.2,May 144.0,Jun 186.0,Jul 155.6,Aug 148.5,Sep 216.4,Oct 194.1,Nov 95.6,Dec 54.4" +
+                    "\n" +
+                    "Beijing:Jan 13.9,Feb 14.7,Mar 18.2,Apr 18.4,May 43.0,Jun 88.1,Jul 224.3,Aug 170.0,Sep 58.4,Oct 38.0,Nov 19.3,Dec 2.7" +
+                    "\n" +
+                    "Lima:Jan 11.2,Feb 10.9,Mar 10.7,Apr 10.4,May 10.6,Jun 11.8,Jul 14.4,Aug 13.1,Sep 23.3,Oct 1.7,Nov 0.5,Dec 10.7";
+    public static double mean(String town, String strng){
+        String [] cityData = findData(town,strng);
+        double sumData = 0d;
+        if (cityData!=null&&cityData.length!=0){
+            int size = cityData.length;// количество данныех(сколько записано месяцев)
+            for (int i = 0; i < cityData.length; i++) {
+                sumData+=Double.parseDouble(cityData[i]);
             }
+            return sumData/size;
         }
-
-        if (!cityYes) {
-            return -1.0;
-        }
-        //парсим данные по городу
-        for (int i = 0; i < AllCity.length; i++) {
-            if (AllCity[i].startsWith(town)) {
-                valueCity = AllCity[i].split("(\\D\\D.\\D)(\\s)+");
-                break;
-            }
-        }
-        //сумируем данные по городу
-        for (int j = 1; j < valueCity.length; j++) {
-            sumValueMonth += Double.valueOf(valueCity[j]);
-        }
-        middleValue = sumValueMonth / SIZ_YEAR;//среднее значение по городу
-        return middleValue;
+        return -1;
     }
+    public static double variance(String town, String strng){
+        String [] cityData = findData(town,strng);
 
-    public static double variance(String town, String strng) {
-        // your code
-        String[] valueCity = new String[12];
-        double[] valueCurrentTown = new double[12];
-        double middleValue = 0;
-        final int SIZ_YEAR = 12;
-        double sumValueMonth = 0;//сумма всех значенией по городу за год
-        String[] AllCity = data.split("\\n");// заменить на strng
-        boolean cityYes = false;
+        double sumData = 0d;
+        double middle = mean(town,strng);
+        if (cityData!=null&&cityData.length!=0){
+            int size = cityData.length;// количество данныех(сколько записано месяцев)
+            for (int i = 0; i < cityData.length; i++) {
+                sumData+=Math.pow((Double.parseDouble(cityData[i])-middle),2);
+            }
+            return sumData/size;
+        }
+        return -1;
+    }
+    public static String [] findData(String town,String strng){
+        String[] AllCity = data1.split("\\n");// заменить на strng
+        String cityData = "";
         loops:
         for (String string : AllCity) {
             if (string.startsWith(town)) {
-                cityYes = string.matches("(.*)\\d\\d.\\d(.*)");
+                cityData=string;
                 break loops;
             }
         }
-        if (!cityYes) {
-            return -1.0;
+        if (!cityData.isEmpty()){
+            cityData=cityData.replaceAll("[a-zA-Z:]","");
         }
-        for (int i = 0; i < AllCity.length; i++) {
-            if (AllCity[i].startsWith(town)) {
-                valueCity = AllCity[i].split("(\\D\\D.\\D)(\\s)+");
-                break;
-            }
-        }
-        for (int j = 1, i = 0; j < valueCity.length; j++, i++) {
-            valueCurrentTown[i] = Double.valueOf(valueCity[j]);
-            sumValueMonth += valueCurrentTown[i];
-        }
-        middleValue = sumValueMonth / SIZ_YEAR;//среднее значение по городу
-        //поиск дисперсии
-        double differenceBetweenValueAndMiddle = 0;
-        for (int i = 0; i < valueCurrentTown.length; i++) {
-            differenceBetweenValueAndMiddle += Math.pow(Math.abs(valueCurrentTown[i] - middleValue), 2);
-        }
-        double dispersion = differenceBetweenValueAndMiddle / SIZ_YEAR;
-        return dispersion;
+        return cityData.isEmpty()?null:cityData.split(",");
     }
 }

@@ -34,8 +34,18 @@ public class HomeWorkForBook {
 //        }
 //        System.out.println(RainFall.mean("London","ds"));
 //        System.out.println(RainFall.variance("London","ds"));
-        System.out.println(Math.abs(RainFall.mean("London","ds") - RainFall.variance("London","ds")));
-        System.out.println(1e-2);
+       // System.out.println(Arrays.toString(RainFall.findData("Bangkok","ds")));
+        System.out.println(RainFall.mean("Rome","ds"));        System.out.println(RainFall.variance("Rome","ds"));
+        System.out.println(RainFall.mean("London","ds"));        System.out.println(RainFall.variance("London","ds"));
+        System.out.println(RainFall.mean("Paris","ds"));        System.out.println(RainFall.variance("Paris","ds"));
+        System.out.println(RainFall.mean("NY","ds"));        System.out.println(RainFall.variance("NY","ds"));
+        System.out.println(RainFall.mean("Vancouver","ds"));        System.out.println(RainFall.variance("Vancouver","ds"));
+        System.out.println(RainFall.mean("Sydney","ds"));        System.out.println(RainFall.variance("Sydney","ds"));
+        System.out.println(RainFall.mean("Bangkok","ds"));        System.out.println(RainFall.variance("Bangkok","ds"));
+        System.out.println(RainFall.mean("Tokyo","ds"));        System.out.println(RainFall.variance("Tokyo","ds"));
+        System.out.println(RainFall.mean("Beijing","ds"));        System.out.println(RainFall.variance("Beijing","ds"));
+        System.out.println(RainFall.mean("Lima","ds"));        System.out.println(RainFall.variance("Lima","ds"));
+
     }
 
 
