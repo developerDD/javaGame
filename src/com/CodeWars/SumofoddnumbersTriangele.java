@@ -39,4 +39,27 @@ public class SumofoddnumbersTriangele {
     // best
     // n*n*n :-)
 
+    /**
+     * Учитывая треугольник последовательных нечетных чисел:
+     *
+     *              1
+     *           3     5
+     *        7     9    11
+     *    13    15    17    19
+     * 21    23    25    27    29
+     * найти строку треугольника, зная его индекс (строки 1-индексированы), например:
+     */
+    public static long[] oddRow(int n) {
+        --n;
+        // лонг для больших значений
+        long firstElevtyn = (long) n*(n+1)+1; // первый елемент следующей строки
+        n++;
+        long[] res = new long[n];
+        for (int i = 0; i < n; i++) {
+            res[i]=firstElevtyn;
+            firstElevtyn+=2;
+
+        }
+        return res;
+    }
 }
