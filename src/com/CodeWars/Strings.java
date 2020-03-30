@@ -332,4 +332,24 @@ public class Strings {
     public static int Digits(long n) {
        return String.valueOf(n).length();
     }
+
+    /**
+     * Напишите функцию, которая принимает строку из одного или нескольких слов и возвращает ту же строку,
+     * но со всеми пятью или более буквенными словами в обратном порядке (точно так же, как имя этого ката).
+     * Переданные строки будут состоять только из букв и пробелов.
+     * Пробелы будут включены только при наличии более одного слова.
+     */
+    public static String spinWords(String sentence) {
+        //TODO: Code stuff here
+        StringBuilder strB = new StringBuilder();
+        String [] words = sentence.split("\\s+");
+        for (int i = 0; i < words.length; i++) {
+            if(words[i].length()>=5){
+              strB.append(new StringBuilder(words[i]).reverse()+" ");
+              continue;
+            }
+          strB.append(words[i]+" ") ;
+        }
+        return strB.toString().trim();
+    }
 }
