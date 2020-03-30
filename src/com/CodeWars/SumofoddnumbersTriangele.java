@@ -58,7 +58,6 @@ public class SumofoddnumbersTriangele {
         for (int i = 0; i < n; i++) {
             res[i]=firstElevtyn;
             firstElevtyn+=2;
-
         }
         return res;
     }

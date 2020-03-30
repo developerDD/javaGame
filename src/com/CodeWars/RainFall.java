@@ -28,7 +28,7 @@ public class RainFall {
                     "\n" +
                     "London:" +
                     "\n" +
-                    "Paris:Jan 182.3,Feb 120.6,Mar 188.1,Apr 204.9,May 323.1,Jun 350.5,Jul 336.8,Aug 192.9,Sep 66.3,Oct 63.3,Nov 83.2,Dec 154.7" +
+                    "London:Jan 182.3,Feb 120.6,Mar 188.1,Apr 204.9,May 323.1,Jun 350.5,Jul 336.8,Aug 192.9,Sep 66.3,Oct 63.3,Nov 83.2,Dec 154.7" +
                     "\n" +
                     "NY:Jan 128.7,Feb 121.8,Mar 151.9,Apr 93.5,May 98.8,Jun 93.6,Jul 142.2,Aug 131.8,Sep 92.0,Oct 82.3,Nov 107.8,Dec 94.2" +
                     "\n" +
@@ -70,17 +70,30 @@ public class RainFall {
         return -1;
     }
     public static String [] findData(String town,String strng){
-        String[] AllCity = data1.split("\\n");// заменить на strng
+        String[] AllCity = data.split("\\n");// заменить на strng
         String cityData = "";
+        String [] AllTown =new String [] {"Rome", "London", "Paris", "NY", "Vancouver", "Sydney", "Bangkok", "Tokyo",
+                "Beijing", "Lima", "Montevideo", "Caracas", "Madrid", "Berlin"};
+        boolean isOK = false;
+        for (String s : AllTown) {
+            if (s.equals(town)){
+                isOK=true;
+                break;
+            }
+        }
+        if (!isOK) return null;
         loops:
         for (String string : AllCity) {
             if (string.startsWith(town)) {
-                cityData=string;
+               cityData=string;
                 break loops;
             }
         }
-        if (!cityData.isEmpty()){
-            cityData=cityData.replaceAll("[a-zA-Z:]","");
+        if (cityData.length()!=0){
+                cityData = cityData.replaceAll("[a-zA-Z:]","");
+                if (cityData.length()==0){
+                    return null;
+                }
         }
         return cityData.isEmpty()?null:cityData.split(",");
     }

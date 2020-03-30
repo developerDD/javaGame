@@ -1,6 +1,4 @@
-import com.CodeWars.SumofoddnumbersTriangele;
-
-import java.util.Arrays;
+import com.CodeWars.RainFall;
 
 /**
  * @author Dima Derevianko
@@ -34,11 +32,9 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-//        System.out.println(RainFall.mean("London","ds"));
-//        System.out.println(RainFall.variance("London","ds"));
-       // System.out.println(Arrays.toString(RainFall.findData("Bangkok","ds")));
+
 //        System.out.println(RainFall.mean("Rome","ds"));        System.out.println(RainFall.variance("Rome","ds"));
-//        System.out.println(RainFall.mean("London","ds"));        System.out.println(RainFall.variance("London","ds"));
+        System.out.println(RainFall.mean("London","ds"));        System.out.println(RainFall.variance("London","ds"));
 //        System.out.println(RainFall.mean("Paris","ds"));        System.out.println(RainFall.variance("Paris","ds"));
 //        System.out.println(RainFall.mean("NY","ds"));        System.out.println(RainFall.variance("NY","ds"));
 //        System.out.println(RainFall.mean("Vancouver","ds"));        System.out.println(RainFall.variance("Vancouver","ds"));
@@ -47,9 +43,16 @@ public class HomeWorkForBook {
 //        System.out.println(RainFall.mean("Tokyo","ds"));        System.out.println(RainFall.variance("Tokyo","ds"));
 //        System.out.println(RainFall.mean("Beijing","ds"));        System.out.println(RainFall.variance("Beijing","ds"));
 //        System.out.println(RainFall.mean("Lima","ds"));        System.out.println(RainFall.variance("Lima","ds"));
-        System.out.println(Arrays.toString(SumofoddnumbersTriangele.oddRow(13)));
-    }
 
+    }
+    //сумирование без +
+    public static int add(int a, int b)	{
+        if (b == 0) return a;
+        int sum = a ^ b;			// добавляем без переноса
+        int as = a&b;
+        int carry = (a & b) << 1;	// перенос без суммирования
+        return add(sum, carry);		// рекурсия
+    }
 
 
     public static char ada(String input) {
