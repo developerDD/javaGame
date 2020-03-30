@@ -32,7 +32,7 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        System.out.println(Strings.spinWords("Hey fellow warriors"));
+        System.out.println(Strings.pigIt("Hello world !"));
 
     }
     //сумирование без +

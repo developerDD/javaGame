@@ -352,4 +352,26 @@ public class Strings {
         }
         return strB.toString().trim();
     }
+
+    /**
+     * Переместите первую букву каждого слова в конец,
+     * затем добавьте «ay» в конец слова. Оставьте знаки препинания нетронутыми.
+     * pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+     * pigIt('Hello world !');     // elloHay orldway !
+     */
+    public static String pigIt(String str) {
+        String [] words = str.split("\\s+");
+        String  newStr = "";
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].matches("\\w*")){
+               String  first =String.valueOf(words[i].charAt(0));
+               newStr =words[i].substring(1);
+               newStr+= first+"ay";
+               words[i]=newStr;
+               newStr="";
+            }
+        }
+        return String.join(" ",words);
+        // best return str.replaceAll("(\\w)(\\w*)", "$2$1ay");
+    }
 }
