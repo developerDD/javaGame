@@ -1,4 +1,4 @@
-import com.CodeWars.Strings;
+import com.CodeWars.Time;
 
 /**
  * @author Dima Derevianko
@@ -32,7 +32,8 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        System.out.println(Strings.pigIt("Hello world !"));
+        int colSec = 120;
+        System.out.println(Time.formatDuration(colSec));
 
     }
     //сумирование без +
