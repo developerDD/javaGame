@@ -1,9 +1,6 @@
 package com.CodeWars;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class AllStrings {
 
@@ -392,5 +389,46 @@ public class AllStrings {
             res.append((char) Integer.parseInt(abc, 2));
         }
         return res.toString();
+    }
+
+    /**
+     * Напишите простой парсер, который будет анализировать и запускать Deadfish.
+     *
+     * У Deadfish есть 4 команды, каждая длиной 1 символ:
+     *
+     * iувеличивает значение (изначально 0)
+     * d уменьшает значение
+     * s возводит в квадрат значение
+     * o выводит значение в возвращаемый массив
+     * Неверные символы следует игнорировать.
+     */
+    public static int[] parse(String data) {
+        List<Integer> arr = new ArrayList<>();
+        int [] res;
+        char[] arrData = data.toCharArray();
+        int number =0;
+        for (int i = 0; i < arrData.length; i++) {
+            switch (arrData[i]){
+                case 'i':
+                    number++;
+                    break;
+                case 'd':
+                    number--;
+                    break;
+                case 's':
+                    number=(int)Math.pow(number,2);
+                    break;
+                case 'o':
+                    arr.add(number);
+                    break;
+                default:
+                    continue;
+            }
+        }
+        res= new int[arr.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i]=arr.get(i);
+        }
+        return res;
     }
 }

@@ -32,7 +32,7 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        AllStrings.binaryToText("0100100001100101011011000110110001101111");
+        AllStrings.parse("riiisdoso");
     }
     //сумирование без +
     public static int add(int a, int b)	{
