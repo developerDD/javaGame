@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class Strings {
+public class AllStrings {
 
     public static String RemoveFirstAndLastCharacter(String str) {
         return str.substring(1, str.length() - 1);
@@ -330,7 +330,7 @@ public class Strings {
      * Будьте осторожны, чтобы избежать переполнения / переполнения.
      */
     public static int Digits(long n) {
-       return String.valueOf(n).length();
+        return String.valueOf(n).length();
     }
 
     /**
@@ -342,13 +342,13 @@ public class Strings {
     public static String spinWords(String sentence) {
         //TODO: Code stuff here
         StringBuilder strB = new StringBuilder();
-        String [] words = sentence.split("\\s+");
+        String[] words = sentence.split("\\s+");
         for (int i = 0; i < words.length; i++) {
-            if(words[i].length()>=5){
-              strB.append(new StringBuilder(words[i]).reverse()+" ");
-              continue;
+            if (words[i].length() >= 5) {
+                strB.append(new StringBuilder(words[i]).reverse() + " ");
+                continue;
             }
-          strB.append(words[i]+" ") ;
+            strB.append(words[i] + " ");
         }
         return strB.toString().trim();
     }
@@ -360,18 +360,37 @@ public class Strings {
      * pigIt('Hello world !');     // elloHay orldway !
      */
     public static String pigIt(String str) {
-        String [] words = str.split("\\s+");
-        String  newStr = "";
+        String[] words = str.split("\\s+");
+        String newStr = "";
         for (int i = 0; i < words.length; i++) {
-            if (words[i].matches("\\w*")){
-               String  first =String.valueOf(words[i].charAt(0));
-               newStr =words[i].substring(1);
-               newStr+= first+"ay";
-               words[i]=newStr;
-               newStr="";
+            if (words[i].matches("\\w*")) {
+                String first = String.valueOf(words[i].charAt(0));
+                newStr = words[i].substring(1);
+                newStr += first + "ay";
+                words[i] = newStr;
+                newStr = "";
             }
         }
-        return String.join(" ",words);
+        return String.join(" ", words);
         // best return str.replaceAll("(\\w)(\\w*)", "$2$1ay");
+    }
+
+    /**
+     * Напишите функцию, которая принимает двоичную строку и возвращает эквивалентный декодированный текст
+     * (текст в кодировке ASCII).
+     * Каждые 8 ​​битов в двоичной строке представляют 1 символ в таблице ASCII.
+     * Входная строка всегда будет допустимой двоичной строкой.
+     * Символы могут быть в диапазоне от «00000000» до «11111111» (включительно)
+     * Примечание. В случае пустой двоичной строки ваша функция должна возвращать пустую строку.
+     */
+    public static String binaryToText(String binary) {
+        String abc = "";
+        if (binary.length() == 0) return abc;
+        StringBuilder res = new StringBuilder();
+        for (int startIndex = 0, endIndex = 8; endIndex <= binary.length(); startIndex += 8, endIndex += 8) {
+            abc = (String) binary.subSequence(startIndex, endIndex);
+            res.append((char) Integer.parseInt(abc, 2));
+        }
+        return res.toString();
     }
 }
