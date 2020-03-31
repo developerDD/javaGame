@@ -32,7 +32,8 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        AllStrings.parse("riiisdoso");
+        AllStrings.order("4of Fo1r pe6ople g3ood th5e the2");
+
     }
     //сумирование без +
     public static int add(int a, int b)	{

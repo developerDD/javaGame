@@ -1,6 +1,8 @@
 package com.CodeWars;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AllStrings {
 
@@ -431,4 +433,32 @@ public class AllStrings {
         }
         return res;
     }
+
+    /**
+     * Ваша задача - отсортировать заданную строку. Каждое слово в строке будет содержать одно число.
+     * Это число - позиция, которую слово должно занимать в результате.
+     * Примечание: числа могут быть от 1 до 9. Таким образом, 1 будет первым словом (не 0).
+     * Если входная строка пуста, вернуть пустую строку. Слова во входной строке будут содержать только действительные последовательные числа.
+     * "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+     * "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+     * ""  -->  ""
+     */
+    public static String order(String words) {
+        if (words.length()==0)return "";
+        String [] d = {"1","2","3","4","5","6","7","8","9"};
+        String pa;Pattern pattern;Matcher matcher;
+        int size = words.split("\\s").length;
+        String [] resalt = new String[size];
+        for (int i = 0; i < size; i++) {
+             pa   = "\\w*"+d[i]+"\\w*";
+             pattern = Pattern.compile(pa);
+             matcher = pattern.matcher(words);
+            while (matcher.find()) {
+                resalt[i]=(matcher.group());
+            }
+        }
+        return String.join(" ",resalt);
+    }
+
+
 }
