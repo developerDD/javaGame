@@ -33,6 +33,7 @@ public class HomeWorkForBook {
 //            System.out.printf(string.toString());
 //        }
         AllStrings.order("4of Fo1r pe6ople g3ood th5e the2");
+        
 
     }
     //сумирование без +
