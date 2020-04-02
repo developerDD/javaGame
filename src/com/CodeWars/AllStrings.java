@@ -395,9 +395,9 @@ public class AllStrings {
 
     /**
      * Напишите простой парсер, который будет анализировать и запускать Deadfish.
-     *
+     * <p>
      * У Deadfish есть 4 команды, каждая длиной 1 символ:
-     *
+     * <p>
      * iувеличивает значение (изначально 0)
      * d уменьшает значение
      * s возводит в квадрат значение
@@ -406,11 +406,11 @@ public class AllStrings {
      */
     public static int[] parse(String data) {
         List<Integer> arr = new ArrayList<>();
-        int [] res;
+        int[] res;
         char[] arrData = data.toCharArray();
-        int number =0;
+        int number = 0;
         for (int i = 0; i < arrData.length; i++) {
-            switch (arrData[i]){
+            switch (arrData[i]) {
                 case 'i':
                     number++;
                     break;
@@ -418,7 +418,7 @@ public class AllStrings {
                     number--;
                     break;
                 case 's':
-                    number=(int)Math.pow(number,2);
+                    number = (int) Math.pow(number, 2);
                     break;
                 case 'o':
                     arr.add(number);
@@ -427,9 +427,9 @@ public class AllStrings {
                     continue;
             }
         }
-        res= new int[arr.size()];
+        res = new int[arr.size()];
         for (int i = 0; i < res.length; i++) {
-            res[i]=arr.get(i);
+            res[i] = arr.get(i);
         }
         return res;
     }
@@ -444,21 +444,90 @@ public class AllStrings {
      * ""  -->  ""
      */
     public static String order(String words) {
-        if (words.length()==0)return "";
-        String [] d = {"1","2","3","4","5","6","7","8","9"};
-        String pa;Pattern pattern;Matcher matcher;
+        if (words.length() == 0) return "";
+        String[] d = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String pa;
+        Pattern pattern;
+        Matcher matcher;
         int size = words.split("\\s").length;
-        String [] resalt = new String[size];
+        String[] resalt = new String[size];
         for (int i = 0; i < size; i++) {
-             pa   = "\\w*"+d[i]+"\\w*";
-             pattern = Pattern.compile(pa);
-             matcher = pattern.matcher(words);
+            pa = "\\w*" + d[i] + "\\w*";
+            pattern = Pattern.compile(pa);
+            matcher = pattern.matcher(words);
             while (matcher.find()) {
-                resalt[i]=(matcher.group());
+                resalt[i] = (matcher.group());
             }
         }
-        return String.join(" ",resalt);
+        return String.join(" ", resalt);
     }
 
+    /**
+     * Для построения зашифрованной строки:
+     * возьмите каждый второй символ из строки, затем другие символы, которые не являются каждым вторым символом, и объедините их как новую строку.
+     * Сделайте это n раз!
+     * Примеры:
+     * "This is a test!", 1 -> "hsi  etTi sats!"
+     * "This is a test!", 2 -> "hsi  etTi sats!" -> "s eT ashi tist!"
+     *
+     * @param text входная строка для кодирования
+     * @param n    количество перестановок
+     * @return строку которую изменили
+     */
+    public static String encrypt(final String text, final int n) {
+        // Your code here
+        if (n < 1) return text;
+        StringBuilder strEven = new StringBuilder();
+        StringBuilder strNoEven = new StringBuilder();
+        String encryptStr = text;
+        for (int j = 0; j < n; j++) {
+            for (int i = 0; i < encryptStr.length(); i++) {
+                if (i % 2 == 0) {
+                    strEven.append(encryptStr.charAt(i));
+                } else {
+                    strNoEven.append(encryptStr.charAt(i));
+                }
+            }
+            if (j == n - 1) {
+                return encryptStr = strNoEven.toString() + strEven;
+            } else {
+                encryptStr = "";
+                encryptStr = strNoEven.toString() + strEven;
+                strEven = strEven.delete(0, strEven.length());
+                strNoEven = strNoEven.delete(0, strNoEven.length());
+            }
+        }
+        return null;
+    }
+
+    public static String decrypt(final String encryptedText, final int n) {
+        // Your code here
+        //что бы разшифровать запись
+        // нужно соеденить строку поочередно брать символы начиная со сридины  и с начала строки
+        if (n < 1) return encryptedText;
+        StringBuilder addStr = new StringBuilder();
+        String encryptStr = encryptedText;
+        int middleIndex=0;
+        middleIndex=(encryptedText.length()/2);
+        int fixIndex = middleIndex;
+        for (int j = 0; j < n; j++) {
+            for (int i = 0; i < encryptStr.length() / 2; i++, middleIndex++) {
+                addStr.append(encryptStr.charAt(middleIndex));
+                addStr.append(encryptStr.charAt(i));
+            }
+            if (encryptedText.length()%2!=0){
+                addStr.append(encryptStr.charAt(middleIndex));
+            }
+            if (j == n - 1) {
+                return encryptStr =  addStr.toString();
+            } else {
+                encryptStr = "";
+                encryptStr = addStr.toString();
+                addStr = addStr.delete(0, addStr.length());
+                middleIndex=fixIndex;
+            }
+        }
+        return null;
+    }
 
 }

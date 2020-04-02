@@ -32,8 +32,9 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        AllStrings.order("4of Fo1r pe6ople g3ood th5e the2");
-        
+        System.out.println(AllStrings.encrypt("This is a test!",1));
+        System.out.println(AllStrings.decrypt("s eT ashi tist!",2));
+
 
     }
     //сумирование без +
