@@ -507,27 +507,64 @@ public class AllStrings {
         if (n < 1) return encryptedText;
         StringBuilder addStr = new StringBuilder();
         String encryptStr = encryptedText;
-        int middleIndex=0;
-        middleIndex=(encryptedText.length()/2);
+        int middleIndex = 0;
+        middleIndex = (encryptedText.length() / 2);
         int fixIndex = middleIndex;
         for (int j = 0; j < n; j++) {
             for (int i = 0; i < encryptStr.length() / 2; i++, middleIndex++) {
                 addStr.append(encryptStr.charAt(middleIndex));
                 addStr.append(encryptStr.charAt(i));
             }
-            if (encryptedText.length()%2!=0){
+            if (encryptedText.length() % 2 != 0) {
                 addStr.append(encryptStr.charAt(middleIndex));
             }
             if (j == n - 1) {
-                return encryptStr =  addStr.toString();
+                return encryptStr = addStr.toString();
             } else {
                 encryptStr = "";
                 encryptStr = addStr.toString();
                 addStr = addStr.delete(0, addStr.length());
-                middleIndex=fixIndex;
+                middleIndex = fixIndex;
             }
         }
         return null;
+    }
+
+    /**
+     * На фабрике принтер печатает этикетки для коробок.
+     * Использованию принтера цвета , которые для простоты названы буквами от а до г
+     * Цвета, используемые принтером, записываются в управляющую строку.
+     * Например, управляющая строка будет aaabbbbhaijjjm означать, что принтер использовал три раза цвета
+     * a, четыре раза цвет b, один раз цвет h, затем один раз цвет a ... и так далее.
+     * Иногда возникают проблемы: отсутствие цветов, техническая неисправность
+     * и строка управления производится , например , uuaaaxbbbbyyhwawiwjjjwwxym где
+     * ошибки сообщается с буквами u, w, x или z.
+     *
+     * @param s входная строка с ошибками принтера (букв u, w, x или z  это ошибки)
+     * @return вернуть строку с ошибками и их количеством
+     */
+    public static String hist(String s) {
+        // your code
+        String[] colErrors = new String[4];
+        StringBuilder resultStr = new StringBuilder();
+        char[] arrErrors = {'u', 'w', 'x', 'z'};
+        String errors = s.replaceAll("[^uzxw]", "");
+        if (errors.length()==0)return errors;// если нет ошибок
+        for (int i = 0; i < colErrors.length; i++) {
+            colErrors[i] = errors.replaceAll("[^" + arrErrors[i] + "+]", "");
+            if (colErrors[i].length() != 0) {
+
+                char[] chars = new char[colErrors[i].length()];//количество *
+                char[] prob = new char[6 - Integer.toString(colErrors[i].length()).length()];//количество пробелов между числом и *
+                Arrays.fill(chars, '*');
+                Arrays.fill(prob, ' ');
+                resultStr.append(arrErrors[i]).append("  ").
+                        append(colErrors[i].length()).
+                        append(prob).
+                        append(chars).append('\r');
+            }
+        }
+          return resultStr.deleteCharAt(resultStr.length()-1).toString();
     }
 
 }

@@ -32,8 +32,7 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        System.out.println(AllStrings.encrypt("This is a test!",1));
-        System.out.println(AllStrings.decrypt("s eT ashi tist!",2));
+        AllStrings.hist("tpaemqdmqbqrjbeosjnejqordosnrgpgqkeihqybyymqeafkyicestgsbenvgibrlvmihcb");
 
 
     }
