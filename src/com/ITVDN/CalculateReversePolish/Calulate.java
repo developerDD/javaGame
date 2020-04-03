@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class Calulate {
+public class Calulate extends Exception {
     private String inputString;
     private String[] numberFromInput;
     private String[] operatorsFromInput;
@@ -19,21 +19,37 @@ public class Calulate {
         stackOperators =new Stack<>();
     }
 
-    public void calculate(){
-        parsInputStringtoArrays();
-        createPolishList();
-        showPolishList();
+    public void calculate() throws Calulate {
+
+        try {
+            parsInputStringtoArrays();
+            createPolishList();
+            showPolishList();
+        } catch (Calulate calulate) {
+            System.out.println("No correct input!!!");
+        }
+
     }
 
-    private void parsInputStringtoArrays(){
+    private void parsInputStringtoArrays() throws Calulate {
         numberFromInput = inputString.split("[\\+,\\-,\\*,\\/]");
         operatorsFromInput = inputString.split("\\d+");//перевый елемент массива пустой
         //формируем список из чисел и операторов
-        for (int i = 0; i < numberFromInput.length; i++) {
-            parsListFromInput.add(numberFromInput[i]);
-            if (i!=numberFromInput.length-1) {
-                parsListFromInput.add(operatorsFromInput[i + 1]);
+        if (numberFromInput.length-(operatorsFromInput.length-1)==1) {
+            for (int i = 0; i < numberFromInput.length; i++) {
+                try {
+                    Double.parseDouble(numberFromInput[i]);
+                    parsListFromInput.add(numberFromInput[i]);
+                    if (i!=numberFromInput.length-1) {
+                        parsListFromInput.add(operatorsFromInput[i + 1]);
+                    }
+                } catch (Exception e) {
+                    System.out.println(inputString+ " -> not only numbers!!!");
+                    throw new Calulate(inputString);
+                }
             }
+        }else {
+            throw new Calulate(inputString);
         }
     }
 
@@ -130,6 +146,9 @@ public class Calulate {
     }
 
     public void showPolishList(){
-        System.out.println(Arrays.toString(polishList.toArray()));
+
+        if (!polishList.isEmpty()) {
+            System.out.println(Arrays.toString(polishList.toArray()));
+        }
     }
 }
