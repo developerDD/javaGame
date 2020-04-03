@@ -1,5 +1,3 @@
-import com.CodeWars.AllStrings;
-
 /**
  * @author Dima Derevianko
  */
@@ -32,7 +30,7 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-        AllStrings.hist("tpaemqdmqbqrjbeosjnejqordosnrgpgqkeihqybyymqeafkyicestgsbenvgibrlvmihcb");
+
 
 
     }
