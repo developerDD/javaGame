@@ -2,9 +2,10 @@ package com.ITVDN.CalculateReversePolish;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.Stack;
 
-public class Calulate extends Exception {
+public class Calculate extends Exception {
     private String inputString;
     private double result;
     private String[] numberFromInput;
@@ -14,27 +15,30 @@ public class Calulate extends Exception {
     private Stack<String> stackOperators;
 
 
-    public Calulate(String inputString) {
+    public Calculate(String inputString) {
         this.inputString = inputString;
         parsListFromInput = new ArrayList<>();
         polishList = new ArrayList<>();
         stackOperators = new Stack<>();
     }
 
-    public void calculate() throws Calulate {
-
+    public void calculate() {
+        System.out.println("This calculator can perform the following operations: '*' '+' '/' '-' !\n" +
+                "You do not need to worry about ()\nEnter an arithmetic expression:");
+        Scanner scanner = new Scanner(System.in);
+        inputString = scanner.nextLine();
         try {
-            parsInputStringtoArrays();
+            parsInputStringToArrays();
             createPolishList();
             calculation();
             showPolishList();
-        } catch (Calulate calulate) {
+        } catch (Calculate calculated) {
             System.out.println("No correct input!!!");
         }
 
     }
 
-    private void parsInputStringtoArrays() throws Calulate {
+    private void parsInputStringToArrays() throws Calculate {
         numberFromInput = inputString.split("[\\+,\\-,\\*,\\/]");
         operatorsFromInput = inputString.split("\\d+");//перевый елемент массива пустой
         //формируем список из чисел и операторов
@@ -48,11 +52,11 @@ public class Calulate extends Exception {
                     }
                 } catch (Exception e) {
                     System.out.println(inputString + " -> not only numbers!!!");
-                    throw new Calulate(inputString);
+                    throw new Calculate(inputString);
                 }
             }
         } else {
-            throw new Calulate(inputString);
+            throw new Calculate(inputString);
         }
     }
 
@@ -183,7 +187,8 @@ public class Calulate extends Exception {
 
     public void showPolishList() {
         if (!polishList.isEmpty()) {
-            System.out.println(Arrays.toString(polishList.toArray()) + " result = "+ result);
+            System.out.println(inputString);
+            System.out.println("Reverse polish notation ->"+Arrays.toString(polishList.toArray()) + " result = "+ result);
         }
     }
 
