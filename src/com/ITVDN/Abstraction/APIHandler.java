@@ -27,16 +27,8 @@ public class APIHandler {
 //        }
             Distance distance = new Distance();
             distance.setDistance(100);
-          double Mile =  distance.convertFromKilometerToMile(distance.getDistance());
-          double Kilometer =  distance.convertFromMeterToKilometer(distance.getDistance());
-          double Centimeter =  distance.convertMillimeterToCentimeter(distance.getDistance());
-        System.out.println(distance.getDistance()+" km to mile -> "+Mile);
-        System.out.println("Centimeter = " + Centimeter);
-        System.out.println("Kilometer = " + Kilometer);
-        System.out.println(distance.convertUAHtoUSD(1000));
-        System.out.println(distance.convertUAHtoERO(1000));
-        System.out.println(distance.convertEROtoUAH(150));
-        System.out.println(distance.convertUSDtoUAH(175));
+            distance.print();
+
 
     }
 }
