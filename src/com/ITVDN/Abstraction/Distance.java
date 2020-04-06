@@ -1,14 +1,9 @@
 package com.ITVDN.Abstraction;
 
 public class Distance implements IConvert{
-    protected static   double distance;
+    public static   double distance;
 
-    public void setDistance(double distance) {
-        this.distance = distance;
-
-    }
-
-    public void print(){
+    public static void print(){
         System.out.println("distance = " + distance+" km to mile "+Distance.Convert.convertKilometerToMile()+"\n"+
                 "distance = " + distance+" meter to kilometer "+Distance.Convert.convertMeterToKilometer()+"\n"+
                 "distance = " + distance+" centimeter to meter "+Distance.Convert.convertSmToMeter()+"\n"+

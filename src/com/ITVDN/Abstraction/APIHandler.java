@@ -25,9 +25,8 @@ public class APIHandler {
 //            document.save();
 //            document.create();
 //        }
-            Distance distance = new Distance();
-            distance.setDistance(100);
-            distance.print();
+            Distance.distance = 2582;
+            Distance.print();
 
 
     }
