@@ -10,6 +10,6 @@ public class APINotepad {
         notepad.saveTaskToNotepad(09.04,"My third task!");
         notepad.saveTaskToNotepad(10.04,"My third task!");
 
-        notepad.readNotepad();
+        notepad.findRecordsByDate(10.04);
     }
 }

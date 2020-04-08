@@ -70,7 +70,7 @@ public class Notepad {
                 page.showTask();
                 return;
             }
-            System.out.println("No tasks this date!");
         }
+        System.out.println("No tasks this date!");
     }
 }
