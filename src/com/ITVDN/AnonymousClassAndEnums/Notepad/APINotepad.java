@@ -1,7 +1,5 @@
 package com.ITVDN.AnonymousClassAndEnums.Notepad;
 
-import com.ITVDN.AnonymousClassAndEnums.Payment.Payment;
-
 public class APINotepad {
     public static void main(String[] args) {
 //        Notepad notepad = new Notepad();
@@ -14,8 +12,5 @@ public class APINotepad {
 //
 //        notepad.findRecordsByDate(10.04);
 
-        Payment payment = new Payment();
-        payment.toMarket("Rise","Banana","Orange","f");
-        payment.showBasket();
     }
 }
