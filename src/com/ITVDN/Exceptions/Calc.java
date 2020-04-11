@@ -44,7 +44,9 @@ public class Calc {
                     isOk=true;
                 } catch (Exception e) {
                     //System.out.println("/ by zero!!!");
-                    e.printStackTrace();
+                    //получение информации об исключении
+                    System.out.println(e.getMessage());// конкретное какое
+                    System.out.println(e.getClass().getName());// тип исключениея
                 }
                 break;
             default:
