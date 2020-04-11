@@ -16,8 +16,7 @@ public class Calculate extends Exception {
     private Stack<String> stackOperators;
 
 
-    public Calculate(String inputString) {
-        this.inputString = inputString;
+    public Calculate() {
         parsListFromInput = new ArrayList<>();
         polishList = new ArrayList<>();
         stackOperators = new Stack<>();
@@ -166,7 +165,7 @@ public class Calculate extends Exception {
                 case "/":
                     b = Double.parseDouble(stackOperators.pop());
                     a = Double.parseDouble(stackOperators.pop());
-                    stackOperators.push(a / b + "");
+                    stackOperators.push(a/b + "");
                     break;
                 case "+":
                     b = Double.parseDouble(stackOperators.pop());
