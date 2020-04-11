@@ -10,24 +10,19 @@ public class Calc {
     private String operator;
     boolean isOk;
 
-    public Calc(){
+    public Calc() {
 
     }
 
-    public Calc(int a, int b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    private void inputData(){
+    private void inputData() {
         Scanner sc = new Scanner(System.in);
         try {
             System.out.print("Введите первый опереанд: ");
-            a=sc.nextInt();
+            a = sc.nextInt();
             System.out.print("Введите второй опереанд: ");
-            b=sc.nextInt();
+            b = sc.nextInt();
             System.out.print("Введите + - * / : ");
-            operator=sc.next();
+            operator = sc.next();
         } catch (InputMismatchException e) {
             System.out.println("Введено не число!");
         }
@@ -38,23 +33,23 @@ public class Calc {
             switch (operator) {
                 case "+":
                     result = a + b;
-                    isOk=true;
+                    isOk = true;
                     break;
                 case "-":
-                    result = a-b;
-                    isOk=true;
+                    result = a - b;
+                    isOk = true;
                     break;
                 case "*":
                     result = a * b;
-                    isOk=true;
+                    isOk = true;
                     break;
                 case "/":
                     //1
                     // if (b==0)  throw new ArithmeticException();
                     //2
                     try {
-                        result = a/b;
-                        isOk=true;
+                        result = a / b;
+                        isOk = true;
                     } catch (Exception e) {
                         //System.out.println("/ by zero!!!");
                         //получение информации об исключении
@@ -69,11 +64,11 @@ public class Calc {
         }
     }
 
-    public void Action(){
+    public void Action() {
         inputData();
         OperationCalc();
-        if (isOk){
-            System.out.println(a+operator+b+" = " + result);
+        if (isOk) {
+            System.out.println(a + operator + b + " = " + result);
         }
     }
 }
