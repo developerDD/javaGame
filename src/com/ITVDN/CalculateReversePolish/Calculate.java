@@ -1,5 +1,6 @@
 package com.ITVDN.CalculateReversePolish;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -25,20 +26,21 @@ public class Calculate extends Exception {
     public void calculate() {
         System.out.println("This calculator can perform the following operations: '*' '+' '/' '-' !\n" +
                 "You do not need to worry about ()\nEnter an arithmetic expression:");
+        try {
         Scanner scanner = new Scanner(System.in);
         inputString = scanner.nextLine();
-        try {
+
             parsInputStringToArrays();
             createPolishList();
             calculation();
             showPolishList();
-        } catch (Calculate calculated) {
+        } catch (IOException calculated) {
             System.out.println("No correct input!!!");
         }
 
     }
 
-    private void parsInputStringToArrays() throws Calculate {
+    private void parsInputStringToArrays() throws IOException {
         numberFromInput = inputString.split("[\\+,\\-,\\*,\\/]");
         operatorsFromInput = inputString.split("\\d+");//перевый елемент массива пустой
         //формируем список из чисел и операторов
@@ -51,12 +53,11 @@ public class Calculate extends Exception {
                         parsListFromInput.add(operatorsFromInput[i + 1]);
                     }
                 } catch (Exception e) {
-                    System.out.println(inputString + " -> not only numbers!!!");
-                    throw new Calculate(inputString);
+                    throw new IOException(inputString);
                 }
             }
         } else {
-            throw new Calculate(inputString);
+            throw new IOException(inputString);
         }
     }
 
