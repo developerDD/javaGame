@@ -1,3 +1,5 @@
+import com.CodeWars.DifferenceOf2InArray;
+
 /**
  * @author Dima Derevianko
  */
@@ -30,7 +32,12 @@ public class HomeWorkForBook {
 //        for (var string :newList){
 //            System.out.printf(string.toString());
 //        }
-
+//        int [] a = {1,2,3,4,9};
+//        int f = 9;
+//        boolean b = IntStream.of(a).anyMatch(x->x==f);
+//        System.out.println(b);
+//        System.out.println(Arrays.binarySearch(a,9));
+        DifferenceOf2InArray.twosDifference(new int[]{4, 3, 1, 5, 6});
 
     }
     //сумирование без +
