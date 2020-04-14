@@ -1,4 +1,4 @@
-import com.CodeWars.DifferenceOf2InArray;
+import com.CodeWars.NumberZooPatrol;
 
 /**
  * @author Dima Derevianko
@@ -37,8 +37,7 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-        DifferenceOf2InArray.twosDifference(new int[]{4, 3, 1, 5, 6});
-
+        NumberZooPatrol.findMissingNumber(new int[]{13, 11, 10, 3, 2, 1, 4, 5, 6, 9, 7, 8});
     }
     //сумирование без +
     public static int add(int a, int b)	{
