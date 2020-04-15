@@ -1,4 +1,4 @@
-import com.CodeWars.AllStrings;
+import com.CodeWars.BasicCalculator;
 
 /**
  * @author Dima Derevianko
@@ -38,8 +38,7 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-        AllStrings.Node node  = new AllStrings().new Node(1,new AllStrings().new Node(2,new AllStrings().new Node(3)));
-        AllStrings.stringify(node);
+         System.out.println(BasicCalculator.calculate(-4,"-",-4));
     }
     //сумирование без +
     public static int add(int a, int b)	{
