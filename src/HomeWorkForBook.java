@@ -1,8 +1,9 @@
-import com.CodeWars.NumberZooPatrol;
+import com.CodeWars.AllStrings;
 
 /**
  * @author Dima Derevianko
  */
+
 public class HomeWorkForBook {
     public static void main(String[] args) {
         //int k = 2;
@@ -37,7 +38,8 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-        NumberZooPatrol.findMissingNumber(new int[]{13, 11, 10, 3, 2, 1, 4, 5, 6, 9, 7, 8});
+        AllStrings.Node node  = new AllStrings().new Node(1,new AllStrings().new Node(2,new AllStrings().new Node(3)));
+        AllStrings.stringify(node);
     }
     //сумирование без +
     public static int add(int a, int b)	{

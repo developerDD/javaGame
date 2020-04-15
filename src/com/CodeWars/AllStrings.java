@@ -1,10 +1,13 @@
 package com.CodeWars;
 
+
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AllStrings {
+    public AllStrings() {
+    }
 
     public static String RemoveFirstAndLastCharacter(String str) {
         return str.substring(1, str.length() - 1);
@@ -567,4 +570,44 @@ public class AllStrings {
           return resultStr.deleteCharAt(resultStr.length()-1).toString();
     }
 
+    /**
+     * Перевести линкед лис в строковое представление
+     * @param list линкед лист
+     * @return строку в виде "1 -> 2 -> 3 -> null"
+     */
+    public static String stringify(Node list) {
+        // Your code here.
+        if(list==null) return "null";
+        StringBuilder resultStr = new StringBuilder();
+        while (list.getNext()!=null){
+            resultStr.append(list.getData()).append(" -> ");
+            list = list.getNext();
+        }
+        resultStr.append(list.getData()).append(" -> ").append("null");
+        return resultStr.toString();
+    }
+    public class Node {
+        private int data;
+        private Node next;
+
+        public Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+
+        public int getData() {
+            return data;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+    }
 }
+
+
