@@ -1,4 +1,7 @@
-import com.CodeWars.BasicCalculator;
+import com.CodeWars.MyLanguagesMAP;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Dima Derevianko
@@ -38,7 +41,11 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-         System.out.println(BasicCalculator.calculate(-4,"-",-4));
+        Map<String, Integer> map2 = new HashMap<>();
+        map2.put("Hindi", 60);
+        map2.put("Dutch", 93);
+        map2.put("Greek", 71);
+        MyLanguagesMAP.myLanguages(map2);
     }
     //сумирование без +
     public static int add(int a, int b)	{
