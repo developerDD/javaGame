@@ -45,6 +45,7 @@ public class HomeWorkForBook {
         map2.put("Hindi", 60);
         map2.put("Dutch", 93);
         map2.put("Greek", 71);
+        map2.put("GDDDD", 71);
         MyLanguagesMAP.myLanguages(map2);
     }
     //сумирование без +

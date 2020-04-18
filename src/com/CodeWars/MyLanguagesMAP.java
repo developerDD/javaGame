@@ -4,25 +4,21 @@ import java.util.*;
 
 public class MyLanguagesMAP {
     public static List<String> myLanguages(final Map<String, Integer> results) {
-        TreeMap treeMap = new TreeMap();
         Object[] key = results.keySet().toArray();
         Object[] value = results.values().toArray();
-        List<String> languages = new ArrayList<>();
+        String [] languages = new String[results.size()];
         for (int i = key.length-1; i >=0; i--) {
-            treeMap.put(value[i], key[i]);
+            languages[i]=(value[i]+" "+ key[i]);
         }
-
-        key = treeMap.keySet().toArray();
-        System.out.println(Arrays.toString(key));
-        value=treeMap.values().toArray();
-        System.out.println(Arrays.toString(value));
-
-        for (int i = key.length-1; i >=0 ; i--) {
-            if ((int)key[i]>=60){
-                languages.add((String) value[i]);
+        Arrays.sort(languages);
+        String [] temp = new  String[2];
+        List<String > res = new ArrayList<>();
+        for (int i = languages.length-1; i >=0; i--) {
+            temp=languages[i].split(" ");
+            if (Integer.parseInt(temp[0]) >=60){
+                res.add(temp[1]);
             }
         }
-
-        return languages;
+        return res;
     }
 }
