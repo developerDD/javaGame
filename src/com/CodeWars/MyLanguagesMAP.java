@@ -4,6 +4,7 @@ import java.util.*;
 
 public class MyLanguagesMAP {
     public static List<String> myLanguages(final Map<String, Integer> results) {
+        //решение без знаий про колекции
         Object[] key = results.keySet().toArray();
         Object[] value = results.values().toArray();
         String [] languages = new String[results.size()];
@@ -21,4 +22,12 @@ public class MyLanguagesMAP {
         }
         return res;
     }
+    /** java 8
+     * return results.entrySet()
+     *                   .stream()
+     *                   .filter( me -> me.getValue() >= 60 )
+     *                   .sorted( (m1,m2) -> Integer.compare(m2.getValue(),m1.getValue()) )
+     *                   .map( me -> me.getKey() )
+     *                   .collect(Collectors.toList());
+     */
 }
