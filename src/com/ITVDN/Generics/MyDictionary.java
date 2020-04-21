@@ -29,6 +29,16 @@ public class MyDictionary<TKey, TValue> {
         }
     }
 
+    public void sortByValue(){
+        Object[] arr = table.toArray();
+        Arrays.sort(arr, new ComparatorByValue());
+        table.clear();
+        for (int i = 0; i < arr.length; i++) {
+            table.add((Pair<TKey, TValue>) arr[i]);
+        }
+    }
+
+
     public void showDictionary() {
         for (Pair<TKey, TValue> pair : table) {
             System.out.println(pair);
@@ -100,6 +110,14 @@ public class MyDictionary<TKey, TValue> {
     }
 }
 
+class ComparatorByValue implements Comparator{
+    @Override
+    public int compare(Object o, Object t1) {
+        return (int)((MyDictionary.Pair) o).value-(int) ((MyDictionary.Pair) t1).value;
+    }
+}
+
+
 class Main {
     public static void main(String[] args) {
         MyDictionary<String, Integer> s = new MyDictionary<>();
@@ -107,7 +125,7 @@ class Main {
         s.add("Aima", 15);
         s.add("Dima", 11);
         s.add("Zima", 11);
-        s.sortByKey();
+        s.sortByValue();
         s.showDictionary();
 
     }
