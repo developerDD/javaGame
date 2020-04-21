@@ -25,6 +25,18 @@ public class MyDictionary<TKey, TValue> {
         return table.toArray();
     }
 
+    public TValue getValue(int index){
+        if (index>=table.size())return null;
+      MyDictionary.Pair p =  table.get(index);
+      return (TValue) p.getValue();
+    }
+
+    public TValue getKey(int index){
+        if (index>=table.size())return null;
+        MyDictionary.Pair p =  table.get(index);
+        return (TValue) p.getKey();
+    }
+
     public void sortByKey() {
 //        Object[] arr = table.toArray();
 //        Arrays.sort(arr);
@@ -133,7 +145,6 @@ class ComparatorByKey implements Comparator {
     }
 }
 
-
 class Main {
     public static void main(String[] args) {
         MyDictionary<String, Integer> dictionary = new MyDictionary<>();
@@ -141,10 +152,7 @@ class Main {
         dictionary.add("Aefr", 14);
         dictionary.add("Cdcd", 17);
         dictionary.add("Zcec", 1);
-        dictionary.showDictionary();
-        dictionary.sortByKey();
-        dictionary.showDictionary();
-
-//        System.out.println("A".hashCode()+" "+"B".hashCode()+" "+"Aa".hashCode()+" "+"Bb".hashCode()+" ");
+        System.out.println(dictionary.getKey(2));
+        System.out.println(dictionary.getValue(2));
     }
 }
