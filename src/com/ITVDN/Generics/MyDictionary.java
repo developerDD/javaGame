@@ -12,6 +12,11 @@ public class MyDictionary<TKey, TValue> {
         this.table = new ArrayList<>(DEFAULT_INITIAL_CAPACITY);
     }
 
+    public MyDictionary(Map<TKey, TValue> map) {
+        int size = map.size();
+        table.addAll((Collection<? extends Pair<TKey, TValue>>) map);
+    }
+
     public void add(TKey k, TValue v) {
         table.add(new Pair<>(k, v));
     }
@@ -20,24 +25,25 @@ public class MyDictionary<TKey, TValue> {
         return table.toArray();
     }
 
-    public void sortByKey(){
-        Object[] arr = table.toArray();
-        Arrays.sort(arr);
-        table.clear();
-        for (int i = 0; i < arr.length; i++) {
-            table.add((Pair<TKey, TValue>) arr[i]);
-        }
+    public void sortByKey() {
+//        Object[] arr = table.toArray();
+//        Arrays.sort(arr);
+//        table.clear();
+//        for (int i = 0; i < arr.length; i++) {
+//            table.add((Pair<TKey, TValue>) arr[i]);
+//        }
+        Collections.sort(table, new ComparatorByKey());
     }
 
-    public void sortByValue(){
-        Object[] arr = table.toArray();
-        Arrays.sort(arr, new ComparatorByValue());
-        table.clear();
-        for (int i = 0; i < arr.length; i++) {
-            table.add((Pair<TKey, TValue>) arr[i]);
-        }
+    public void sortByValue() {
+//        Object[] arr = table.toArray();
+//        Arrays.sort(arr, new ComparatorByValue());
+//        table.clear();
+//        for (int i = 0; i < arr.length; i++) {
+//            table.add((Pair<TKey, TValue>) arr[i]);
+//        }
+        Collections.sort(table, new ComparatorByValue());
     }
-
 
     public void showDictionary() {
         for (Pair<TKey, TValue> pair : table) {
@@ -70,9 +76,10 @@ public class MyDictionary<TKey, TValue> {
             this.value = (V) o;
             return oldValue;
         }
+
         @Override
         public int hashCode() {
-            return 31*1+(key.hashCode()+value.hashCode());
+            return 31 * 1 + (key.hashCode() + value.hashCode());
         }
 
         @Override
@@ -92,7 +99,7 @@ public class MyDictionary<TKey, TValue> {
 
         @Override
         public String toString() {
-            return key + " " + value+" "+hashCode();
+            return key + " " + value + " " + hashCode();
         }
 
         @Override
@@ -110,23 +117,34 @@ public class MyDictionary<TKey, TValue> {
     }
 }
 
-class ComparatorByValue implements Comparator{
+class ComparatorByValue implements Comparator {
     @Override
     public int compare(Object o, Object t1) {
-        return (int)((MyDictionary.Pair) o).value-(int) ((MyDictionary.Pair) t1).value;
+        return (int) ((MyDictionary.Pair) o).value - (int) ((MyDictionary.Pair) t1).value;
+    }
+}
+
+class ComparatorByKey implements Comparator {
+    @Override
+    public int compare(Object o, Object t1) {
+        String s =(String) ((MyDictionary.Pair) o).key;
+        String s1 =(String) ((MyDictionary.Pair) t1).key;
+        return s.compareTo(s1);
     }
 }
 
 
 class Main {
     public static void main(String[] args) {
-        MyDictionary<String, Integer> s = new MyDictionary<>();
-        s.add("Dima", 16);
-        s.add("Aima", 15);
-        s.add("Dima", 11);
-        s.add("Zima", 11);
-        s.sortByValue();
-        s.showDictionary();
+        MyDictionary<String, Integer> dictionary = new MyDictionary<>();
+        dictionary.add("Dfe", 12);
+        dictionary.add("Aefr", 14);
+        dictionary.add("Cdcd", 17);
+        dictionary.add("Zcec", 1);
+        dictionary.showDictionary();
+        dictionary.sortByKey();
+        dictionary.showDictionary();
 
+//        System.out.println("A".hashCode()+" "+"B".hashCode()+" "+"Aa".hashCode()+" "+"Bb".hashCode()+" ");
     }
 }
