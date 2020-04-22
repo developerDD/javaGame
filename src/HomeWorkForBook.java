@@ -1,5 +1,3 @@
-import com.ITVDN.Generics.MyList;
-
 /**
  * @author Dima Derevianko
  */
@@ -38,14 +36,7 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-        MyList<String> list = new MyList<>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
-        System.out.println(list.get(0));
-        System.out.println(list.getSize());
-        System.out.println(MyList.getCapacity());
-        list.show();
+      
     }
     //сумирование без +
     public static int add(int a, int b)	{
