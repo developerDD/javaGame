@@ -3,6 +3,9 @@ package com.ITVDN.IteratorComparator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class SportCar extends Car implements Comparable<SportCar>{
    private Float speed;
@@ -99,8 +102,12 @@ class Main{
         SportCar s3=s2;
         SportCar[] car = {s,s1,s2,s3};
         Arrays.sort(car);
-        for (SportCar sportCar : car) {
-            System.out.println("sportCar = " + sportCar.hashCode());
+        Iterator<SportCar> iterator =  List.of(car).iterator();
+        ListIterator<SportCar> listIterator = List.of(car).listIterator();
+
+        while (listIterator.hasNext()){
+            SportCar temp = listIterator.next();
+            System.out.println(temp);
         }
 
     }
