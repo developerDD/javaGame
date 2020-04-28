@@ -1,7 +1,7 @@
 package com.ITVDN.IteratorComparator;
 
 public abstract class Car {
-    // создать класс для компаратара и сомпереТО + посвторить наследование икверс хешКод
+    // создать класс для компаратара и сомпереТО + повторить наследование иквелс хешКод
     private long numberBody;
     private String owner;
     private String model;

@@ -44,12 +44,23 @@ public class SportCar extends Car implements Comparable<SportCar>{
     public int hashCode() {
         int result=1;
         final int index = 31;
-        return super.hashCode();
+        result+=index*(speed.hashCode()+price.hashCode()+super.hashCode());
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (obj == this) {
+            return true;
+        }else {
+            if (obj instanceof SportCar){
+                SportCar e = (SportCar) obj;
+                if (super.equals(e)&&price==e.price&&speed==e.speed){
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     @Override
@@ -85,10 +96,12 @@ class Main{
         SportCar s = new SportCar(123,"DD","S","red","f",236,2354.4);
         SportCar s1 = new SportCar(1233,"DDF","S","red","f",235,2354.5);
         SportCar s2 = new SportCar(1234,"DDC","S","red","f",235,2354.4);
-        SportCar[] car = {s,s1,s2};
+        SportCar s3=s2;
+        SportCar[] car = {s,s1,s2,s3};
         Arrays.sort(car);
         for (SportCar sportCar : car) {
-            System.out.println("sportCar = " + sportCar);
+            System.out.println("sportCar = " + sportCar.hashCode());
         }
+
     }
 }
