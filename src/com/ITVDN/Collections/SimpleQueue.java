@@ -22,7 +22,10 @@ public class SimpleQueue<T> {
     }
 
     public boolean offer(T element){
-        if (countElements<capacity&&element!=null){
+        if(rear==capacity-1){
+            rear =-1;
+        }
+        if (element!=null&&countElements<capacity){
             arr[++rear]= element;
             countElements++;
             return true;
@@ -32,7 +35,10 @@ public class SimpleQueue<T> {
     }
 
     public T poll(){
-        if (countElements!=0&&front<capacity){
+        if (countElements!=0){
+            if (front==capacity){
+                front=0;
+            }
             countElements--;
             return (T) arr[front++];
         }
@@ -54,13 +60,13 @@ public class SimpleQueue<T> {
 
 class MainQueue{
     public static void main(String[] args) {
-        SimpleQueue<Integer> simpleQueue = new SimpleQueue<>(4);
+        SimpleQueue<Integer> simpleQueue = new SimpleQueue<>(2);
         System.out.println(simpleQueue.offer(1));
         System.out.println(simpleQueue.offer(2));
+
+        System.out.println(simpleQueue.poll());
         System.out.println(simpleQueue.offer(3));
-        System.out.println(simpleQueue.offer(4));
-        simpleQueue.poll();
-        simpleQueue.poll();
+
         while (!simpleQueue.isEmpty()) {
             System.out.println(simpleQueue.poll());
         }
