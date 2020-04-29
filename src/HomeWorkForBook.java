@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 /**
  * @author Dima Derevianko
  */
@@ -36,7 +38,17 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-      
+        LinkedList<String> list =new LinkedList<>();
+        list.add("A");
+//        list.add("B");
+//        list.add("C");
+//        list.add("D");
+//        list.addFirst("1");
+//        list.addLast("2");
+        System.out.println(list.removeFirst());
+        System.out.println(list.removeLastOccurrence("A"));
+
+
     }
     //сумирование без +
     public static int add(int a, int b)	{

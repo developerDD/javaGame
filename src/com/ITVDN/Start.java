@@ -1,5 +1,7 @@
 package com.ITVDN;
 
+import java.util.ArrayDeque;
+
 public class Start {
     public static void main(String[] args) {
 //        Sedan bmw = new Sedan();
@@ -9,9 +11,16 @@ public class Start {
 //        Sedan bmwClon = (Sedan) bmw2.clone();
 //        System.out.println(bmw2.compareTo(bmw));
 
+        ArrayDeque<Integer> integers = new ArrayDeque<>();
+        integers.add(1);
+        integers.addFirst(2);
+        integers.addLast(3);
+        integers.add(10);
 
-
-
-
+        // опеределить за какое время выполняеться метод
+//        date1 = new Date();
+//
+//        date2 = new Date();
+//        result = date2.getTime()-date1.getTime();
     }
 }
