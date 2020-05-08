@@ -66,6 +66,5 @@ class MainStack{
         stack.push(12);
         System.out.println(stack.peek());
         System.out.println(stack.pop());
-
     }
 }

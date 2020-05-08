@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.TreeSet;
 
 /**
  * @author Dima Derevianko
@@ -38,16 +38,12 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-        LinkedList<String> list =new LinkedList<>();
-        list.add("A");
-//        list.add("B");
-//        list.add("C");
-//        list.add("D");
-//        list.addFirst("1");
-//        list.addLast("2");
-        System.out.println(list.removeFirst());
-        System.out.println(list.removeLastOccurrence("A"));
-
+        TreeSet<Integer>   integers = new TreeSet<>();
+        integers.add(1);
+        integers.add(38);
+        integers.add(5);
+        integers.add(11);
+        System.out.println(integers.ceiling(6));
 
     }
     //сумирование без +
