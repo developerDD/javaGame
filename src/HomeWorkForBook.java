@@ -1,4 +1,4 @@
-import java.util.TreeSet;
+import com.CodeWars.SumOfNumbers;
 
 /**
  * @author Dima Derevianko
@@ -38,12 +38,8 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-        TreeSet<Integer>   integers = new TreeSet<>();
-        integers.add(1);
-        integers.add(38);
-        integers.add(5);
-        integers.add(11);
-        System.out.println(integers.ceiling(6));
+
+        System.out.println(SumOfNumbers.GetSum(0, -1));
 
     }
     //сумирование без +
