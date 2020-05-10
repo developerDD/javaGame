@@ -6,20 +6,27 @@ package com.ITVDN.Collections;
  * Класс должен быть финализирован, и поля дожны быть константны.
  * Не должно быть методов для изменения обэкта (setров) только getры.
  */
-public final class SimpleImmutableClass {
-    private final int id;
-    private final String name;
+public final class SimpleImmutableClass <K,T> {
+    private final K id;
+    private final T name;
 
-    public SimpleImmutableClass(int id, String name) {
+    public SimpleImmutableClass(K id, T name) {
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public K getId() {
         return id;
     }
 
-    public String getName() {
+    public T getName() {
         return name;
+    }
+}
+
+class Main{
+    public static void main(String[] args) {
+        SimpleImmutableClass<Integer,String> id = new SimpleImmutableClass<>(1,"D");
+        System.out.println(id.getId()+" "+id.getName());
     }
 }
