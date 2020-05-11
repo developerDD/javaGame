@@ -24,9 +24,3 @@ public final class SimpleImmutableClass <K,T> {
     }
 }
 
-class Main{
-    public static void main(String[] args) {
-        SimpleImmutableClass<Integer,String> id = new SimpleImmutableClass<>(1,"D");
-        System.out.println(id.getId()+" "+id.getName());
-    }
-}
