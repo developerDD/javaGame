@@ -34,36 +34,40 @@ public class AllStrings {
         StringBuilder decodeString = new StringBuilder();
         int number = Integer.parseInt(num);
         int indexInput;
-        int indexOutput;
+        int indexOutput=-1;
+        int indexCode;
         int flag=0;
         while (flag!=words.length()){
             indexInput = abc.indexOf(words.charAt(flag));
-            indexOutput = number/indexInput%26;
-//            if (indexOutput==indexInput){
-//                return "Impossible to decode";
-//            }
+
+            for (int i = 0; i < 25; i++) {
+                indexCode=i*number%26;
+                if (indexCode==indexInput){
+                    indexOutput=i;
+                    break;
+                }
+            }
+//
             decodeString.append(abc.charAt(indexOutput));
             flag++;
         }
         return decodeString.toString();
     }
-
+    // кодирование строки
     public static String code(String s, int num){
         String abc = "abcdefghijklmnopqrstuvwxyz";
         int indexInput;
         int indexOutput;
         int flag=0;
-        StringBuilder decodeString = new StringBuilder();
-
+        StringBuilder codeStr = new StringBuilder();
+        codeStr.append(num);
         while (flag!=s.length()){
             indexInput = abc.indexOf(s.charAt(flag));
             indexOutput = num*indexInput%26;
-            decodeString.append(abc.charAt(indexOutput));
+            codeStr.append(abc.charAt(indexOutput));
                 flag++;
         }
-
-
-        return null;
+        return codeStr.toString();
     }
 
     /**

@@ -40,7 +40,7 @@ public class HomeWorkForBook {
 //        System.out.println(Arrays.binarySearch(a,9));
 
         System.out.println(AllStrings.decode("6015ekx"));
-        System.out.println(AllStrings.code("rrsxppowmjsrclfljrajtybwviqb",1877138));
+        System.out.println(AllStrings.code("rrsxppowmjsrclfljrajtybwviqb",1122305));
     }
     //сумирование без +
     public static int add(int a, int b)	{
