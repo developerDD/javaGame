@@ -1,3 +1,5 @@
+import com.CodeWars.AllStrings;
+
 /**
  * @author Dima Derevianko
  */
@@ -37,9 +39,7 @@ public class HomeWorkForBook {
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
 
-        Integer d1 = null;
-       int d = d1;
-        System.out.println("d1 = " + d);
+        System.out.println(AllStrings.greet("dima"));
     }
     //сумирование без +
     public static int add(int a, int b)	{

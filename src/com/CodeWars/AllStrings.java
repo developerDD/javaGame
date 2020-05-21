@@ -14,10 +14,9 @@ public class AllStrings {
      * "JACK"  --> "Hello Jack!"
      */
     public static String greet(String name){
-        String all =name.toLowerCase().substring(1,name.length());
-
-
-        return "Hello "+name.toUpperCase()+"!";
+        String allWithOutFirst =name.toLowerCase().substring(1,name.length());
+        String first = name.toUpperCase().substring(0,1);
+        return "Hello "+first+allWithOutFirst+"!";
     }
 
     public AllStrings() {
