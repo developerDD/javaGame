@@ -40,18 +40,18 @@ public class AllStrings {
         while (flag!=words.length()){
             indexInput = abc.indexOf(words.charAt(flag));
 
-            for (int i = 0; i < 25; i++) {
+            for (int i = 0; i < 26; i++) {
                 indexCode=i*number%26;
                 if (indexCode==indexInput){
                     indexOutput=i;
                     break;
                 }
             }
-//
             decodeString.append(abc.charAt(indexOutput));
             flag++;
         }
-        return decodeString.toString();
+        String s = (code(decodeString.toString(),number));
+       return s==r?decodeString.toString():"Impossible to decode";
     }
     // кодирование строки
     public static String code(String s, int num){
