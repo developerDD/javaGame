@@ -6,6 +6,20 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AllStrings {
+    /**
+     * Напишите метод, который принимает один аргумент в качестве имени,
+     * а затем встречает это имя с большой буквы и заканчивается восклицательным знаком.
+     * Пример:
+     * "riley" --> "Hello Riley!"
+     * "JACK"  --> "Hello Jack!"
+     */
+    public static String greet(String name){
+        String all =name.toLowerCase().substring(1,name.length());
+
+
+        return "Hello "+name.toUpperCase()+"!";
+    }
+
     public AllStrings() {
     }
 
