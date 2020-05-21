@@ -39,7 +39,8 @@ public class HomeWorkForBook {
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
 
-        System.out.println(AllStrings.greet("dima"));
+        System.out.println(AllStrings.decode("6015ekx"));
+        System.out.println(AllStrings.code("rrsxppowmjsrclfljrajtybwviqb",1877138));
     }
     //сумирование без +
     public static int add(int a, int b)	{

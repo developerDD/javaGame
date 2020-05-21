@@ -7,6 +7,66 @@ import java.util.regex.Pattern;
 
 public class AllStrings {
     /**
+     * Предположим, мы знаем процесс, с помощью которого строка s была закодирована в строку r(см. Пояснение ниже).
+     * Целью ката является декодирование этой строки, r чтобы получить исходную строку s.
+     *
+     * Объяснение процесса кодирования:
+     * input: строка, s состоящая из строчных букв от "a" до "z" и положительного целого числа num
+     * мы знаем, что есть соответствие между abcde...uvwxyz и 0, 1, 2 ..., 23, 24, 25:0 <-> a, 1 <-> b ...
+     * Если c это символ s, соответствующий номер которого x, примените к x функции f: x-> f(x) = num * x % 26, а затем найдите ch соответствующий
+     * символ f(x)
+     * Накопить все это chв строку r
+     * объединить num и r вернуть результат
+     * Например:
+     * encode("mer", 6015)  -->  "6015ekx"
+     * m --> 12,   12 * 6015 % 26 = 4,    4  --> e
+     * e --> 4,     4 * 6015 % 26 = 10,   10 --> k
+     * r --> 17,   17 * 6015 % 26 = 23,   23 --> x
+     *
+     * So we get "ekx", hence the output is "6015ekx"
+     * @param r закодированая в строка
+     * @return декодирование этой строки, r чтобы получить исходную строку s
+     */
+    public static String decode(String r) {
+        String abc = "abcdefghijklmnopqrstuvwxyz";
+        String num = r.replaceAll("\\D","");
+        String words = r.replaceAll("\\d","");
+        StringBuilder decodeString = new StringBuilder();
+        int number = Integer.parseInt(num);
+        int indexInput;
+        int indexOutput;
+        int flag=0;
+        while (flag!=words.length()){
+            indexInput = abc.indexOf(words.charAt(flag));
+            indexOutput = number/indexInput%26;
+//            if (indexOutput==indexInput){
+//                return "Impossible to decode";
+//            }
+            decodeString.append(abc.charAt(indexOutput));
+            flag++;
+        }
+        return decodeString.toString();
+    }
+
+    public static String code(String s, int num){
+        String abc = "abcdefghijklmnopqrstuvwxyz";
+        int indexInput;
+        int indexOutput;
+        int flag=0;
+        StringBuilder decodeString = new StringBuilder();
+
+        while (flag!=s.length()){
+            indexInput = abc.indexOf(s.charAt(flag));
+            indexOutput = num*indexInput%26;
+            decodeString.append(abc.charAt(indexOutput));
+                flag++;
+        }
+
+
+        return null;
+    }
+
+    /**
      * Напишите метод, который принимает один аргумент в качестве имени,
      * а затем встречает это имя с большой буквы и заканчивается восклицательным знаком.
      * Пример:
