@@ -1,5 +1,3 @@
-import com.CodeWars.AllStrings;
-
 /**
  * @author Dima Derevianko
  */
@@ -39,8 +37,6 @@ public class HomeWorkForBook {
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
 
-        System.out.println(AllStrings.decode("5057abcdefghijk"));
-        System.out.println(AllStrings.code("abb",5057));
     }
     //сумирование без +
     public static int add(int a, int b)	{

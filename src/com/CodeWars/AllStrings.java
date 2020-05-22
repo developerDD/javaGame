@@ -9,7 +9,7 @@ public class AllStrings {
     /**
      * Предположим, мы знаем процесс, с помощью которого строка s была закодирована в строку r(см. Пояснение ниже).
      * Целью ката является декодирование этой строки, r чтобы получить исходную строку s.
-     *
+     * <p>
      * Объяснение процесса кодирования:
      * input: строка, s состоящая из строчных букв от "a" до "z" и положительного целого числа num
      * мы знаем, что есть соответствие между abcde...uvwxyz и 0, 1, 2 ..., 23, 24, 25:0 <-> a, 1 <-> b ...
@@ -22,51 +22,58 @@ public class AllStrings {
      * m --> 12,   12 * 6015 % 26 = 4,    4  --> e
      * e --> 4,     4 * 6015 % 26 = 10,   10 --> k
      * r --> 17,   17 * 6015 % 26 = 23,   23 --> x
-     *
+     * <p>
      * So we get "ekx", hence the output is "6015ekx"
+     *
      * @param r закодированая в строка
      * @return декодирование этой строки, r чтобы получить исходную строку s
      */
     public static String decode(String r) {
         String abc = "abcdefghijklmnopqrstuvwxyz";
-        String num = r.replaceAll("\\D","");
-        String words = r.replaceAll("\\d","");
+        String num = r.replaceAll("\\D", "");
+        String words = r.replaceAll("\\d", "");
         StringBuilder decodeString = new StringBuilder();
         int number = Integer.parseInt(num);
         int indexInput;
-        int indexOutput=-1;
+        int indexOutput = -1;
         int indexCode;
-        int flag=0;
-        while (flag!=words.length()){
+        int flag = 0;
+        int Impossible;
+        while (flag != words.length()) {
             indexInput = abc.indexOf(words.charAt(flag));
-
+            Impossible = 0;
             for (int i = 0; i < 26; i++) {
-                indexCode=i*number%26;
-                if (indexCode==indexInput){
-                    indexOutput=i;
-                    break;
+                indexCode = i * number % 26;
+                if (indexCode == indexInput) {
+                    if (Impossible == 0) {
+                        indexOutput = i;
+                    } else {
+                        return "Impossible to decode";
+                    }
+                    Impossible++;
                 }
             }
             decodeString.append(abc.charAt(indexOutput));
             flag++;
         }
-        String s = (code(decodeString.toString(),number));
-       return s==r?decodeString.toString():"Impossible to decode";
+        return decodeString.toString();
     }
+
     // кодирование строки
-    public static String code(String s, int num){
+    public static String code(String s, int num) {
         String abc = "abcdefghijklmnopqrstuvwxyz";
         int indexInput;
         int indexOutput;
-        int flag=0;
+        int flag = 0;
         StringBuilder codeStr = new StringBuilder();
-        codeStr.append(num);
-        while (flag!=s.length()){
+        //codeStr.append(num);
+        while (flag != s.length()) {
             indexInput = abc.indexOf(s.charAt(flag));
-            indexOutput = num*indexInput%26;
+            indexOutput = num * indexInput % 26;
             codeStr.append(abc.charAt(indexOutput));
-                flag++;
+            flag++;
         }
+
         return codeStr.toString();
     }
 
@@ -77,10 +84,10 @@ public class AllStrings {
      * "riley" --> "Hello Riley!"
      * "JACK"  --> "Hello Jack!"
      */
-    public static String greet(String name){
-        String allWithOutFirst =name.toLowerCase().substring(1,name.length());
-        String first = name.toUpperCase().substring(0,1);
-        return "Hello "+first+allWithOutFirst+"!";
+    public static String greet(String name) {
+        String allWithOutFirst = name.toLowerCase().substring(1, name.length());
+        String first = name.toUpperCase().substring(0, 1);
+        return "Hello " + first + allWithOutFirst + "!";
     }
 
     public AllStrings() {
@@ -629,7 +636,7 @@ public class AllStrings {
         StringBuilder resultStr = new StringBuilder();
         char[] arrErrors = {'u', 'w', 'x', 'z'};
         String errors = s.replaceAll("[^uzxw]", "");
-        if (errors.length()==0)return errors;// если нет ошибок
+        if (errors.length() == 0) return errors;// если нет ошибок
         for (int i = 0; i < colErrors.length; i++) {
             colErrors[i] = errors.replaceAll("[^" + arrErrors[i] + "+]", "");
             if (colErrors[i].length() != 0) {
@@ -644,25 +651,27 @@ public class AllStrings {
                         append(chars).append('\r');
             }
         }
-          return resultStr.deleteCharAt(resultStr.length()-1).toString();
+        return resultStr.deleteCharAt(resultStr.length() - 1).toString();
     }
 
     /**
      * Перевести линкед лис в строковое представление
+     *
      * @param list линкед лист
      * @return строку в виде "1 -> 2 -> 3 -> null"
      */
     public static String stringify(Node list) {
         // Your code here.
-        if(list==null) return "null";
+        if (list == null) return "null";
         StringBuilder resultStr = new StringBuilder();
-        while (list.getNext()!=null){
+        while (list.getNext() != null) {
             resultStr.append(list.getData()).append(" -> ");
             list = list.getNext();
         }
         resultStr.append(list.getData()).append(" -> ").append("null");
         return resultStr.toString();
     }
+
     public class Node {
         private int data;
         private Node next;
