@@ -1,3 +1,5 @@
+import com.CodeWars.AllStrings;
+
 /**
  * @author Dima Derevianko
  */
@@ -36,7 +38,7 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-
+        AllStrings.splitInParts("supercalifragilisticexpialidocious",3);
     }
     //сумирование без +
     public static int add(int a, int b)	{

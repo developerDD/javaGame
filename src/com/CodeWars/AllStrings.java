@@ -7,6 +7,26 @@ import java.util.regex.Pattern;
 
 public class AllStrings {
     /**
+     * Split In Parts
+     * Цель этого ката - разделить данную строку на разные строки одинакового размера (размер строки примечания передается методу)
+     */
+    public static String splitInParts(String s, int partLength) {
+        // your code
+        char[] f = s.toCharArray();
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < f.length; i++) {
+            if (i%partLength==0){
+                str.append(" ");
+            }
+            str.append(f[i]);
+        }
+        String res = str.toString();
+        return res.trim();
+        // best return s.replaceAll("(.{"+partLength+"})(?!$)", "$1 ");
+    }
+
+
+    /**
      * Предположим, мы знаем процесс, с помощью которого строка s была закодирована в строку r(см. Пояснение ниже).
      * Целью ката является декодирование этой строки, r чтобы получить исходную строку s.
      * <p>
