@@ -7,6 +7,15 @@ import java.util.regex.Pattern;
 
 public class AllStrings {
     /**
+     * В каждом предложении текста поменять местами первое слово с последним, не изменяя длины предложения.
+     */
+
+    public static String replaceFirstAndLastWords(String sentence){
+
+        return null;
+    }
+
+    /**
      * Split In Parts
      * Цель этого ката - разделить данную строку на разные строки одинакового размера (размер строки примечания передается методу)
      */
