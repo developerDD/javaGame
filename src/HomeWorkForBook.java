@@ -1,4 +1,7 @@
-import com.CodeWars.AllStrings;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Dima Derevianko
@@ -38,8 +41,7 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-       String s = "Dima Vasy GEnya.DD  ppp yyy.";
-        AllStrings.replaceFirstAndLastWords(s);
+       String s = "Dima Vasy GEnya.Gora  reoa dawdw ded.";
 
 
     }

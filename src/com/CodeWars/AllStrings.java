@@ -7,21 +7,40 @@ import java.util.regex.Pattern;
 
 public class AllStrings {
     /**
+     * Вывести все предложения заданного текста в порядке возрастания количества слов в каждом из них.
+     */
+    public static void sortText(String text) {
+        TreeMap<Integer, String> map = new TreeMap<>();
+        String[] arr = text.split("\\.");
+        for (int i = 0; i < arr.length; i++) {
+            Matcher m = Pattern.compile("\\w+").matcher(arr[i]);
+            Integer count = 0;
+            while (m.find()) {
+                count++;    //подсчет количества слов в предложении
+            }
+            map.put(count, arr[i].concat("."));
+        }
+        for (Map.Entry<Integer, String> stringEntry : map.entrySet()) {
+            System.out.println(stringEntry.getValue());
+        }
+    }
+
+    /**
      * В каждом предложении текста поменять местами первое слово с последним, не изменяя длины предложения.
      */
 
-    public static String replaceFirstAndLastWords(String text){
+    public static String replaceFirstAndLastWords(String text) {
 
         String tempWord;
         StringBuilder textResult = new StringBuilder();
         String[] sentence = text.split("\\.");
         String[] words;
         for (int i = 0; i < sentence.length; i++) {
-            words=sentence[i].split("\\W+");
-            tempWord=words[0];
-            words[0]=words[words.length-1];
-            words[words.length-1]=tempWord;
-            textResult.append(String.join(" ",words)).append(".");
+            words = sentence[i].split("\\W+");
+            tempWord = words[0];
+            words[0] = words[words.length - 1];
+            words[words.length - 1] = tempWord;
+            textResult.append(String.join(" ", words)).append(".");
         }
         return textResult.toString();
     }
@@ -35,7 +54,7 @@ public class AllStrings {
         char[] f = s.toCharArray();
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < f.length; i++) {
-            if (i%partLength==0){
+            if (i % partLength == 0) {
                 str.append(" ");
             }
             str.append(f[i]);
