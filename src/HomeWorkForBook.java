@@ -1,6 +1,3 @@
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -42,7 +39,7 @@ public class HomeWorkForBook {
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
        String s = "Dima Vasy GEnya.Gora  reoa dawdw ded.";
-
+        Pattern p = Pattern.compile("\\w+\\s");
 
     }
     //сумирование без +
