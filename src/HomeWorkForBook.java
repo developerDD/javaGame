@@ -1,3 +1,5 @@
+import com.CodeWars.AllStrings;
+
 /**
  * @author Dima Derevianko
  */
@@ -36,7 +38,8 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-       String s = "Dima Vasy.DD  ppp yyy.";
+       String s = "Dima Vasy GEnya.DD  ppp yyy.";
+        AllStrings.replaceFirstAndLastWords(s);
 
 
     }

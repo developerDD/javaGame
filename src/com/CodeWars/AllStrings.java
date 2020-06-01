@@ -10,9 +10,20 @@ public class AllStrings {
      * В каждом предложении текста поменять местами первое слово с последним, не изменяя длины предложения.
      */
 
-    public static String replaceFirstAndLastWords(String sentence){
+    public static String replaceFirstAndLastWords(String text){
 
-        return null;
+        String tempWord;
+        StringBuilder textResult = new StringBuilder();
+        String[] sentence = text.split("\\.");
+        String[] words;
+        for (int i = 0; i < sentence.length; i++) {
+            words=sentence[i].split("\\W+");
+            tempWord=words[0];
+            words[0]=words[words.length-1];
+            words[words.length-1]=tempWord;
+            textResult.append(String.join(" ",words)).append(".");
+        }
+        return textResult.toString();
     }
 
     /**
