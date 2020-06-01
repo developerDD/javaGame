@@ -1,5 +1,3 @@
-import java.util.regex.Pattern;
-
 /**
  * @author Dima Derevianko
  */
@@ -38,8 +36,16 @@ public class HomeWorkForBook {
 //        boolean b = IntStream.of(a).anyMatch(x->x==f);
 //        System.out.println(b);
 //        System.out.println(Arrays.binarySearch(a,9));
-       String s = "Dima Vasy GEnya.Gora  reoa dawdw ded.";
-        Pattern p = Pattern.compile("\\w+\\s");
+
+
+//        String s=null;
+//        Pattern p = Pattern.compile("\\sв\\s|\\sпро\\s|\\sу\\s|\\sдо\\s|\\sза\\s|\\sна\\s|\\sо\\s|\\sпо\\s");
+//        Matcher m = p.matcher(s);
+//        while (m.find()) {
+//            System.out.println(m.group(0));
+//
+//        }
+
 
     }
     //сумирование без +
