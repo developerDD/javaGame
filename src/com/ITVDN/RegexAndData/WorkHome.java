@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -14,7 +16,9 @@ public class WorkHome {
     public static void main(String[] args) {
 //        System.out.println(replaceOnJava("dima.txt"));
 //    registration();
-        countTimeYourBirthday(1984,4,16,10,30);
+       // countTimeYourBirthday(2013,11,8,5,30);
+        WorkHome workHome = new WorkHome();
+        workHome.foo();
     }
 
 //Напишите шуточную программу «Дешифратор», которая бы в текстовом файле могла бы заменить все
@@ -76,10 +80,25 @@ public class WorkHome {
         long second =Math.abs(milsec2/1000l) ;
         System.out.println(second);
         long year = second / 31536000;
+        long monthRes = (second/31536000)%12;
         long day = (second / 86400) % 365;
         long hours = (second % 86400) / 3600;
         long min = (second % 3600) / 60;
-        long secc = second % 60;
-        System.out.println(year + " " + day + " " + hours + " " + min + " " + secc);
+        long secc = second % 60;// можно добаить и секунды
+        System.out.println("Ваш возраст:");
+        System.out.println(year + " лет "+monthRes+" месяц " + day + " дней " + hours + " часов " + min + " минут ");
+    }
+// с помощью  LocalDate разница с текущей датой и прошлой
+    public void foo(){
+        LocalDate last = LocalDate.of(2020,6,3);
+        LocalDate first = LocalDate.of(1984, 9, 14);
+        LocalDate resultDate = compare(last, first); //returns 0011-08-25
+        System.out.println(resultDate.toString());
+
+    }
+    LocalDate compare(LocalDate dateOfSession, LocalDate compared)
+    {
+        long resultDays = ChronoUnit.DAYS.between(compared, dateOfSession);
+        return LocalDate.of(0, 1, 1).plusDays(resultDays - 1);
     }
 }
