@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -13,7 +14,7 @@ public class WorkHome {
     public static void main(String[] args) {
 //        System.out.println(replaceOnJava("dima.txt"));
 //    registration();
-        countTimeYourBirthday(1,2,4,5,6);
+        countTimeYourBirthday(1984,4,16,10,30);
     }
 
 //Напишите шуточную программу «Дешифратор», которая бы в текстовом файле могла бы заменить все
@@ -60,16 +61,19 @@ public class WorkHome {
             System.out.println((char) 27 + "[31m"+ "Ваш логин имеет недопустимые символы или короткий!");
         }
     }
-
+    //Спроектируйте и разработайте метод, определяющий, сколько времени прошло с заданной даты.
+    //С помощью этого методы выведите в консоль, сколько времени прошло с вашего дня рождения в удобном
+    //для восприятия виде, например: «Вам исполнилось 20 лет, 3 месяца, 18 дней, 4 часа, 5 минут и 10 секунд».
     public static void countTimeYourBirthday(int years,int month,int date,int hourOfDay,int minute){
         GregorianCalendar calendar = new GregorianCalendar();
-        calendar.set(1984,8,14,10,30);
+        calendar.set(years,month-1,date,hourOfDay,minute);
         long milsec= calendar.getTimeInMillis();
-        GregorianCalendar calendar1 = new GregorianCalendar();
-        calendar1.set(2020,5,1,23,10);
-        long milsec1= calendar1.getTimeInMillis();
-        long milsec2 = milsec1-milsec;
-        long second = milsec2/1000l;
+        System.out.println(milsec);
+        Date date2 = new Date();
+        long i = date2.getTime();
+
+        long milsec2 = i-milsec;
+        long second =Math.abs(milsec2/1000l) ;
         System.out.println(second);
         long year = second / 31536000;
         long day = (second / 86400) % 365;
