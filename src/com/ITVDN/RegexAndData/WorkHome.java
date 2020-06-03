@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -93,8 +96,22 @@ public class WorkHome {
         LocalDate last = LocalDate.of(2020,6,3);
         LocalDate first = LocalDate.of(1984, 9, 14);
         LocalDate resultDate = compare(last, first); //returns 0011-08-25
-        System.out.println(resultDate.toString());
+//        System.out.println(resultDate.toString());
+        System.out.println(LocalDate.now());
+        LocalDateTime dateTimeNow = LocalDateTime.now();
+        LocalDateTime dateTime = LocalDateTime.of(1984,9,14,10,30,30);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E d-M-Y H:m:s день в году D");
+        System.out.println("dateTime = " + dateTime.format(formatter));
+        System.out.println("dateTimeNow = " + dateTimeNow.format(formatter));
+        System.out.println(Period.between(dateTimeNow.toLocalDate(), dateTime.toLocalDate()));
+        //можно получить раздельно данные
+        long y = ChronoUnit.YEARS.between(dateTime,dateTimeNow);
+        long m = ChronoUnit.MONTHS.between(dateTime,dateTimeNow);
+        long d = ChronoUnit.DAYS.between(dateTime,dateTimeNow);
 
+//        System.out.println(Period.between(last, first).getYears());
+//        System.out.println(Period.between(last, first).getMonths());
+//        System.out.println(Period.between(last, first).getDays());
     }
     LocalDate compare(LocalDate dateOfSession, LocalDate compared)
     {
