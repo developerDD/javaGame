@@ -1,3 +1,5 @@
+import com.CodeWars.HowManyDays;
+
 /**
  * @author Dima Derevianko
  */
@@ -45,7 +47,7 @@ public class HomeWorkForBook {
 //            System.out.println(m.group(0));
 //
 //        }
-
+        HowManyDays.daysRepresented(new int[][] {{2,8},{220,229},{10,16}});
 
 
     }
