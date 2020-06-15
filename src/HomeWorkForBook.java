@@ -47,6 +47,7 @@ public class HomeWorkForBook {
 //        }
 
 
+
     }
     //сумирование без +
     public static int add(int a, int b)	{
