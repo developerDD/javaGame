@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Branch_1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="434be9f6-da10-44d5-863a-dd2223b1760a" name="Default Changelist" comment="Fix idea">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/javaHomeWork/META-INF/javaHomeWork.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/javaHomeWork/dima.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Branch_1" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Branch_1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="1WGVOCqm0xPfJSmMhQ0sFC1MLX6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last.edited.regexp" value="!#2$%3#%" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ITVDN.Abstraction" />
+      <recent name="com.chapt05.AbstractFactory" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HomeWork">
+    <configuration name="HomeWork" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="HomeWorkForBook" />
+      <module name="javaHomeWork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ITVDN.Collections.Main" />
+      <module name="javaHomeWork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ITVDN.RegexAndData.MainData" />
+      <module name="javaHomeWork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleDataInputStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ITVDN.IO_NIO.SimpleDataInputStream" />
+      <module name="javaHomeWork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.ITVDN.Start" />
+      <module name="javaHomeWork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ITVDN.RegexAndData.WorkHome" />
+      <module name="javaHomeWork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="byteArrayInputStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ITVDN.IO_NIO.byteArrayInputStream" />
+      <module name="javaHomeWork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.HomeWork" />
+      <item itemvalue="Application.Start" />
+      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.SimpleDataInputStream" />
+      <item itemvalue="Application.byteArrayInputStream" />
+      <item itemvalue="Application.MainData" />
+      <item itemvalue="Application.WorkHome" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WorkHome" />
+        <item itemvalue="Application.MainData" />
+        <item itemvalue="Application.SimpleDataInputStream" />
+        <item itemvalue="Application.byteArrayInputStream" />
+        <item itemvalue="Application.Main (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Branch_1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Branch_1" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CodeWars&#10;Convert integer to Whitespace format done" />
+    <MESSAGE value="CodeWars&#10;Convert integer to Whitespace format done fix" />
+    <MESSAGE value="CodeWars&#10;CreatePhoneNumber done" />
+    <MESSAGE value="CodeWars&#10;IntroToArt v1&#10;Test MateAcademy done" />
+    <MESSAGE value="CodeWars&#10;IntroToArt fix done" />
+    <MESSAGE value="CodeWars&#10;From The Minimum done" />
+    <MESSAGE value="CodeWars&#10;Primorial Of a Number done" />
+    <MESSAGE value="CodeWars&#10;Credit Card Mask done" />
+    <MESSAGE value="CodeWars&#10;Sum of Digits / Digital Root done" />
+    <MESSAGE value="CodeWars&#10;Complete The Pattern #2 done" />
+    <MESSAGE value="CodeWars&#10;Regexp Basics - is it a eight bit unsigned number? done" />
+    <MESSAGE value="CodeWars&#10;Irreducible Sum of Rationals V1" />
+    <MESSAGE value="CodeWars&#10;Irreducible Sum of Rationals done" />
+    <MESSAGE value="CodeWars&#10;Easy Line Pascals` Triangle done" />
+    <MESSAGE value="CodeWars&#10;Easy Diagonal Pascals` Triangle v1" />
+    <MESSAGE value="CodeWars&#10;Easy Diagonal Pascals` Triangle done" />
+    <MESSAGE value="CodeWars&#10;VowelCount done" />
+    <MESSAGE value="CodeWars&#10;Mumbling done" />
+    <MESSAGE value="CodeWars&#10;Get the Middle Character done" />
+    <MESSAGE value="CodeWars&#10;Highest and Lowest done" />
+    <MESSAGE value="CodeWars&#10;Alternate capitalization done" />
+    <MESSAGE value="CodeWars&#10;A Rule of Divisibility by 7 done" />
+    <MESSAGE value="CodeWars&#10;GrowthOfPopulation done" />
+    <MESSAGE value="CodeWars&#10;Find NOD V1" />
+    <MESSAGE value="Fix idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix idea" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="281" y="38" width="794" height="725" key="CommitChangelistDialog2" timestamp="1610701311168">
+      <screen x="0" y="38" width="1366" height="730" />
+    </state>
+    <state x="281" y="38" width="794" height="725" key="CommitChangelistDialog2/0.38.1366.730@0.38.1366.730" timestamp="1610701311168" />
+    <state x="278" y="138" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1610701661863">
+      <screen x="0" y="38" width="1366" height="730" />
+    </state>
+    <state x="278" y="138" width="800" height="523" key="Vcs.Push.Dialog.v2/0.38.1366.730@0.38.1366.730" timestamp="1610701661863" />
+    <state x="481" y="319" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610701224553">
+      <screen x="0" y="38" width="1366" height="730" />
+    </state>
+    <state x="481" y="319" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.38.1366.730@0.38.1366.730" timestamp="1610701224553" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/CodeWars/HowManyDays.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="java.util.ImmutableCollections$ListItr" fieldName="isListIterator" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
