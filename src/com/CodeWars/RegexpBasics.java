@@ -1,6 +1,6 @@
 package com.CodeWars;
 
-import javafx.beans.property.IntegerProperty;
+
 
 public class RegexpBasics {
     /**

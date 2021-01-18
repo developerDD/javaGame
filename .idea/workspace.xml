@@ -27,13 +27,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="434be9f6-da10-44d5-863a-dd2223b1760a" name="Default Changelist" comment="Fix idea">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaHomeWork/META-INF/javaHomeWork.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaHomeWork/dima.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaHomeWork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javaHomeWork.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaHomeWork/META-INF/javaHomeWork.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HomeWorkForBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomeWorkForBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/CodeWars/RegexpBasics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/CodeWars/RegexpBasics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ITVDN/Generics/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ITVDN/Generics/MyDictionary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,20 +89,24 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last.edited.regexp" value="!#2$%3#%" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.ITVDN.Abstraction" />
       <recent name="com.chapt05.AbstractFactory" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Application.HomeWork">
@@ -173,8 +178,19 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="434be9f6-da10-44d5-863a-dd2223b1760a" name="Default Changelist" comment="Fix idea" />
+      <created>1610703344558</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610703344558</updated>
+    </task>
+    <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -254,33 +270,10 @@
     <MESSAGE value="Fix idea" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix idea" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="281" y="38" width="794" height="725" key="CommitChangelistDialog2" timestamp="1610701311168">
-      <screen x="0" y="38" width="1366" height="730" />
-    </state>
-    <state x="281" y="38" width="794" height="725" key="CommitChangelistDialog2/0.38.1366.730@0.38.1366.730" timestamp="1610701311168" />
-    <state x="278" y="138" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1610701661863">
-      <screen x="0" y="38" width="1366" height="730" />
-    </state>
-    <state x="278" y="138" width="800" height="523" key="Vcs.Push.Dialog.v2/0.38.1366.730@0.38.1366.730" timestamp="1610701661863" />
-    <state x="481" y="319" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610701224553">
-      <screen x="0" y="38" width="1366" height="730" />
-    </state>
-    <state x="481" y="319" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.38.1366.730@0.38.1366.730" timestamp="1610701224553" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/CodeWars/HowManyDays.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo typeName="java.util.ImmutableCollections$ListItr" fieldName="isListIterator" />
+        <PinnedItemInfo />
       </pinned-members>
     </pin-to-top-manager>
   </component>

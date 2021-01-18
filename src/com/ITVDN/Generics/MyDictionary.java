@@ -12,7 +12,7 @@ public class MyDictionary<TKey, TValue> {
         this.table = new ArrayList<>(DEFAULT_INITIAL_CAPACITY);
     }
 
-    public MyDictionary(Map<TKey, TValue> map) {
+    public MyDictionary(@NotNull Map<TKey, TValue> map) {
         int size = map.size();
         table.addAll((Collection<? extends Pair<TKey, TValue>>) map);
     }
