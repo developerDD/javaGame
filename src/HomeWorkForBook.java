@@ -67,6 +67,10 @@ public class HomeWorkForBook {
             count=0;
             // нужно пройтись по масиву слова и по массиву алфавита и соспостовлять порядковые номера слова и алфавита
             for (int j = 0; j < temp.length; j++) {
+                //если в входной строке больше букв чем в алфавите
+                if (j==abc.length){
+                    break;
+                }
                 if (temp[j]==abc[j]){
                     count++;
                 }
