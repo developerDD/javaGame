@@ -1,3 +1,7 @@
+import com.CodeWars.AllStrings;
+
+import java.util.Arrays;
+
 /**
  * @author Dima Derevianko
  */
@@ -46,14 +50,7 @@ public class HomeWorkForBook {
 //
 //        }
 
-        int[] arr = {55, -56, -7, -6, 56, 55, 63, 62,43,545,23,43,42,56,78,79,80};
-        int count =0;
-        for (int i = 1; i <arr.length; i+=2) {
-            if (Math.abs(Math.abs(arr[i-1])-Math.abs(arr[i]))==1){
-                count++;
-            }
-        }
-        System.out.println(count);
+        System.out.println(Arrays.toString(AllStrings.dup(new String[]{"ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"})));
 
 
 

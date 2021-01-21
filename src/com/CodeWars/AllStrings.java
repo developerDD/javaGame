@@ -8,6 +8,29 @@ import java.util.regex.Pattern;
 public class AllStrings {
 
     /**
+     * In this Kata, you will be given an array of strings and your task is to remove all consecutive
+     * duplicate letters from each string in the array.
+     *
+     * For example:
+     *
+     * dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
+     *
+     * dup(["kelless","keenness"]) = ["keles","kenes"].
+     *
+     * Strings will be lowercase only, no spaces. See test cases for more examples.
+     * @param arr входной массив строк для поиска дубликатов
+     * @return вернуть масив строк без дубликатов
+     */
+
+    public static String[] dup(String[] arr){
+        //..
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]=arr[i].replaceAll("([a-z])\\1+", "$1");
+        }
+        return arr;
+    }
+
+    /**
      * solve(["abode","ABc","xyzD"]) = [4, 3, 1]
      *         See test cases for more examples.
      * @param arr массив слов

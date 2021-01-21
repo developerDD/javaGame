@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434be9f6-da10-44d5-863a-dd2223b1760a" name="Default Changelist" comment="Alphabet symmetry done&#10;CodeWar">
+    <list default="true" id="434be9f6-da10-44d5-863a-dd2223b1760a" name="Default Changelist" comment="Simple consecutive pairs done&#10;CodeWar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HomeWorkForBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomeWorkForBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/CodeWars/AllStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/CodeWars/AllStrings.java" afterDir="false" />
@@ -199,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611043817278</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Simple consecutive pairs done&#10;CodeWar">
+      <created>1611253301772</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611253301772</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +260,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="CodeWars&#10;CreatePhoneNumber done" />
     <MESSAGE value="CodeWars&#10;IntroToArt v1&#10;Test MateAcademy done" />
     <MESSAGE value="CodeWars&#10;IntroToArt fix done" />
     <MESSAGE value="CodeWars&#10;From The Minimum done" />
@@ -278,7 +284,8 @@
     <MESSAGE value="Fix idea" />
     <MESSAGE value="New task&#10;CodeWar" />
     <MESSAGE value="Alphabet symmetry done&#10;CodeWar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alphabet symmetry done&#10;CodeWar" />
+    <MESSAGE value="Simple consecutive pairs done&#10;CodeWar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple consecutive pairs done&#10;CodeWar" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
