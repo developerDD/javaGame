@@ -46,44 +46,43 @@ public class HomeWorkForBook {
 //
 //        }
 
-       /** Consider the word "abode". We can see that the letter a is in position 1 and b is in position 2. In the alphabet, a and b are also in positions 1 and 2. Notice also that d and e in abode occupy the positions they would occupy in the alphabet, which are positions 4 and 5.
-
-        Given an array of words, return an array of the number of letters that occupy their positions in the alphabet for each word. For example,
-
-        solve(["abode","ABc","xyzD"]) = [4, 3, 1]
-        See test cases for more examples.
-
-        Input will consist of alphabet characters, both uppercase and lowercase. No spaces.
-
-        Good luck!
-
-        */
-        char [] abc = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-        String[] arr = {"ABCDEFGHKYGZefghijklmnopqrstuvwx"};
-        int[] result=new int[arr.length];
-        int count;
-        for (int i = 0; i < arr.length; i++) {
-            char[] temp = arr[i].toLowerCase().toCharArray();
-            count=0;
-            // нужно пройтись по масиву слова и по массиву алфавита и соспостовлять порядковые номера слова и алфавита
-            for (int j = 0; j < temp.length; j++) {
-                //если в входной строке больше букв чем в алфавите
-                if (j==abc.length){
-                    break;
-                }
-                if (temp[j]==abc[j]){
-                    count++;
-                }
+        int[] arr = {55, -56, -7, -6, 56, 55, 63, 62,43,545,23,43,42,56,78,79,80};
+        int count =0;
+        for (int i = 1; i <arr.length; i+=2) {
+            if (Math.abs(Math.abs(arr[i-1])-Math.abs(arr[i]))==1){
+                count++;
             }
-            result[i]=count;
         }
-
-
+        System.out.println(count);
 
 
 
 
     }
+
+    /**
+     * In this Kata your task will be to return the count of pairs that have consecutive numbers as follows:
+     * pairs([1,2,5,8,-4,-3,7,6,5]) = 3
+     * The pairs are selected as follows [(1,2),(5,8),(-4,-3),(7,6),5]
+     * --the first pair is (1,2) and the numbers in the pair are consecutive; Count = 1
+     * --the second pair is (5,8) and are not consecutive
+     * --the third pair is (-4,-3), consecutive. Count = 2
+     * --the fourth pair is (7,6), also consecutive. Count = 3.
+     * --the last digit has no pair, so we ignore.
+     * @param arr массив чисел в котором нужно найти пары с разницей 1
+     * @return вернуть количество пар
+     */
+    public static int solve(int [] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length - 1; i += 2) {
+            if (Math.abs(arr[i] - arr[i + 1]) == 1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
     //сумирование без +
     public static int add(int a, int b)	{
         if (b == 0) return a;

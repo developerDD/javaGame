@@ -26,9 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434be9f6-da10-44d5-863a-dd2223b1760a" name="Default Changelist" comment="New task&#10;CodeWar">
+    <list default="true" id="434be9f6-da10-44d5-863a-dd2223b1760a" name="Default Changelist" comment="Alphabet symmetry done&#10;CodeWar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HomeWorkForBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomeWorkForBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/CodeWars/AllStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/CodeWars/AllStrings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611007053352</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Alphabet symmetry done&#10;CodeWar">
+      <created>1611043817278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611043817278</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,7 +253,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="CodeWars&#10;Convert integer to Whitespace format done fix" />
     <MESSAGE value="CodeWars&#10;CreatePhoneNumber done" />
     <MESSAGE value="CodeWars&#10;IntroToArt v1&#10;Test MateAcademy done" />
     <MESSAGE value="CodeWars&#10;IntroToArt fix done" />
@@ -270,7 +277,8 @@
     <MESSAGE value="CodeWars&#10;Find NOD V1" />
     <MESSAGE value="Fix idea" />
     <MESSAGE value="New task&#10;CodeWar" />
-    <option name="LAST_COMMIT_MESSAGE" value="New task&#10;CodeWar" />
+    <MESSAGE value="Alphabet symmetry done&#10;CodeWar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alphabet symmetry done&#10;CodeWar" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

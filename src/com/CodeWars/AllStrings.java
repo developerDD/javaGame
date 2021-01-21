@@ -6,6 +6,34 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AllStrings {
+
+    /**
+     * solve(["abode","ABc","xyzD"]) = [4, 3, 1]
+     *         See test cases for more examples.
+     * @param arr массив слов
+     * @return количество букв в слове которые стоят на томже месте что и в словаре
+     */
+    public static int[] solve(String[] arr) {
+        char[] abc = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        int[] result = new int[arr.length];
+        int count;
+        for (int i = 0; i < arr.length; i++) {
+            char[] temp = arr[i].toLowerCase().toCharArray();
+            count = 0;
+            // нужно пройтись по масиву слова и по массиву алфавита и соспостовлять порядковые номера слова и алфавита
+            for (int j = 0; j < temp.length; j++) {
+                //если в входной строке больше букв чем в алфавите
+                if (j == abc.length) {
+                    break;
+                }
+                if (temp[j] == abc[j]) {
+                    count++;
+                }
+            }
+            result[i] = count;
+        }
+        return result;
+    }
     /**
      * Вывести все предложения заданного текста в порядке возрастания количества слов в каждом из них.
      */
