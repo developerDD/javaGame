@@ -1,7 +1,5 @@
 import com.CodeWars.AllStrings;
 
-import java.util.Arrays;
-
 /**
  * @author Dima Derevianko
  */
@@ -50,8 +48,7 @@ public class HomeWorkForBook {
 //
 //        }
 
-        System.out.println(Arrays.toString(AllStrings.dup(new String[]{"ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"})));
-
+        AllStrings.longestRepetition("acdkca");
 
 
 

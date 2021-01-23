@@ -1,11 +1,46 @@
 package com.CodeWars;
 
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AllStrings {
+
+    /**
+     * Для данной строки s найдите символ c (или C) с самым длинным последовательным повторением и верните:
+     *
+     * Объект [] {c, l};
+     * где l (или L) - длина повторения. Если есть два или более символа с одинаковым l,
+     * вернуть первый в порядке появления.
+     *
+     * Для возврата пустой строки:
+     *
+     * Объект [] {"", 0}
+     * @param s входная строка с буквами
+     * @return вернуть букву которая больше всего повторялась
+     */
+    public static Object[] longestRepetition(String s) {
+        if (s.isEmpty()){
+            return new Object[]{"", 0};
+        }
+        ArrayList<String> stringList = new ArrayList<>();
+        char[] chars =s.toCharArray();
+        Arrays.sort(chars);
+        char firs;
+        char second;
+        int count1=0;
+        int count2=0;
+        for (char aChar : chars) {
+            
+        }
+        
+        String d = new String(chars);
+        System.out.println(d);
+        
+        return new Object[]{"", 0};
+    }
 
     /**
      * In this Kata, you will be given an array of strings and your task is to remove all consecutive
