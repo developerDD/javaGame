@@ -48,7 +48,7 @@ public class HomeWorkForBook {
 //
 //        }
 
-        AllStrings.longestRepetition("aaaaммм3333333");
+        System.out.println(AllStrings.longestRepetition("abbbbb\naafffff"));
 
 
 

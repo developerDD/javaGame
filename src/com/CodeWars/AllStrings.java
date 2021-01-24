@@ -26,21 +26,29 @@ public class AllStrings {
         if (s.isEmpty()){
             return new Object[]{"", 0};
         }
-        char[] chars =s.toCharArray();
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        for (int i = 0; i < chars.length; i++) {
-            if (!map.containsKey(chars[i])){
-                map.put(chars[i],1);
-                continue;
+        String [] arrStr = s.split("\n");
+        Pattern p = Pattern.compile("(\\w)\\1+");//регулярка поиска повторяющегося символа
+        Matcher m;
+       List<String> list = new ArrayList<>();
+        for (int i = 0; i < arrStr.length; i++) {
+            m = p.matcher(arrStr[i]);
+            while (m.find()){
+              list.add(m.group());
             }
-                map.put(chars[i], map.get(chars[i])+1);
         }
-       String ss= map.entrySet().stream()
-                .sorted(Map.Entry.<Character,Integer>comparingByValue(Comparator.reverseOrder())).collect(Collectors.toList()).toString();
-            String sivol = ss.substring(1,2);
-            int count = Integer.parseInt(ss.substring(3,4));
-        System.out.println();
-        return new Object[]{sivol, count};
+        Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if (o1.length()>o2.length()){
+                    return -1;
+                }else if (o1.length()<o2.length()){
+                    return 1;
+                }else {
+                    return 0;
+                }
+            }
+        });
+        return new Object[]{String.valueOf(list.get(0).charAt(0)) ,list.get(0).length()};
     }
 
     /**
