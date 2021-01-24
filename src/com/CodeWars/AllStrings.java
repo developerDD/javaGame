@@ -1,10 +1,11 @@
 package com.CodeWars;
 
 
-import java.lang.reflect.Array;
+import java.security.KeyStore;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class AllStrings {
 
@@ -25,21 +26,21 @@ public class AllStrings {
         if (s.isEmpty()){
             return new Object[]{"", 0};
         }
-        ArrayList<String> stringList = new ArrayList<>();
         char[] chars =s.toCharArray();
-        Arrays.sort(chars);
-        char firs;
-        char second;
-        int count1=0;
-        int count2=0;
-        for (char aChar : chars) {
-            
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        for (int i = 0; i < chars.length; i++) {
+            if (!map.containsKey(chars[i])){
+                map.put(chars[i],1);
+                continue;
+            }
+                map.put(chars[i], map.get(chars[i])+1);
         }
-        
-        String d = new String(chars);
-        System.out.println(d);
-        
-        return new Object[]{"", 0};
+       String ss= map.entrySet().stream()
+                .sorted(Map.Entry.<Character,Integer>comparingByValue(Comparator.reverseOrder())).collect(Collectors.toList()).toString();
+            String sivol = ss.substring(1,2);
+            int count = Integer.parseInt(ss.substring(3,4));
+        System.out.println();
+        return new Object[]{sivol, count};
     }
 
     /**

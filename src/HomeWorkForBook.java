@@ -48,7 +48,7 @@ public class HomeWorkForBook {
 //
 //        }
 
-        AllStrings.longestRepetition("acdkca");
+        AllStrings.longestRepetition("aaaaммм3333333");
 
 
 
